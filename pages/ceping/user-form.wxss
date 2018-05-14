@@ -1,0 +1,27 @@
+/* pages/ceping/user-form.wxss */
+@import "/pages/common/common.wxss";
+
+view {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 40rpx;
+}
+view text{
+  margin-bottom: 40rpx;
+  font-weight: bold;
+  color: #00479d;
+
+}
+view.sex text.block {
+  float: left;
+  margin-bottom: 40rpx;
+}
+.sex .radio-group {
+  float: left;
+  margin-left: 80rpx;
+}
+
+input {
+  border-width: thin;
+  border-bottom:1px solid #dfdfdf;
+}

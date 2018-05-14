@@ -1,0 +1,50 @@
+/* pages/index/pay-success.wxss */
+.block {
+  display: block;
+  overflow: hidden;
+}
+view {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+image {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 150rpx auto;
+  margin-bottom: 30rpx;
+}
+
+.success-msg {
+  text-align: center;
+  width: 100%;
+}
+
+.product-name {
+  float: left;
+  margin-left: 5rpx;
+}
+
+.price {
+  float: right;
+  font-weight: bold;
+  margin-right: 10rpx;
+}
+
+button {
+  margin-bottom: 20rpx; 
+}
+
+.ceping {
+  background-color: #00479d;
+  color: white;
+}
+
+.share-text {
+  color: #ababab;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 32rpx;
+  position: fixed;
+  bottom: 0;
+}

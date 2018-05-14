@@ -1,0 +1,82 @@
+/* pages/coupon/index.wxss */
+page {
+  background-color: #f7f7f7;
+}
+.coupon {
+  position: relative;
+}
+.coupon image {
+  display: block;
+  width: 700rpx;
+  height: 240rpx;
+  margin: 30rpx auto;
+  
+}
+
+.coupon-price {
+  color: #e8684f;
+  font-size: 68rpx;
+  line-height: 200rpx;
+  font-weight: bold;
+  width: 260rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  border-right: dashed #b6b6b6 2rpx;
+}
+
+.coupon-info {
+  width: 350rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 22%;
+  left: 46%;
+}
+
+.coupon-info .title {
+  font-size: 28rpx;
+  color: #e8684f;
+}
+
+.coupon-info .content {
+  font-size: 24rpx;
+  color: #888888;
+}
+
+.coupon-info .date {
+  margin-top: 20rpx; 
+  font-size: 22rpx;
+  color: #888888;
+}
+
+
+.coupon.expired .coupon-price {
+  color: #cdcdcd;
+  font-size: 68rpx;
+  line-height: 200rpx;
+  font-weight: bold;
+  width: 260rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  border-right: dashed #cdcdcd 2rpx;
+}
+
+
+
+.coupon.expired .coupon-info .title {
+  font-size: 28rpx;
+  color: #cccccc;
+}
+
+.coupon.expired .coupon-info .content {
+  font-size: 24rpx;
+  color: #d9d9d9;
+}
+
+.coupon.expired .coupon-info .date {
+  font-size: 22rpx;
+  color: #cccccc;
+}

@@ -1,0 +1,6 @@
+<!--pages/coupon/send.wxml-->
+<view class='coupon'>
+    <image src='/images/bg_tanchuang.png'></image>
+    <view class='coupon-liaojie'>了解测试</view>
+    <view class='coupon-use'>立即使用</view>
+</view>

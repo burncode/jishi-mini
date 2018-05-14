@@ -1,0 +1,40 @@
+/* pages/coupon/send.wxss */
+page {
+  background-color: #f7f7f7;
+}
+.coupon {
+  position: relative;
+}
+.coupon image {
+  display: block;
+  width: 418rpx;
+  height: 478rpx;
+  margin: 30rpx auto;
+  
+}
+
+.coupon-liaojie {
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 200rpx;
+  font-weight: bold;
+  width: 100rpx;
+  height: 31rpx;
+  position: absolute;
+  top: 52%;
+  left: 41%;
+  text-decoration: underline;
+
+}
+
+.coupon-use {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #00479d;
+  width: 121rpx;
+  height: 31rpx;
+  position: absolute;
+  top: 87%;
+  left: 40%;
+}
+

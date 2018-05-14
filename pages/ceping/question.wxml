@@ -1,0 +1,26 @@
+<!--pages/ceping/submit.wxml-->
+
+<import src="/pages/ceping/common/template.wxml"/>
+<template is="progress"  data="{{progress}}" />
+<text>\n</text>
+<view class='option'>
+<view>
+<text class='block'>我喜欢和陌生人打交道</text>
+</view>
+
+</view>
+<text>\n</text>
+<view>
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}">
+  <view>
+      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </view>
+
+  </label>
+</radio-group>
+</view>
+
+<text>\n</text>
+
+<button>提交答案</button>

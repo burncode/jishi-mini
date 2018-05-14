@@ -1,0 +1,130 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.98",
+	"appid": "wx2e68cc2040709c54",
+	"projectname": "jishi",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "测评引导",
+					"pathName": "pages/ceping/yindao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提交答题",
+					"pathName": "pages/ceping/submit",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "引导2",
+					"pathName": "pages/ceping/yindao-02",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "引导3",
+					"pathName": "pages/ceping/yindao-03",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "问题-二选项",
+					"pathName": "pages/ceping/question",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写个人信息",
+					"pathName": "pages/ceping/user-form",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "轮播详情－01",
+					"pathName": "pages/index/lunbo-01",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/index/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新闻详情页",
+					"pathName": "pages/index/detail-news",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "支付成功页面",
+					"pathName": "pages/index/pay-success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单列表页",
+					"pathName": "pages/order/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单列表页",
+					"pathName": "pages/order/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "优惠券列表",
+					"pathName": "pages/coupon/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领取优惠券",
+					"pathName": "pages/coupon/send",
+					"query": ""
+				}
+			]
+		}
+	}
+}

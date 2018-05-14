@@ -1,0 +1,111 @@
+/* pages/index/detail.wxss */
+@import "/pages/common/common.wxss";
+image {
+  width: 100%;
+  height: 340rpx;
+}
+view {
+  margin-bottom: 40rpx; 
+}
+text.p {
+  color: #9d9d9d;
+}
+.qiangou {
+  color: #9e9e9e;
+  font-size: 24rpx;
+  margin-top: 40rpx;
+}
+.qiangou .h1 {
+  color: black;
+  font-size: 36rpx;
+}
+.huodong {
+  margin-bottom: 10rpx;
+}
+.price {
+  color: #e64340;
+  margin-left: 20rpx;
+  margin-right: 30rpx;
+}
+.tishi {
+  color: #e64340;
+  margin-bottom: 10rpx;
+}
+
+.tishi2 {
+  color: #b2b2b2;
+  font-size: 22rpx;
+}
+
+.zhuanjia-img {
+  float: left;
+
+}
+.block {
+  overflow: hidden;
+
+}
+.zhuanjia-img{
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 30rpx;
+}
+.zhuanjia-content {
+
+  font-size: 26rpx;
+  float: left;
+  width: 450rpx;
+
+}
+
+.h2 {
+  font-weight: bold;
+}
+.p {
+  font-size: 22rpx;
+  color: #888;
+}
+.hits {
+  font-size: 22rpx;
+  color: #b2b2b2;
+
+  float: right;
+}
+.date {
+  margin-top: 10rpx; 
+  font-size: 22rpx;
+  color: #b2b2b2;
+
+}
+
+.empty-line {
+  overflow: hidden;
+
+  display: block;
+  width: 100%;
+  height: 80rpx;
+
+}
+
+text.right {
+
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  background-color: #e64340;
+  border-radius: 10rpx;
+}
+
+.right text {
+  margin:  auto;
+  margin-top: 28rpx;
+
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+    text-align: center;
+    color: white;
+    font-size: 50rpx;
+    line-height: 50rpx;
+    font-weight: bold;
+}

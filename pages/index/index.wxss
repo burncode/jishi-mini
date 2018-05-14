@@ -1,0 +1,102 @@
+
+swiper {
+  width: 100%;
+  height: 340 rpx;
+}
+
+swiper image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bobao{
+  overflow: hidden
+}
+.bobao text{
+  font-weight: bold;
+  font-size: 34rpx;
+  margin-left: 10rpx;
+  line-height: 1;
+}
+.bobao-img{
+  margin-top: 40rpx;
+  margin-left: 40rpx;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+
+.bobao-img image {
+ 
+  width: 83rpx;
+  height: 44rpx;
+
+}
+.bobao-content {
+  margin-top: 50rpx;
+  font-size: 26rpx;
+  float: left;
+  width: 430rpx;
+  margin-left: 40rpx;
+}
+.zhuanjia-img {
+  float: left;
+  margin-left: 40rpx;
+}
+.block {
+  overflow: hidden;
+
+}
+.zhuanjia-img image{
+  width: 200rpx;
+  height: 150rpx;
+}
+.zhuanjia-content {
+  margin-left: 40rpx;
+  font-size: 26rpx;
+  float: left;
+  width: 400rpx;
+
+}
+.h1 {
+  font-weight: bold;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx; 
+}
+.h2 {
+  font-weight: bold;
+}
+.p {
+  font-size: 22rpx;
+  color: #888;
+}
+.hits {
+  font-size: 22rpx;
+  color: #b2b2b2;
+
+  float: right;
+}
+.date {
+  margin-top: 30rpx; 
+  font-size: 22rpx;
+  color: #b2b2b2;
+
+}
+
+.huodong {
+  margin-left: 40rpx;
+  color: #d8d8d8;
+  font-size: 30rpx;
+}
+
+.price {
+  color: #e64340;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+.del-price {
+  text-decoration: line-through;
+  margin-right: 50rpx;
+}
