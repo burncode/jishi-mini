@@ -16,7 +16,6 @@ App({
                         withCredentials: true,
                         success: res => {
                             This.globalData.userInfo = res.userInfo;
-                            console.log(res.userInfo)
                             console.log(code)
                         },
                         complete: res => {
@@ -29,11 +28,11 @@ App({
                                 },
                                 method: getApp().globalData.login.method,
                                 success: function (res) {
-                                    if (res.data.StatusCode === 200) {
+                                    if (res.statusCode === 200) {
                                         // 登录成功 将token存入本地
-                                        getApp().globalData._token = res.data.ResultData._token;
-                                        getApp().globalData.userInfo.id = res.data.ResultData.user.id;
-                                        getApp().globalData.userInfo.tel = res.data.ResultData.user.tel;
+                                        getApp().globalData._token = res.data.data._token;
+                                        getApp().globalData.userInfo.id = res.data.data.user.id;
+                                        getApp().globalData.userInfo.tel = res.data.data.user.tel;
                                     }
                                 }
                             });
@@ -48,8 +47,13 @@ App({
         _token: null,
         host: host,
         login: {
-            url:host + '/login',
-            method:'post'
+            url: host + '/login',
+            method: 'post'
         },
+        my_coupons: {
+            url: host + '/my_coupons',
+            method: 'get'
+        },
+
     }
 })

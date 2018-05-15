@@ -11,7 +11,7 @@
 </view>
 
 <view class='coupon'>
-    <view class='coupon-left'>
+    <view class='coupon-left' bindtap="toMyCoupons">
     <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
     <text class='my-coupon'>我的优惠券</text>
     </view>
