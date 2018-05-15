@@ -1,5 +1,11 @@
-// pages/ceping/yindao-02.js
+const app = getApp()
 Page({
+  startA: function(event) {
+    wx.navigateTo({
+      url: '/pages/ceping/question' 
+    })
+
+  },
 
   /**
    * 页面的初始数据
@@ -12,6 +18,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.request({
+      url: app.globalData.host+'?category_id=1' ,
+      method: 'POST',
+      success: function(res) {
+        var a_questions = res.data
+        wx.setStorageSync('a_questions', a_questions)
+      }
+    })
+ 
   
   },
 

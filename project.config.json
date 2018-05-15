@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -32,30 +32,30 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 2,
 			"list": [
 				{
-					"id": -1,
-					"name": "测评引导",
-					"pathName": "pages/ceping/yindao",
+					"id": 0,
+					"name": "测评引导-B类",
+					"pathName": "pages/ceping/yindao-b",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "提交答题",
+					"id": 1,
+					"name": "问题-五选项-提交答题",
 					"pathName": "pages/ceping/submit",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "引导2",
-					"pathName": "pages/ceping/yindao-02",
+					"id": 2,
+					"name": "测评引导-A类",
+					"pathName": "pages/ceping/yindao-a",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "引导3",
-					"pathName": "pages/ceping/yindao-03",
+					"id": 3,
+					"name": "测评引导-C类",
+					"pathName": "pages/ceping/yindao-c",
 					"query": ""
 				},
 				{
