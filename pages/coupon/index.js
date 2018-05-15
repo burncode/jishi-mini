@@ -55,9 +55,8 @@ Page({
     onPullDownRefresh: function () {
         // 页面进来 请求房源数据
         wx.showNavigationBarLoading()
-        let houseApi = getApp().globalData.getHouse
-        let This = this;
-        This.getHouseData(This.data.labelCondition);
+        this.getCouponsData({});
+        console.log(22222);
         wx.hideNavigationBarLoading() //完成停止加载
         wx.stopPullDownRefresh() //停止下拉刷新
     },
@@ -67,9 +66,7 @@ Page({
      */
     onReachBottom: function () {
         // 页面进来 请求房源数据
-        let houseApi = getApp().globalData.getHouse
         let This = this;
-
         if (!This.data.next_page_url) {
             This.setData({
                 next_page_url: '',
@@ -83,17 +80,20 @@ Page({
         });
         wx.request({
             url: This.data.next_page_url, //仅为示例，并非真实的接口地址
-            data: This.data.labelCondition,
+            header: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + getApp().globalData._token
+            },
             success: function (res) {
-                if (res.data.StatusCode === 200) {
+                if (res.statusCode === 200 && res.data.data.data) {
                     This.setData({
-                        houses: This.data.houses.concat(res.data.ResultData.data),
-                        total_page: res.data.ResultData.last_page,
-                        page: res.data.ResultData.current_page,
-                        next_page_url: res.data.ResultData.next_page_url,
+                        coupons: This.data.coupons.concat(res.data.data.data),
+                        total_page: res.data.data.last_page,
+                        page: res.data.data.current_page,
+                        next_page_url: res.data.data.next_page_url,
                         moreLoadingComplete: false,
                     });
-                } else if (res.data.SCode === 204) {
+                } else {
                     This.setData({
                         next_page_url: '',
                         moreLoadingComplete: true,
