@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -42,8 +42,8 @@
 				},
 				{
 					"id": 1,
-					"name": "问题-五选项-提交答题",
-					"pathName": "pages/ceping/submit",
+					"name": "B类问题-五选项",
+					"pathName": "pages/ceping/question-b",
 					"query": ""
 				},
 				{
@@ -59,9 +59,9 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "问题-二选项",
-					"pathName": "pages/ceping/question",
+					"id": 4,
+					"name": "A类问题-二选项",
+					"pathName": "pages/ceping/question-a",
 					"query": ""
 				},
 				{

@@ -1,6 +1,7 @@
 <template name="progress">
-    <view class='progress'>
-        <text class='progress-title b'>答题进度</text><text class='progress-number'>{{progress.current_no}}/{{progress.question_count}}</text>
-        <progress stroke-width='20' percent='{{progress.percent}}' activeColor='#00479d' />
-    </view>
+  <view class='progress'>
+    <text class='progress-title b'>答题进度</text>
+    <text class='progress-number'>{{progress.current_no}}/{{progress.question_count}}</text>
+    <progress stroke-width='20' percent='{{progress.percent}}' activeColor='#00479d' />
+  </view>
 </template>

@@ -35,6 +35,11 @@ App({
   },
   globalData: {
     userInfo: null,
-    host:"http://localhost:8000/api/questions"
+    host: "http://localhost:8000/api",
+    userId: 3550,
+    subjectId: 1,
+    questionANumber: 60,
+    questionBNumber:150,
+    questionCNumber:28,
   }
 })

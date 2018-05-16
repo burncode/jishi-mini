@@ -1,18 +1,14 @@
-<!--pages/ceping/submit.wxml-->
-
-<view class='progress'>
-<text class='progress-title b'>答题进度</text><text class='progress-number'>150/150</text>
-<progress stroke-width='20' percent='30' activeColor='#00479d' />
-</view>
+<import src="/pages/ceping/common/template.wxml" />
+<template is="progress" data="{{progress}}" />
 <text>\n</text>
 <view class='option'>
 <view class='harf-left'>
 <text class='block'>A</text>
-<text class='block'>我喜欢和陌生人打交道</text>
+<text class='block'>{{question_items[current_key].sub_questions[0].title}}</text>
 </view>
 <view class='harf-right'>
 <text class='block'>B</text>
-<text class='block'>我喜欢分析事物的原理</text>
+<text class='block'>{{question_items[current_key].sub_questions[1].title}}</text>
 </view>
 
 </view>
@@ -30,4 +26,4 @@
 
 <text>\n</text>
 
-<button>提交答案</button>
+<button bindtap='{{bindfunction}}'>{{button_name}}</button>

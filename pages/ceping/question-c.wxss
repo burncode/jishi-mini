@@ -1,0 +1,44 @@
+/* pages/ceping/submit.wxss */
+@import "/pages/common/common.wxss";
+progress {
+  width: 100%;
+  height: 30rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.progress-number {
+  margin-left: 40rpx;
+}
+
+.harf-left {
+  width: 35%;
+  float: left;
+}
+.harf-left text.block {
+  text-align: left;
+}
+.harf-right {
+  width: 35%;
+  float: left;
+}
+.harf-right text.block {
+  text-align: right;
+}
+
+.option {
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+
+radio {
+  margin-bottom: 30rpx;
+}
+
+button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+
+}
