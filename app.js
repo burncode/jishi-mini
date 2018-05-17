@@ -41,5 +41,9 @@ App({
     questionANumber: 60,
     questionBNumber:150,
     questionCNumber:28,
+    questionASeconds: 5,
+    questionBSeconds: 5,
+    questionCSeconds:5,
+    timeOutUrl:"/pages/index/index",//答题中断跳转地址
   }
 })

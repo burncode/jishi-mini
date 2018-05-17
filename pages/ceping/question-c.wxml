@@ -20,5 +20,14 @@
 </view>
 
 <text>\n</text>
+<view class='timer'>
+    <text>{{seconds}}</text>
+</view>
 
 <button bindtap='{{bindfunction}}'>{{button_name}}</button>
+
+
+<modal hidden="{{hidden}}" title="" confirm-text="好的" bindconfirm="confirm" no-cancel="true">
+    抱歉，系统检测到您 没有在规定时间内完成 选择，为了保障测评结果为您提供更精准的指导，请及时选择！
+    当前已经做完数据已经为您保存，您可以从 “我的”-“未完成测评”-点击“继续测评”，会从当前题目开始！
+</modal>

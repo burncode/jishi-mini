@@ -1,5 +1,39 @@
 const app = getApp()
 Page({
+
+  confirm: function () {
+
+    console.log(app.globalData.timeOutUrl)
+    this.setData({
+      hidden: true
+    });
+    wx.switchTab({
+      url: app.globalData.timeOutUrl
+    })
+    console.log("clicked confirm");
+
+  },
+  startTimer: function () {
+    var that = this
+    var timer = setInterval(function () {
+      var seconds = that.data.seconds
+      seconds--
+      if (seconds <= 0) {
+        that.timeOut()
+        clearInterval(timer)
+        that.setData({
+          hidden: false
+        });
+        return false
+      }
+      that.setData({
+        seconds: seconds
+      })
+    }, 1000)
+  },
+  timeOut: function () {
+    console.log('时间到');
+  },
   displayButton: function () {
     if (this.data.progress.current_no >= 59) {
       var button_name = '提交答案'
@@ -78,6 +112,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    hidden: true,
+    nocancel: false,
+    seconds: app.globalData.questionCSeconds,
     currentNo: 1,
     button_name: '下一题',
     progress: {
@@ -92,10 +129,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.startTimer()
     var c_questions = wx.getStorageSync('c_questions')
     var history = wx.getStorageSync('history')
-    console.log(c_questions)
+
     if (history.category_id == 3) {
       var current_key = history.current_key;
     } else {
@@ -109,7 +146,7 @@ Page({
     progress.percent = current_no / question_count * 100;
     progress.current_no = current_no
     progress.question_count = question_count
-console.log(c_questions.data)
+
     var bindfunction = 'nextQuestion'
     this.setData({
       progress: progress,
@@ -117,10 +154,10 @@ console.log(c_questions.data)
       current_key: current_key,
       bindfunction: bindfunction,
       items: [
-        { name: '1', value: c_questions.data[current_key].sub_questions[0].title},
+        { name: '1', value: c_questions.data[current_key].sub_questions[0].title },
         { name: '2', value: c_questions.data[current_key].sub_questions[1].title },
       ]
-        
+
       ,
     })
 

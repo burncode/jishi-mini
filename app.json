@@ -16,6 +16,7 @@
     "pages/order/index",
     "pages/coupon/index",
     "pages/coupon/send",
+    "pages/comment/comment",
     "pages/logs/logs"
   ],
   "window": {
