@@ -56,7 +56,6 @@ Page({
         // 页面进来 请求房源数据
         wx.showNavigationBarLoading()
         this.getCouponsData({});
-        console.log(22222);
         wx.hideNavigationBarLoading() //完成停止加载
         wx.stopPullDownRefresh() //停止下拉刷新
     },

@@ -1,11 +1,11 @@
 <!--pages/order/index.wxml-->
 <view class='user'>
     <view class='user-left'>
-    <image src='/demo/zhuanjia-001.gif'></image>
+    <image src='{{userInfo.avatarUrl}}'></image>
     </view>
     
     <view class='user-info'>
-        <view class='user-name'>用户名</view>
+        <view class='user-name'>{{userInfo.nickName}}</view>
         <view class='ads-msg'>微信搜索“远识测评”订阅号，免费得测评卡</view>
     </view>
 </view>
