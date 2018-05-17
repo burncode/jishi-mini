@@ -62,6 +62,8 @@ view{
 .content {
   clear: both;
   margin-top: 110rpx;
+  font-size: 28rpx;
+  color: 888888;
 }
 
 .remainer {

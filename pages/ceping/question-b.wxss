@@ -35,3 +35,10 @@ radio {
   margin-bottom: 30rpx;
 }
 
+.timer {
+   position: fixed;
+  bottom: 150rpx;
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
+}

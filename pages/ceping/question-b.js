@@ -1,5 +1,38 @@
 const app = getApp()
 Page({
+  confirm: function () {
+
+    console.log(app.globalData.timeOutUrl)
+    this.setData({
+      hidden: true
+    });
+    wx.switchTab({
+      url: app.globalData.timeOutUrl
+    })
+    console.log("clicked confirm");
+
+  },
+  startTimer: function () {
+    var that = this
+    var timer = setInterval(function () {
+      var seconds = that.data.seconds
+      seconds--
+      if (seconds <= 0) {
+        that.timeOut()
+        clearInterval(timer)
+        that.setData({
+          hidden: false
+        });
+        return false
+      }
+      that.setData({
+        seconds: seconds
+      })
+    }, 1000)
+  },
+  timeOut: function () {
+    console.log('时间到');
+  },
   displayButton: function () {
     if (this.data.progress.current_no >= app.globalData.questionBNumber) {
       var button_name = '提交答案'
@@ -87,6 +120,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    hidden: true,
+    nocancel: false,
+    seconds: app.globalData.questionBSeconds,
     items: [
       { name: '1', value: 'A非常贴切描述我' },
       { name: '2', value: 'A一般' },
@@ -107,7 +143,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.startTimer()
     var b_questions = wx.getStorageSync('b_questions')
     var history = wx.getStorageSync('history')
     if (history.category_id == 2) {
