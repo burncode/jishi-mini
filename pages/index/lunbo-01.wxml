@@ -6,5 +6,5 @@
         <text class='h1 block'>{{title}}</text>
         <text class='p'>{{content}}</text>
     </view>
-    <button open-type="share">分享给好友</button>
 </view>
+<button open-type="share">分享给好友</button>

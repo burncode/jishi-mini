@@ -66,5 +66,9 @@ App({
             url: host + '/news/',
             method: 'get'
         },
+        getComments:{
+            url: host + '/comments',
+            method: 'get'
+        }
     }
 })

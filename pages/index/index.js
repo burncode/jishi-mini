@@ -1,36 +1,58 @@
 //index.js
 //获取应用实例
-const app = getApp()
+var interval;
 
 Page({
     data: {
         imgUrls: [
             '/demo/swiper.gif',
             '/demo/swiper-002.gif'
-
         ],
         indicatorDots: false,
         autoplay: false,
         interval: 5000,
         duration: 1000,
         rand_order: '',
-        news: []
+        news: [],
+        comments: []
     },
 
     onLoad: function () {
-        var This=this;
+        var This = this;
         This.getRandOrder();
         This.getNews();
+        This.getComments();
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        var This=this;
-        setInterval(function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+        var This = this;
+        interval = setInterval(function () {
             This.getRandOrder();
         }, 5000);
+    },
+
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function () {
+        clearInterval(interval);
+    },
+
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function () {
+        clearInterval(interval);
     },
 
     getRandOrder: function () {
@@ -71,7 +93,7 @@ Page({
                     This.setData({
                         news: res.data.data.data,
                     });
-                } else{
+                } else {
                     wx.showModal({
                         title: '提示',
                         content: '专家专栏数据加载失败'
@@ -82,6 +104,31 @@ Page({
                 wx.showModal({
                     title: '提示',
                     content: '专家专栏数据加载失败'
+                })
+            }
+        })
+    },
+    getComments: function () {
+        var This = this;
+        wx.request({
+            url: getApp().globalData.getComments.url, //仅为示例，并非真实的接口地址
+            method: getApp().globalData.getComments.method,
+            success: function (res) {
+                if (res.statusCode === 200) {
+                    This.setData({
+                        comments: res.data.data.data,
+                    });
+                } else {
+                    wx.showModal({
+                        title: '提示',
+                        content: '评论数据加载失败'
+                    })
+                }
+            },
+            error: function () {
+                wx.showModal({
+                    title: '提示',
+                    content: '评论数据加载失败'
                 })
             }
         })
