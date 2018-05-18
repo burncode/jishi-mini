@@ -18,7 +18,7 @@
     </view>
 
     <view class='h1'>专家专栏</view>
-    <view wx:for="{{news}}" class='block'>
+    <view wx:for="{{news}}" class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
         <view class='zhuanjia-img'>
             <image src='{{item.banner}}'/>
         </view>

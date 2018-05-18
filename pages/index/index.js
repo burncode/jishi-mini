@@ -18,7 +18,9 @@ Page({
     },
 
     onLoad: function () {
-        // 获取随机播报
+        var This=this;
+        This.getRandOrder();
+        This.getNews();
     },
 
     /**
@@ -26,12 +28,9 @@ Page({
      */
     onReady: function () {
         var This=this;
-        This.getRandOrder();
-        This.getNews();
         setInterval(function () {
             This.getRandOrder();
         }, 5000);
-
     },
 
     getRandOrder: function () {
@@ -96,5 +95,14 @@ Page({
             title: '我正在使用基石测评，您也来吧-首页',
             path: '/pages/index/index'
         }
-    }
+    },
+
+    /**
+     * 跳转到房源详情页面
+     */
+    toNewsDetail: function (data) {
+        wx.navigateTo({
+            url: '/pages/index/lunbo-01?guid=' + data.currentTarget.dataset.id,
+        });
+    },
 })

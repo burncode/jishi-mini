@@ -61,6 +61,10 @@ App({
         get_news:{
             url: host + '/news?per_page=3',
             method: 'get'
-        }
+        },
+        getOneNews:{
+            url: host + '/news/',
+            method: 'get'
+        },
     }
 })
