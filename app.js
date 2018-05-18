@@ -54,6 +54,13 @@ App({
             url: host + '/my_coupons',
             method: 'get'
         },
-
+        rand_order:{
+            url: host + '/rand_order',
+            method: 'get'
+        },
+        get_news:{
+            url: host + '/news?per_page=3',
+            method: 'get'
+        }
     }
 })

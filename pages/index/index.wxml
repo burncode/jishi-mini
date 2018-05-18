@@ -1,90 +1,85 @@
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots='true' autoplay='true'>
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150"/>
-    </swiper-item>
-  </block>
-</swiper>
+<view>
+    <swiper indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots='true'
+            autoplay='true'>
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+        </block>
+    </swiper>
 
-<view class='bobao'>
-<view class='bobao-img'><image src='/images/icon_ceping.png'/><text>播报</text> </view>
-<view class='bobao-content'>用户某某某刚刚购买了高中测评</view>
-</view>
+    <view wx:if="{{rand_order}}" class='bobao'>
+        <view class='bobao-img'>
+            <image src='/images/icon_ceping.png'/>
+            <text>播报</text>
+        </view>
+        <view class='bobao-content'>{{rand_order}}</view>
+    </view>
 
-<view class='h1'>专家专栏</view>
-<view class='block'>
-<view class='zhuanjia-img'>
-<image src='/demo/zhuanjia-001.gif'/>
-</view>
-<view class='zhuanjia-content'>
-<view class='h2'>孩子为什么要做测评</view>
-<view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
-    <view class='hits'>10万+阅读</view>
+    <view class='h1'>专家专栏</view>
+    <view wx:for="{{news}}" class='block'>
+        <view class='zhuanjia-img'>
+            <image src='{{item.banner}}'/>
+        </view>
+        <view class='zhuanjia-content'>
+            <view class='h2'>{{item.title}}</view>
+            <view class='p'>{{item.brief}}</view>
+            <view class='hits'>{{item.read_num}}人阅读</view>
+        </view>
+    </view>
 
-</view>
-</view>
-<view class='block'>
-<view class='zhuanjia-img'>
-<image src='/demo/zhuanjia-001.gif'/>
-</view>
-<view class='zhuanjia-content'>
-<view class='h2'>孩子为什么要做测评</view>
-<view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
-    <view class='hits'>10万+阅读</view>
+    <view class='h1'>十年，我们只做这一款产品</view>
+    <view class='block'>
+        <view class='zhuanjia-img'>
+            <image src='/demo/zhuanjia-001.gif'/>
+        </view>
+        <view class='zhuanjia-content'>
+            <view class='h2'>孩子为什么要做测评</view>
+            <view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
+            <view class='hits'>10万+阅读</view>
 
-</view>
-</view>
+        </view>
+    </view>
 
+    <view class='huodong'>
+        <text class='price'>￥ 999</text>
+        <text class='del-price'>￥1999</text>
+        <text class='price-content'>活动结束恢复原价</text>
+    </view>
 
-<view class='h1'>十年，我们只做这一款产品</view>
-<view class='block'>
-<view class='zhuanjia-img'>
-<image src='/demo/zhuanjia-001.gif'/>
-</view>
-<view class='zhuanjia-content'>
-<view class='h2'>孩子为什么要做测评</view>
-<view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
-    <view class='hits'>10万+阅读</view>
+    <view class='h1'>用数据说话</view>
+    <view class='block'>
+        <view class='zhuanjia-img'>
+            <image src='/demo/zhuanjia-001.gif'/>
+        </view>
+        <view class='zhuanjia-content'>
 
-</view>
-</view>
+            <view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
+            <view class='date'>4月12日 12:32</view>
 
-<view class='huodong'>
-  <text class='price'>￥ 999</text> <text class='del-price'>￥1999</text>   <text class='price-content'>活动结束恢复原价</text> 
-</view>
+        </view>
+    </view>
+    <view class='block'>
+        <view class='zhuanjia-img'>
+            <image src='/demo/zhuanjia-001.gif'/>
+        </view>
+        <view class='zhuanjia-content'>
 
-<view class='h1'>用数据说话</view>
-<view class='block'>
-<view class='zhuanjia-img'>
-<image src='/demo/zhuanjia-001.gif'/>
-</view>
-<view class='zhuanjia-content'>
+            <view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
+            <view class='date'>10万+阅读</view>
 
-<view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
-    <view class='date'>4月12日 12:32</view>
+        </view>
+    </view>
+    <view class='block'>
+        <view class='zhuanjia-img'>
+            <image src='/demo/zhuanjia-001.gif'/>
+        </view>
+        <view class='zhuanjia-content'>
 
-</view>
-</view>
-<view class='block'>
-<view class='zhuanjia-img'>
-<image src='/demo/zhuanjia-001.gif'/>
-</view>
-<view class='zhuanjia-content'>
+            <view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
+            <view class='date'>10万+阅读</view>
 
-<view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
-    <view class='date'>10万+阅读</view>
-
-</view>
-</view>
-<view class='block'>
-<view class='zhuanjia-img'>
-<image src='/demo/zhuanjia-001.gif'/>
-</view>
-<view class='zhuanjia-content'>
-
-<view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
-    <view class='date'>10万+阅读</view>
-
-</view>
+        </view>
+    </view>
 </view>

@@ -12,11 +12,80 @@ Page({
         indicatorDots: false,
         autoplay: false,
         interval: 5000,
-        duration: 1000
+        duration: 1000,
+        rand_order: '',
+        news: []
     },
 
     onLoad: function () {
+        // 获取随机播报
+    },
 
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+        var This=this;
+        This.getRandOrder();
+        This.getNews();
+        setInterval(function () {
+            This.getRandOrder();
+        }, 5000);
+
+    },
+
+    getRandOrder: function () {
+        var This = this;
+        wx.request({
+            url: getApp().globalData.rand_order.url, //仅为示例，并非真实的接口地址
+            method: getApp().globalData.rand_order.method,
+            success: function (res) {
+                console.log(res);
+                console.log(res.data.data);
+
+                if (res.statusCode === 200) {
+                    This.setData({
+                        rand_order: res.data.data,
+                    });
+                } else {
+                    wx.showModal({
+                        title: '提示',
+                        content: '播报数据加载失败'
+                    })
+                }
+            },
+            error: function () {
+                wx.showModal({
+                    title: '提示',
+                    content: '播报数据加载失败'
+                })
+            }
+        })
+    },
+    getNews: function () {
+        var This = this;
+        wx.request({
+            url: getApp().globalData.get_news.url, //仅为示例，并非真实的接口地址
+            method: getApp().globalData.get_news.method,
+            success: function (res) {
+                if (res.statusCode === 200) {
+                    This.setData({
+                        news: res.data.data.data,
+                    });
+                } else{
+                    wx.showModal({
+                        title: '提示',
+                        content: '专家专栏数据加载失败'
+                    })
+                }
+            },
+            error: function () {
+                wx.showModal({
+                    title: '提示',
+                    content: '专家专栏数据加载失败'
+                })
+            }
+        })
     },
 
     /**
