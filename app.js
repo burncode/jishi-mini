@@ -44,6 +44,6 @@ App({
     questionASeconds: 5,
     questionBSeconds: 5,
     questionCSeconds:5,
-    timeOutUrl:"/pages/index/index",//答题中断跳转地址
+    timeOutUrl:"/pages/order/index",//答题中断跳转地址
   }
 })

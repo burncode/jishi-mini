@@ -26,7 +26,8 @@ Page({
         return false
       }
       that.setData({
-        seconds: seconds
+        seconds: seconds,
+        timer: timer,
       })
     }, 1000)
   },
@@ -48,6 +49,9 @@ Page({
 
   },
   radioChange: function (e) {
+    this.setData({
+      selected:true,
+    })
 
     var a_questions = wx.getStorageSync('a_questions')
     var selected = e.detail.value
@@ -59,6 +63,7 @@ Page({
       category_id: category_id,
       question_id: question_id,
       selected: selected,
+      current_key: this.data.current_key,
     }
     this.sendAnswer(answer)
   },
@@ -73,6 +78,11 @@ Page({
     })
   },
   nextQuestion: function (event) {
+    console.log('点击下一题')
+    this.setData({
+      seconds: app.globalData.questionASeconds,
+      selected:false,
+    })
     this.displayButton(this.data.current_key)
     var current_key = this.data.current_key + 1
     var progress = this.data.progress
@@ -81,16 +91,14 @@ Page({
     this.setData({
       progress: progress,
       current_key: current_key,
-      button_name: button_name,
-      bindfunction: bindfunction,
       items: [
         { name: '1', value: '同意' },
         { name: '2', value: '不同意' },
-
       ],
     })
   },
   submit: function (event) {
+    clearInterval(this.data.timer)
     var data = {
       member_id: app.globalData.userId,
       category_id: wx.getStorageSync('category_id')
@@ -111,6 +119,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    timer: null,
+    selected: false,
     hidden: true,
     nocancel: false,
     seconds: app.globalData.questionASeconds,
@@ -137,6 +147,7 @@ Page({
     this.startTimer()
     var a_questions = wx.getStorageSync('a_questions')
     var history = wx.getStorageSync('history')
+    console.log(history)
     if (history.category_id == 1) {
       var current_key = history.current_key;
     } else {

@@ -27,7 +27,8 @@ Page({
         return false
       }
       that.setData({
-        seconds: seconds
+        seconds: seconds,
+        timer: timer,
       })
     }, 1000)
   },
@@ -35,7 +36,7 @@ Page({
     console.log('时间到');
   },
   displayButton: function () {
-    if (this.data.progress.current_no >= 59) {
+    if (this.data.progress.current_no >= 27) {
       var button_name = '提交答案'
       var bindfunction = 'submit'
     } else {
@@ -49,7 +50,9 @@ Page({
 
   },
   radioChange: function (e) {
-
+    this.setData({
+      selected: true,
+    })
     var c_questions = wx.getStorageSync('c_questions')
     var selected = e.detail.value
     var category_id = wx.getStorageSync('category_id')
@@ -75,6 +78,10 @@ Page({
     })
   },
   nextQuestion: function (event) {
+    this.setData({
+      seconds: app.globalData.questionCSeconds,
+      selected: false,
+    })
     var c_questions = wx.getStorageSync('c_questions')
     this.displayButton(this.data.current_key)
     var current_key = this.data.current_key + 1
@@ -92,6 +99,7 @@ Page({
     })
   },
   submit: function (event) {
+    clearInterval(this.data.timer)
     var data = {
       member_id: app.globalData.userId,
       category_id: wx.getStorageSync('category_id')
@@ -101,17 +109,19 @@ Page({
       method: 'POST',
       data: data,
       success: function (msg) {
-
+console.log('做完了')
       },
     })
-    wx.navigateTo({
-      url: '/pages/ceping/yindao-b'
-    })
+    // wx.navigateTo({
+    //   url: '/pages/ceping/yindao-b'
+    // })
   },
   /**
    * 页面的初始数据
    */
   data: {
+    timer: null,
+    selected: false,
     hidden: true,
     nocancel: false,
     seconds: app.globalData.questionCSeconds,

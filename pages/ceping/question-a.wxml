@@ -23,7 +23,7 @@
 <view class='timer'>
     <text>{{seconds}}</text>
 </view>
-<button bindtap='{{bindfunction}}'>{{button_name}}</button>
+<button wx:if="{{selected}}" bindtap='{{bindfunction}}'>{{button_name}}</button>
 
 <modal hidden="{{hidden}}" title="" confirm-text="好的" bindconfirm="confirm" no-cancel="true">
     抱歉，系统检测到您 没有在规定时间内完成 选择，为了保障测评结果为您提供更精准的指导，请及时选择！

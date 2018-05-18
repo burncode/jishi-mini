@@ -28,7 +28,7 @@ view{
 .subject-name {
   font-size: 28rpx;
   line-height: 40rpx;
-  color: 888888;
+  color: #888888;
 }
 
 .h1 {
@@ -50,26 +50,26 @@ view{
 .item .title {
   font-size: 28rpx;
   line-height: 40rpx;
-  color: 888888;
+  color: #888888;
 }
 .level {
   float: right;
   line-height: 54rpx;
   padding: 20rpx 2rpx;
   font-size: 28rpx;
-  color: 888888;
+  color: #888888;
 }
 .content {
   clear: both;
   margin-top: 110rpx;
   font-size: 28rpx;
-  color: 888888;
+  color: #888888;
 }
 
 .remainer {
   font-size: 24rpx;
   line-height: 40rpx;
-  color: 888888;
+  color: #888888;
 }
 
 

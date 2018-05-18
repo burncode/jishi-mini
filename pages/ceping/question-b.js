@@ -26,7 +26,8 @@ Page({
         return false
       }
       that.setData({
-        seconds: seconds
+        seconds: seconds,
+        timer: timer,
       })
     }, 1000)
   },
@@ -48,6 +49,9 @@ Page({
 
   },
   radioChange: function (e) {
+    this.setData({
+      selected: true,
+    })
     console.log('radio发生change事件，携带value值为：', e.detail.value)
     var b_questions = wx.getStorageSync('b_questions')
     var selected = e.detail.value
@@ -74,6 +78,10 @@ Page({
     })
   },
   nextQuestion: function (event) {
+    this.setData({
+      seconds: app.globalData.questionBSeconds,
+      selected: false,
+    })
     if (this.data.progress.current_no >= 149) {
       var button_name = '提交答案'
       var bindfunction = 'submit'
@@ -100,6 +108,7 @@ Page({
     })
   },
   submit: function (event) {
+    clearInterval(this.data.timer)
     var data = {
       member_id: app.globalData.userId,
       category_id: wx.getStorageSync('category_id')
@@ -120,6 +129,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    timer: null,
+    selected: false,
     hidden: true,
     nocancel: false,
     seconds: app.globalData.questionBSeconds,
