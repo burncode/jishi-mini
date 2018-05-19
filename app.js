@@ -33,6 +33,10 @@ App({
                                         getApp().globalData._token = res.data.data._token;
                                         getApp().globalData.userInfo.id = res.data.data.user.id;
                                         getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                                        getApp().globalData.userInfo.name = res.data.data.user.name;
+                                        getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                                        getApp().globalData.userInfo.address = res.data.data.user.address;
+                                        getApp().globalData.userInfo.sex = res.data.data.user.sex;
                                     }
                                 }
                             });
@@ -77,6 +81,10 @@ App({
         getOneGood:{
             url: host + '/goods/',
             method: 'get'
+        },
+        users_update:{
+            url: host + '/users_update',
+            method: 'post'
         },
     }
 })

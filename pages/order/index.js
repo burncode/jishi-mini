@@ -69,5 +69,10 @@ Page({
      */
     onShareAppMessage: function () {
 
-    }
+    },
+    toUsersDetail:function (data) {
+        wx.navigateTo({
+            url: '/pages/ceping/user-form',
+        });
+    },
 })

@@ -1,34 +1,36 @@
 <!--pages/ceping/user-form.wxml-->
 <view class='h1 center'>
-<text class='point'>·</text>
-<text class='title blue bold'>请填写相关个人信息</text>
-<text class='point'>·</text>
+    <text class='point'>·</text>
+    <text class='title blue bold'>请填写相关个人信息</text>
+    <text class='point'>·</text>
 </view>
 
-
+<form bindsubmit="onSubmit" report-submit='true'>
 <view>
     <text class='block'>姓名</text>
-    <input placeholder="请输入您的姓名"/>
+    <input placeholder="请输入您的姓名" name="name" value="{{name}}"/>
 </view>
 <text>\n</text>
 <view class='sex'>
     <text class='block'>性别</text>
     <radio-group class="radio-group" bindchange="radioChange">
-      <label class="radio">
-        <radio value="1" />男
-        <radio value="2" />女
-      </label>
+        <label class="radio">
+            <radio value="1" wx:if="sex==1" checked/>男
+            <radio value="2" wx:if="sex==2" checked/>女
+        </label>
     </radio-group>
 </view>
 <text>\n</text>
+<text>\n</text>
 <view>
     <text class='block'>手机号</text>
-    <input placeholder="请输入您的手机号"/>
+    <input placeholder="请输入您的手机号" name="tel" value="{{tel}}"/>
 </view>
 <text>\n</text>
 <view>
     <text class='block'>地址</text>
-    <input placeholder="请输入您的具体地址（到市）"/>
+    <input placeholder="请输入您的具体地址（到市）" name="address" value="{{address}}"/>
 </view>
 <text>\n</text>
-<button>马上开始</button>
+<button formType="submit">马上开始</button>
+</form>
