@@ -6,7 +6,7 @@ Page({
      */
     data: {
         good_id: null,
-        comments: null,
+        comments: [],
     },
 
     /**
@@ -94,12 +94,13 @@ Page({
             url: getApp().globalData.getComments.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.getComments.method,
             data:{
-                goods_id:id
+                goods_id:id,
+                per_page:'all',
             },
             success: function (res) {
                 if (res.statusCode === 200) {
                     This.setData({
-                        comments: res.data.data.data,
+                        comments: res.data.data,
                     });
                 } else {
                     wx.showModal({
