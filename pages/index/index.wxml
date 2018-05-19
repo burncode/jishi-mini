@@ -29,23 +29,24 @@
         </view>
     </view>
 
-    <view class='h1'>十年，我们只做这一款产品</view>
-    <view class='block'>
-        <view class='zhuanjia-img'>
-            <image src='/demo/zhuanjia-001.gif'/>
+    <view wx:if="{{goods.length}}" class='h1'>十年，我们只做这一款产品</view>
+    <view wx:for="{{goods}}" data-id="{{item.id}}" bindtap="toGoodsDetail">
+        <view class='block'>
+            <view class='zhuanjia-img'>
+                <image src='{{item.goods_image}}'/>
+            </view>
+            <view class='zhuanjia-content'>
+                <view class='h2'>{{item.goods_name}}</view>
+                <view class='p'>{{item.describe}}</view>
+                <view class='hits'>10万+阅读</view>
+            </view>
         </view>
-        <view class='zhuanjia-content'>
-            <view class='h2'>孩子为什么要做测评</view>
-            <view class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</view>
-            <view class='hits'>10万+阅读</view>
 
+        <view class='huodong'>
+            <text class='price'>￥ 999</text>
+            <text class='del-price'>￥1999</text>
+            <text class='price-content'>活动结束恢复原价</text>
         </view>
-    </view>
-
-    <view class='huodong'>
-        <text class='price'>￥ 999</text>
-        <text class='del-price'>￥1999</text>
-        <text class='price-content'>活动结束恢复原价</text>
     </view>
 
     <view class='h1'>用数据说话</view>

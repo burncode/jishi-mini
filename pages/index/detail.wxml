@@ -1,35 +1,41 @@
 <!--pages/index/detail.wxml-->
-<image src='/demo/swiper-002.gif' />
+<image src='/demo/swiper-002.gif'/>
 <text>\n</text>
 <view class='qiangou clear-both'>
-    <text class='left'>
-        <text class='block h1'>基石出品高中生专业测评</text>
-        <text class='huodong'>限时活动价：</text><text class='price b'>29.90</text><text class='delete'>99.00</text>
-        <text class='block tishi'>(您有20元的优惠券，可在购买时直接抵扣)</text>
-         <text class='tishi2'>22道题目 | 10项专业报告 | 10W+已测试</text>
-    </text>
-    
-   
-    <text class='block right'>
-        <text>立即抢购</text>
-    </text>
+<text class='left'>
+    <text class='block h1'>基石出品高中生专业测评</text>
+    <text class='huodong'>限时活动价：</text>
+    <text class='price b'>29.90</text>
+    <text class='delete'>99.00</text>
+    <text class='block tishi'>(您有20元的优惠券，可在购买时直接抵扣)</text>
+    <text class='tishi2'>22道题目 | 10项专业报告 | 10W+已测试</text>
+</text>
+
+
+<text class='block right'>
+    <text>立即抢购</text>
+</text>
 </view>
 <view>
 
-    <text class='h1 block'>测评介绍</text>
-    <text class='p'>成功心理学的最新研究发现：在外部条件给定的前提下，一个人能否成功，关键在于能否准确识别并全力发挥其天生优势——天赋和性格。</text>
+<text class='h1 block'>测评介绍</text>
+<text class='p'>成功心理学的最新研究发现：在外部条件给定的前提下，一个人能否成功，关键在于能否准确识别并全力发挥其天生优势——天赋和性格。</text>
 
 </view>
 <view>
 
-    <text class='h1 block'>测评需知</text>
-    <text class='p'>“一母生九子，九子各不同。”每个人都有自己的天赋，就如同每个人都有自己的性格一样，每个人在自己的天赋和与性格匹配的方面学习进步最快、成长空间、潜力最大，能够获得的成就也最大；相反，如果一个人一直在自己的短板、不适合自己性格的方面去努力，只会让自己深陷于泥潭之中，丧失信心、痛苦、挣扎、没有价值感，更谈不上成功！</text>
+<text class='h1 block'>测评需知</text>
+<text class='p'>
+    “一母生九子，九子各不同。”每个人都有自己的天赋，就如同每个人都有自己的性格一样，每个人在自己的天赋和与性格匹配的方面学习进步最快、成长空间、潜力最大，能够获得的成就也最大；相反，如果一个人一直在自己的短板、不适合自己性格的方面去努力，只会让自己深陷于泥潭之中，丧失信心、痛苦、挣扎、没有价值感，更谈不上成功！
+</text>
 
 </view>
 <view>
 
 <text class='h1 block'>案例介绍</text>
-<text class='p'>那么自己的性格特点是什么？天赋又是什么？什么才是适合自己的90%的高中生不知道自己要学什么专业，适合学什么专业！本测评最大的价值是创始团队用10年的时间潜心研发，并通过为世界500强企业、国内知名企业做人才甄选与评鉴，人才适岗度、胜任能力评估等人力资源系统咨询服务中，不断的搜集与分析各行、各业、各岗位优秀模型，不断的应用与印证，而取得的专业成果，以帮助高中生认知自己、发现自己、选择最适合自己的专业！为高中生未来的成功奠定基石。</text>
+<text class='p'>
+    那么自己的性格特点是什么？天赋又是什么？什么才是适合自己的90%的高中生不知道自己要学什么专业，适合学什么专业！本测评最大的价值是创始团队用10年的时间潜心研发，并通过为世界500强企业、国内知名企业做人才甄选与评鉴，人才适岗度、胜任能力评估等人力资源系统咨询服务中，不断的搜集与分析各行、各业、各岗位优秀模型，不断的应用与印证，而取得的专业成果，以帮助高中生认知自己、发现自己、选择最适合自己的专业！为高中生未来的成功奠定基石。
+</text>
 
 </view>
 
@@ -37,36 +43,36 @@
 <view class='h1'>用户评价</view>
 <view>
 
-        <image class='zhuanjia-img' src='/demo/zhuanjia-001.gif'/>
+<image class='zhuanjia-img' src='/demo/zhuanjia-001.gif'/>
 
 <text class='zhuanjia-content'>
 
-<text class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</text>
-<text class='block date'>4月12日 12:32</text>
+    <text class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</text>
+    <text class='block date'>4月12日 12:32</text>
 
 </text>
 </view>
 <view>
 
-        <image class='zhuanjia-img' src='/demo/zhuanjia-001.gif'/>
+<image class='zhuanjia-img' src='/demo/zhuanjia-001.gif'/>
 
 <text class='zhuanjia-content'>
 
-<text class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</text>
-<text class='block date'>4月12日 12:32</text>
+    <text class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</text>
+    <text class='block date'>4月12日 12:32</text>
 
 </text>
 </view>
 <view>
 
-        <image class='zhuanjia-img' src='/demo/zhuanjia-001.gif'/>
+<image class='zhuanjia-img' src='/demo/zhuanjia-001.gif'/>
 
 <text class='zhuanjia-content'>
 
-<text class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</text>
-<text class='block date'>4月12日 12:32</text>
+    <text class='p'>对您的专属报告进行精细化解读，为孩子的未来提供更专业的人性化的建议让孩子对未来更清晰...</text>
+    <text class='block date'>4月12日 12:32</text>
 
 </text>
 </view>
 <view class='empty-line'></view>
-<button>分享给好友</button>
+<button open-type="share">分享给好友</button>

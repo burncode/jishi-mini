@@ -14,7 +14,8 @@ Page({
         duration: 1000,
         rand_order: '',
         news: [],
-        comments: []
+        comments: [],
+        goods: [],
     },
 
     onLoad: function () {
@@ -22,6 +23,7 @@ Page({
         This.getRandOrder();
         This.getNews();
         This.getComments();
+        This.getGoods();
     },
 
     /**
@@ -133,6 +135,31 @@ Page({
             }
         })
     },
+    getGoods: function () {
+        var This = this;
+        wx.request({
+            url: getApp().globalData.getGoods.url, //仅为示例，并非真实的接口地址
+            method: getApp().globalData.getGoods.method,
+            success: function (res) {
+                if (res.statusCode === 200) {
+                    This.setData({
+                        goods: res.data.data.data,
+                    });
+                } else {
+                    wx.showModal({
+                        title: '提示',
+                        content: '商品数据加载失败'
+                    })
+                }
+            },
+            error: function () {
+                wx.showModal({
+                    title: '提示',
+                    content: '商品数据加载失败'
+                })
+            }
+        })
+    },
 
     /**
      * 用户点击右上角分享
@@ -145,11 +172,16 @@ Page({
     },
 
     /**
-     * 跳转到房源详情页面
+     * 跳转到新闻详情页面
      */
     toNewsDetail: function (data) {
         wx.navigateTo({
             url: '/pages/index/lunbo-01?guid=' + data.currentTarget.dataset.id,
+        });
+    },
+    toGoodsDetail:function (data) {
+        wx.navigateTo({
+            url: '/pages/index/detail?id=' + data.currentTarget.dataset.id,
         });
     },
 })

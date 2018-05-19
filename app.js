@@ -69,6 +69,14 @@ App({
         getComments:{
             url: host + '/comments',
             method: 'get'
-        }
+        },
+        getGoods:{
+            url: host + '/goods',
+            method: 'get'
+        },
+        getOneGood:{
+            url: host + '/goods/',
+            method: 'get'
+        },
     }
 })
