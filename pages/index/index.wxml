@@ -42,9 +42,15 @@
             </view>
         </view>
 
-        <view class='huodong'>
-            <text class='price'>￥ 999</text>
-            <text class='del-price'>￥1999</text>
+        <view wx:if="{{item.price_level==1}}" class='huodong'>
+            <text class='price'>￥ {{item.price}}</text>
+        </view>
+        <view wx:if="{{item.price_level==2}}" class='huodong'>
+            <text class='price'>免费</text>
+        </view>
+        <view wx:if="{{item.price_level==3}}" class='huodong'>
+            <text class='price'>￥ {{item.activity_price}}</text>
+            <text class='del-price'>￥{{item.price}}</text>
             <text class='price-content'>活动结束恢复原价</text>
         </view>
     </view>
