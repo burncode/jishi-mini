@@ -39,13 +39,14 @@ Page({
       },
       success: function (res) {
         var history = res.data.data;
+        console.log(history)
         wx.setStorageSync('history', history)
 
         var question_no = history.current_key + 1
 
         if (history.current_key > 0 && history.category_id == category_id) {
           if (history.category_id == 1) {
-            if (question_no <  app.globalData.questionANumber) {
+            if (question_no < app.globalData.questionANumber) {
               wx.navigateTo({
                 url: '/pages/ceping/question-a'
               })
@@ -55,7 +56,7 @@ Page({
               })
 
             }
-            
+
           } else if (history.category_id == 2) {
 
             if (question_no < app.globalData.questionBNumber) {
@@ -66,7 +67,7 @@ Page({
               wx.navigateTo({
                 url: '/pages/ceping/yindao-c'
               })
-              
+
             }
           } else if (history.category_id == 3) {
 
@@ -75,7 +76,7 @@ Page({
                 url: '/pages/ceping/question-c'
               })
             } else {
-             
+
             }
           }
         }
