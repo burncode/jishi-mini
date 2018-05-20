@@ -122,7 +122,7 @@ Page({
       },
     })
     wx.navigateTo({
-      url: '/pages/ceping/yindao-c'
+      url: '/pages/ceping/yindao-a'
     })
   },
   /**

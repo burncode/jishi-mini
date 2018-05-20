@@ -52,32 +52,11 @@ Page({
               })
             } else {
               wx.navigateTo({
-                url: '/pages/ceping/yindao-b'
-              })
-
-            }
-
-          } else if (history.category_id == 2) {
-
-            if (question_no < app.globalData.questionBNumber) {
-              wx.navigateTo({
-                url: '/pages/ceping/question-b'
-              })
-            } else {
-              wx.navigateTo({
                 url: '/pages/ceping/yindao-c'
               })
 
             }
-          } else if (history.category_id == 3) {
 
-            if (question_no < app.globalData.questionCNumber) {
-              wx.navigateTo({
-                url: '/pages/ceping/question-c'
-              })
-            } else {
-
-            }
           }
         }
       }

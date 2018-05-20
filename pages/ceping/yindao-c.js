@@ -45,40 +45,16 @@ Page({
         var question_no = history.current_key + 1
 
         if (history.current_key > 0 && history.category_id == category_id) {
-          if (history.category_id == 1) {
-            if (question_no < app.globalData.questionANumber) {
-              wx.navigateTo({
-                url: '/pages/ceping/question-a'
-              })
-            } else {
-              wx.navigateTo({
-                url: '/pages/ceping/yindao-b'
-              })
+            if (history.category_id == 3) {
 
+                if (question_no < app.globalData.questionCNumber) {
+                    wx.navigateTo({
+                        url: '/pages/ceping/question-c'
+                    })
+                } else {
+
+                }
             }
-
-          } else if (history.category_id == 2) {
-
-            if (question_no < app.globalData.questionBNumber) {
-              wx.navigateTo({
-                url: '/pages/ceping/question-b'
-              })
-            } else {
-              wx.navigateTo({
-                url: '/pages/ceping/yindao-c'
-              })
-
-            }
-          } else if (history.category_id == 3) {
-
-            if (question_no < app.globalData.questionCNumber) {
-              wx.navigateTo({
-                url: '/pages/ceping/question-c'
-              })
-            } else {
-
-            }
-          }
         }
       }
     })

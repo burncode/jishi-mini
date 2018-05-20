@@ -1,6 +1,6 @@
 //app.js
-// const host = 'https://admin.gq1994.top/api'
-const host = 'http://192.168.0.8/api'
+const host = 'https://admin.gq1994.top/api'
+// const host = 'http://192.168.0.8/api'
 App({
     onLaunch: function () {
         // 展示本地存储能力
