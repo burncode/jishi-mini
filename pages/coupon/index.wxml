@@ -1,23 +1,27 @@
 <!--pages/coupon/index.wxml-->
-<view class='coupon'>
-    <image src='/images/youhuiquan.png'></image>
-    <view class='coupon-price'>￥ 199</view>
-    <view class='coupon-info'>
-        <view class='title'>好友福利</view>
-        <view class='content'>支付时自动抵扣现金且默认使用最高额
-的优惠</view>
-        <view class='date'>有效期：2018/05/21-2018/08/22</view>
-    
+<view class="list" style="margin: 0rpx">
+    <view wx:for="{{coupons}}">
+        <view wx:if="{{item.status}}" class='coupon'>
+            <image src='/images/youhuiquan.png'></image>
+            <view class='coupon-price'>￥ {{item.price}}</view>
+            <view class='coupon-info'>
+                <view class='title'>好友福利</view>
+                <view class='content'>{{item.remark}}</view>
+                <view class='date'>有效期：{{item.expire_start}}-{{item.expire_end}}</view>
+            </view>
+        </view>
+        <view wx:else class='coupon expired'>
+            <image src='/images/youhuiquan.png'></image>
+            <view class='coupon-price'>￥ {{item.price}}</view>
+            <view class='coupon-info'>
+                <view class='title'>好友福利</view>
+                <view class='content'>{{item.remark}}</view>
+                <view class='date'>有效期：{{item.expire_start}}-{{item.expire_end}}</view>
+            </view>
+        </view>
     </view>
-</view>
-<view class='coupon expired'>
-    <image src='/images/youhuiquan.png'></image>
-    <view class='coupon-price'>￥ 199</view>
-    <view class='coupon-info'>
-        <view class='title'>好友福利（已失效）</view>
-        <view class='content'>支付时自动抵扣现金且默认使用最高额
-的优惠</view>
-        <view class='date'>有效期：2018/05/21-2018/08/22</view>
-    
+    <view class="loading" style="bottom: 180rpx;font-size: 25rpx;text-align:center;" hidden="{{!moreLoading}}">正在载入更多...</view>
+    <view class="loading complete" style="bottom: 180rpx;font-size: 25rpx;text-align:center;" hidden="{{!moreLoadingComplete}}">
+        已加载全部
     </view>
 </view>

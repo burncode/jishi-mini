@@ -1,17 +1,17 @@
 <!--pages/order/index.wxml-->
-<view class='user'>
-  <view class='user-left'>
-    <image src='/demo/zhuanjia-001.gif'></image>
-  </view>
-
-  <view class='user-info'>
-    <view class='user-name'>{{userInfo.name}}</view>
-    <view class='ads-msg'>微信搜索“远识测评”订阅号，免费得测评卡</view>
-  </view>
+<view class='user' bindtap="toUsersDetail">
+    <view class='user-left'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    
+    <view class='user-info'>
+        <view class='user-name'>{{userInfo.nickName}}</view>
+        <view class='ads-msg'>微信搜索“远识测评”订阅号，免费得测评卡</view>
+    </view>
 </view>
 
 <view class='coupon'>
-  <view class='coupon-left'>
+    <view class='coupon-left' bindtap="toMyCoupons">
     <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
     <text class='my-coupon'>我的优惠券</text>
   </view>
