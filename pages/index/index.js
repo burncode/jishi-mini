@@ -33,8 +33,9 @@ Page({
     onReady: function () {
 
     },
-    bindGetUserInfo: function(e) {
+    bindGetUserInfo: function (e) {
         console.log(e.detail.userInfo)
+        var This=this;
         // 小程序打开
         wx.login({
             success: function (res) {
@@ -46,7 +47,7 @@ Page({
                     wx.getUserInfo({
                         withCredentials: true,
                         success: res => {
-                            This.globalData.userInfo = res.userInfo;
+                            getApp().globalData.userInfo = res.userInfo;
                             console.log(code)
                         },
                         complete: res => {
@@ -71,6 +72,7 @@ Page({
                                         getApp().globalData.userInfo.address = res.data.data.user.address;
                                         getApp().globalData.userInfo.sex = res.data.data.user.sex;
                                         getApp().globalData.userId = res.data.data.user.id;
+                                        console.log(getApp().globalData);
                                     }
                                 }
                             });
@@ -227,7 +229,7 @@ Page({
             url: '/pages/index/lunbo-01?guid=' + data.currentTarget.dataset.id,
         });
     },
-    toGoodsDetail:function (data) {
+    toGoodsDetail: function (data) {
         wx.navigateTo({
             url: '/pages/index/detail?id=' + data.currentTarget.dataset.id,
         });
