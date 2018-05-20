@@ -2,57 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ffbbb50-db95-47f1-9580-587b8ebf5bba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/icon_xiangqing.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/star_nor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/star_sel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/question-a.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/question-a.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/question-b.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/question-b.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/question-c.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/question-c.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/question-c.wxss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/yindao-a.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/yindao-b.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/yindao-b.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/yindao-b.wxss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/yindao-c.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ceping/yindao-c.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/comment/comment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/comment/comment.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/comment/comment.wxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/comment/comment.wxss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/question.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/question.wxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/submit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/submit.wxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-02.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-03.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/yindao.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/ceping/yindao.wxss" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/question.json" afterPath="$PROJECT_DIR$/pages/ceping/question-a.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/question.wxss" afterPath="$PROJECT_DIR$/pages/ceping/question-b.wxss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/submit.json" afterPath="$PROJECT_DIR$/pages/ceping/question-b.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/submit.wxss" afterPath="$PROJECT_DIR$/pages/ceping/question-a.wxss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-02.json" afterPath="$PROJECT_DIR$/pages/ceping/question-c.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-02.wxml" afterPath="$PROJECT_DIR$/pages/ceping/yindao-a.wxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-02.wxss" afterPath="$PROJECT_DIR$/pages/ceping/yindao-a.wxss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-03.json" afterPath="$PROJECT_DIR$/pages/ceping/yindao-a.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-03.wxml" afterPath="$PROJECT_DIR$/pages/ceping/yindao-c.wxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/yindao-03.wxss" afterPath="$PROJECT_DIR$/pages/ceping/yindao-c.wxss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pages/ceping/yindao.json" afterPath="$PROJECT_DIR$/pages/ceping/yindao-b.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ceping/common/template.wxml" afterPath="$PROJECT_DIR$/pages/ceping/common/template.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ceping/user-form.js" afterPath="$PROJECT_DIR$/pages/ceping/user-form.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/order/index.js" afterPath="$PROJECT_DIR$/pages/order/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/order/index.wxml" afterPath="$PROJECT_DIR$/pages/order/index.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/order/index.wxss" afterPath="$PROJECT_DIR$/pages/order/index.wxss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/wode/index.js" afterPath="$PROJECT_DIR$/pages/wode/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,12 +15,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="524">
-              <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="198">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,17 +89,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/index/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+            <state relative-caret-position="728">
+              <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#2303#3136#0" expanded="false" />
-                <element signature="e#3163#3916#0" expanded="false" />
-                <element signature="e#3947#4706#0" expanded="false" />
-                <element signature="e#4734#5484#0" expanded="false" />
+                <element signature="e#1298#2845#0" expanded="false" />
+                <element signature="e#3392#4225#0" expanded="false" />
+                <element signature="e#4252#5005#0" expanded="false" />
+                <element signature="e#5036#5795#0" expanded="false" />
+                <element signature="e#5823#6573#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -394,8 +348,8 @@
         <option value="$PROJECT_DIR$/project.config.json" />
         <option value="$PROJECT_DIR$/pages/order/index.wxml" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
-        <option value="$PROJECT_DIR$/pages/index/index.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/pages/index/index.js" />
       </list>
     </option>
   </component>
@@ -638,12 +592,12 @@
       <workItem from="1526604335785" duration="8626000" />
       <workItem from="1526632205189" duration="1556000" />
       <workItem from="1526718212818" duration="13416000" />
-      <workItem from="1526781784478" duration="4918000" />
+      <workItem from="1526781784478" duration="5499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40542000" />
+    <option name="totallyTimeSpent" value="41123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -716,10 +670,11 @@
           <caret line="94" column="34" lean-forward="true" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#2303#3136#0" expanded="false" />
-            <element signature="e#3163#3916#0" expanded="false" />
-            <element signature="e#3947#4706#0" expanded="false" />
-            <element signature="e#4734#5484#0" expanded="false" />
+            <element signature="e#1298#2845#0" expanded="false" />
+            <element signature="e#3392#4225#0" expanded="false" />
+            <element signature="e#4252#5005#0" expanded="false" />
+            <element signature="e#5036#5795#0" expanded="false" />
+            <element signature="e#5823#6573#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -728,7 +683,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
           <caret line="33" column="68" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="68" />
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -836,7 +793,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1072,14 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/order/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2110">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/order/index.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1093,20 +1044,6 @@
         <state relative-caret-position="22">
           <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#2303#3136#0" expanded="false" />
-            <element signature="e#3163#3916#0" expanded="false" />
-            <element signature="e#3947#4706#0" expanded="false" />
-            <element signature="e#4734#5484#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,11 +1063,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/order/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2110">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="198">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="75" column="31" lean-forward="false" selection-start-line="75" selection-start-column="31" selection-end-line="75" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1298#2845#0" expanded="false" />
+            <element signature="e#3392#4225#0" expanded="false" />
+            <element signature="e#4252#5005#0" expanded="false" />
+            <element signature="e#5036#5795#0" expanded="false" />
+            <element signature="e#5823#6573#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

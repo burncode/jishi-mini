@@ -1,6 +1,6 @@
 //app.js
-const host = 'https://admin.gq1994.top/api'
-// const host = 'http://192.168.0.8/api'
+// const host = 'https://admin.gq1994.top/api'
+const host = 'http://192.168.0.8/api'
 App({
     onLaunch: function () {
         // 展示本地存储能力
@@ -8,27 +8,6 @@ App({
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
         let This = this
-        // 小程序打开
-        wx.login({
-            success: function (res) {
-
-                var code = res.code;
-                console.log(code);
-
-                if (res.code) {
-                    wx.getUserInfo({
-                        withCredentials: true,
-                        success: res => {
-                            This.globalData.userInfo = res.userInfo;
-                            console.log(code)
-                        },
-                        complete: res => {
-                            console.log(res);
-                        }
-                    })
-                }
-            }
-        })
     },
     globalData: {
         userInfo: {},
