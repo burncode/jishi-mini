@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -35,33 +35,33 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "测评引导",
-					"pathName": "pages/ceping/yindao",
+					"id": 0,
+					"name": "测评引导-B类",
+					"pathName": "pages/ceping/yindao-b",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "提交答题",
-					"pathName": "pages/ceping/submit",
+					"id": 1,
+					"name": "B类问题-五选项",
+					"pathName": "pages/ceping/question-b",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "引导2",
-					"pathName": "pages/ceping/yindao-02",
+					"id": 2,
+					"name": "测评引导-A类",
+					"pathName": "pages/ceping/yindao-a",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "引导3",
-					"pathName": "pages/ceping/yindao-03",
+					"id": 3,
+					"name": "测评引导-C类",
+					"pathName": "pages/ceping/yindao-c",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "问题-二选项",
-					"pathName": "pages/ceping/question",
+					"id": 4,
+					"name": "A类问题-二选项",
+					"pathName": "pages/ceping/question-a",
 					"query": ""
 				},
 				{
@@ -126,37 +126,21 @@
 				},
 				{
 					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/coupon/index",
+					"name": "评价",
+					"pathName": "pages/comment/commont",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/index/detail",
+					"name": "评价",
+					"pathName": "pages/comment/comment",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/coupon/index",
+					"name": "订单列表",
+					"pathName": "pages/order/index",
 					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/coupon/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的优惠券",
-					"pathName": "pages/coupon/index",
-					"query": "",
-					"scene": "1020",
-					"referrerInfo": {
-						"appId": "wxffa5d8b8abc258f6"
-					}
 				}
 			]
 		}

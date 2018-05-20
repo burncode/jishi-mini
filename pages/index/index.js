@@ -4,6 +4,7 @@ var interval;
 
 Page({
     data: {
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
         imgUrls: [
             '/demo/swiper.gif',
             '/demo/swiper-002.gif'
@@ -32,15 +33,41 @@ Page({
     onReady: function () {
 
     },
+    bindGetUserInfo: function(e) {
+        console.log(e.detail.userInfo)
+        wx.request({
+            url: getApp().globalData.login.url,
+            data: {
+                js_code: code,
+                name: e.detail.userInfo.nickName,
+                head_url: e.detail.userInfo.avatarUrl,
+            },
+            method: getApp().globalData.login.method,
+            success: function (res) {
+                if (res.statusCode === 200) {
+                    console.log(res.data);
+                    // 登录成功 将token存入本地
+                    getApp().globalData._token = res.data.data._token;
+                    getApp().globalData.userInfo.id = res.data.data.user.id;
+                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                    getApp().globalData.userInfo.name = res.data.data.user.name;
+                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                    getApp().globalData.userInfo.address = res.data.data.user.address;
+                    getApp().globalData.userInfo.sex = res.data.data.user.sex;
+                    getApp().globalData.userId = res.data.data.user.id;
+                }
+            }
+        });
+    },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
         var This = this;
-        interval = setInterval(function () {
-            This.getRandOrder();
-        }, 5000);
+        // interval = setInterval(function () {
+        //     This.getRandOrder();
+        // }, 5000);
     },
 
     /**

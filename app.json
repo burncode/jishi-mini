@@ -1,42 +1,45 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/index/lunbo-01",
     "pages/index/detail",
-     "pages/index/detail-news",
-     "pages/index/pay-success",
+    "pages/index/detail-news",
+    "pages/index/pay-success",
     "pages/wode/index",
-    "pages/ceping/yindao",
-    "pages/ceping/yindao-02",
-    "pages/ceping/yindao-03",
-     "pages/ceping/user-form",
-    "pages/ceping/submit",
-    "pages/ceping/question",
+    "pages/ceping/yindao-b",
+    "pages/ceping/yindao-a",
+    "pages/ceping/yindao-c",
+    "pages/ceping/question-a",
+    "pages/ceping/question-b",
+    "pages/ceping/question-c",
+    "pages/ceping/user-form",
     "pages/order/index",
     "pages/coupon/index",
     "pages/coupon/send",
+    "pages/comment/comment",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "selectedColor": "#00479d",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "/images/Tab_home.png",
-      "selectedIconPath": "/images/Tab_home_sel.png"
-    },
-    {
-      "pagePath": "pages/order/index",
-      "text": "我的",
-      "iconPath": "/images/tab_wode.png",
-      "selectedIconPath": "/images/tab_wode_sel.png"
-    }
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/Tab_home.png",
+        "selectedIconPath": "/images/Tab_home_sel.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "我的",
+        "iconPath": "/images/tab_wode.png",
+        "selectedIconPath": "/images/tab_wode_sel.png"
+      }
     ]
   }
 }

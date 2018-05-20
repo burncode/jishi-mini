@@ -1,5 +1,6 @@
 //app.js
 const host = 'https://admin.gq1994.top/api'
+// const host = 'http://192.168.0.8/api'
 App({
     onLaunch: function () {
         // 展示本地存储能力
@@ -10,7 +11,10 @@ App({
         // 小程序打开
         wx.login({
             success: function (res) {
+
                 var code = res.code;
+                console.log(code);
+
                 if (res.code) {
                     wx.getUserInfo({
                         withCredentials: true,
@@ -19,27 +23,7 @@ App({
                             console.log(code)
                         },
                         complete: res => {
-                            wx.request({
-                                url: getApp().globalData.login.url,
-                                data: {
-                                    js_code: code,
-                                    name: This.globalData.userInfo.nickName,
-                                    head_url: This.globalData.userInfo.avatarUrl,
-                                },
-                                method: getApp().globalData.login.method,
-                                success: function (res) {
-                                    if (res.statusCode === 200) {
-                                        // 登录成功 将token存入本地
-                                        getApp().globalData._token = res.data.data._token;
-                                        getApp().globalData.userInfo.id = res.data.data.user.id;
-                                        getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                        getApp().globalData.userInfo.name = res.data.data.user.name;
-                                        getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                        getApp().globalData.userInfo.address = res.data.data.user.address;
-                                        getApp().globalData.userInfo.sex = res.data.data.user.sex;
-                                    }
-                                }
-                            });
+                            console.log(res);
                         }
                     })
                 }
@@ -86,5 +70,14 @@ App({
             url: host + '/users_update',
             method: 'post'
         },
+        userId: null,
+        subjectId: 1,
+        questionANumber: 60,
+        questionBNumber:150,
+        questionCNumber:28,
+        questionASeconds: 15,
+        questionBSeconds: 15,
+        questionCSeconds:15,
+        timeOutUrl:"/pages/order/index",//答题中断跳转地址
     }
 })

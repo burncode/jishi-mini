@@ -72,7 +72,6 @@ Page({
         console.log(this.data.name);
         var data = e.detail.value;
         data.sex = This.data.sex;
-        console.log(data);
         wx.request({
             url: getApp().globalData.users_update.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.users_update.method,
@@ -82,7 +81,6 @@ Page({
                 'Authorization': 'Bearer ' + getApp().globalData._token
             },
             success: function (res) {
-                console.log(res);
                 if (res.statusCode === 200) {
                     getApp().globalData.userInfo.name = res.data.name;
                     getApp().globalData.userInfo.tel = res.data.tel;
@@ -94,7 +92,6 @@ Page({
                     })
                 } else if (res.statusCode === 422) {
                     // console.log(res.data.errors);
-                    console.log();
                     var obj = res.data
                     This.setData({
                         disabled: false

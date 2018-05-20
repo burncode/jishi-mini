@@ -1,0 +1,6 @@
+/* pages/ceping/yindao.wxss */
+@import "/pages/common/common.wxss";
+
+.body {
+  margin-bottom: 100rpx;
+}
