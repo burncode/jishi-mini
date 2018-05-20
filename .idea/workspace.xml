@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ffbbb50-db95-47f1-9580-587b8ebf5bba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ceping/user-form.js" afterPath="$PROJECT_DIR$/pages/ceping/user-form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.config.json" afterPath="$PROJECT_DIR$/project.config.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -239,31 +239,7 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1526741808000" expanded="true" signature="0:2808" ph="{&quot;description&quot;: &quot;项目配置文件。&quot;...}" />
-                <marker date="1526741808000" expanded="true" signature="307:2806" ph="{...}" />
-                <marker date="1526741808000" expanded="true" signature="535:2803" ph="{&quot;current&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="565:2799" ph="[...]" />
-                <marker date="1526741808000" expanded="true" signature="571:671" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="677:777" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="783:885" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="891:993" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="999:1103" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1109:1214" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1220:1324" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1330:1429" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1435:1531" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1537:1642" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1648:1754" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1760:1859" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1865:1964" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="1970:2070" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="2076:2175" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="2181:2281" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="2287:2387" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="2393:2493" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="2499:2599" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="2605:2794" ph="{&quot;id&quot;: -1...}" />
-                <marker date="1526741808000" expanded="true" signature="2744:2788" ph="{&quot;appId&quot;: &quot;wxffa5d8b8abc258f6&quot;...}" />
+                <marker date="1526741980000" expanded="true" signature="0:2809" ph="{&quot;description&quot;: &quot;项目配置文件。&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -621,16 +597,15 @@
       <workItem from="1526447854111" duration="2662000" />
       <workItem from="1526604335785" duration="8626000" />
       <workItem from="1526632205189" duration="1556000" />
-      <workItem from="1526718212818" duration="12716000" />
+      <workItem from="1526718212818" duration="13416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34924000" />
+    <option name="totallyTimeSpent" value="35624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15351813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -641,7 +616,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2920354" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2920354" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -752,31 +727,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526741808000" expanded="true" signature="0:2808" ph="{&quot;description&quot;: &quot;项目配置文件。&quot;...}" />
-            <marker date="1526741808000" expanded="true" signature="307:2806" ph="{...}" />
-            <marker date="1526741808000" expanded="true" signature="535:2803" ph="{&quot;current&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="565:2799" ph="[...]" />
-            <marker date="1526741808000" expanded="true" signature="571:671" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="677:777" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="783:885" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="891:993" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="999:1103" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1109:1214" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1220:1324" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1330:1429" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1435:1531" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1537:1642" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1648:1754" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1760:1859" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1865:1964" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1970:2070" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2076:2175" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2181:2281" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2287:2387" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2393:2493" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2499:2599" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2605:2794" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2744:2788" ph="{&quot;appId&quot;: &quot;wxffa5d8b8abc258f6&quot;...}" />
+            <marker date="1526741980000" expanded="true" signature="0:2809" ph="{&quot;description&quot;: &quot;项目配置文件。&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -940,31 +891,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1526741808000" expanded="true" signature="0:2808" ph="{&quot;description&quot;: &quot;项目配置文件。&quot;...}" />
-            <marker date="1526741808000" expanded="true" signature="307:2806" ph="{...}" />
-            <marker date="1526741808000" expanded="true" signature="535:2803" ph="{&quot;current&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="565:2799" ph="[...]" />
-            <marker date="1526741808000" expanded="true" signature="571:671" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="677:777" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="783:885" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="891:993" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="999:1103" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1109:1214" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1220:1324" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1330:1429" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1435:1531" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1537:1642" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1648:1754" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1760:1859" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1865:1964" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="1970:2070" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2076:2175" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2181:2281" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2287:2387" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2393:2493" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2499:2599" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2605:2794" ph="{&quot;id&quot;: -1...}" />
-            <marker date="1526741808000" expanded="true" signature="2744:2788" ph="{&quot;appId&quot;: &quot;wxffa5d8b8abc258f6&quot;...}" />
+            <marker date="1526741980000" expanded="true" signature="0:2809" ph="{&quot;description&quot;: &quot;项目配置文件。&quot;...}" />
           </folding>
         </state>
       </provider>
