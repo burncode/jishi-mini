@@ -1,7 +1,7 @@
 <!--pages/coupon/index.wxml-->
 <view class="list" style="margin: 0rpx">
     <view wx:for="{{coupons}}">
-        <view wx:if="{{item.status}}" class='coupon'>
+        <view wx:if="{{item.status}}" class='coupon' data-id="{{item.id}}" bindtap='toGoodDetail'>
             <image src='/images/youhuiquan.png'></image>
             <view class='coupon-price'>￥ {{item.price}}</view>
             <view class='coupon-info'>
@@ -10,7 +10,7 @@
                 <view class='date'>有效期：{{item.expire_start}}-{{item.expire_end}}</view>
             </view>
         </view>
-        <view wx:else class='coupon expired'>
+        <view wx:else class='coupon expired' data-id="{{item.id}}" bindtap='toGoodDetail'>
             <image src='/images/youhuiquan.png'></image>
             <view class='coupon-price'>￥ {{item.price}}</view>
             <view class='coupon-info'>

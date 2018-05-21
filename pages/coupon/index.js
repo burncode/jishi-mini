@@ -48,6 +48,11 @@ Page({
     onUnload: function () {
 
     },
+    toGoodDetail: (data) => {
+        wx.navigateTo({
+            url: '/pages/index/detail?id=' + data.currentTarget.dataset.id,
+        });
+    },
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
@@ -58,7 +63,8 @@ Page({
         this.getCouponsData({});
         wx.hideNavigationBarLoading() //完成停止加载
         wx.stopPullDownRefresh() //停止下拉刷新
-    },
+    }
+    ,
 
     /**
      * 页面上拉触底事件的处理函数
@@ -107,14 +113,16 @@ Page({
                 })
             }
         })
-    },
+    }
+    ,
 
     /**
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
 
-    },
+    }
+    ,
 
     getCouponsData: function (data) {
         var This = this;
@@ -136,7 +144,7 @@ Page({
                         next_page_url: res.data.data.next_page_url,
                         moreLoadingComplete: false,
                     });
-                } else{
+                } else {
                     wx.showModal({
                         title: '提示',
                         content: '数据加载失败'
@@ -150,5 +158,6 @@ Page({
                 })
             }
         })
-    },
+    }
+    ,
 })
