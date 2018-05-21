@@ -33,55 +33,6 @@ Page({
     onReady: function () {
 
     },
-    bindGetUserInfo: function (e) {
-        console.log(e.detail.userInfo)
-        var This=this;
-        // 小程序打开
-        wx.login({
-            success: function (res) {
-
-                var code = res.code;
-                console.log(code);
-
-                if (res.code) {
-                    wx.getUserInfo({
-                        withCredentials: true,
-                        success: res => {
-                            getApp().globalData.userInfo = res.userInfo;
-                            console.log(code)
-                        },
-                        complete: res => {
-                            console.log(res);
-                            wx.request({
-                                url: getApp().globalData.login.url,
-                                data: {
-                                    js_code: code,
-                                    name: e.detail.userInfo.nickName,
-                                    head_url: e.detail.userInfo.avatarUrl,
-                                },
-                                method: getApp().globalData.login.method,
-                                success: function (res) {
-                                    if (res.statusCode === 200) {
-                                        console.log(res.data);
-                                        // 登录成功 将token存入本地
-                                        getApp().globalData._token = res.data.data._token;
-                                        getApp().globalData.userInfo.id = res.data.data.user.id;
-                                        getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                        getApp().globalData.userInfo.name = res.data.data.user.name;
-                                        getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                        getApp().globalData.userInfo.address = res.data.data.user.address;
-                                        getApp().globalData.userInfo.sex = res.data.data.user.sex;
-                                        getApp().globalData.userId = res.data.data.user.id;
-                                        console.log(getApp().globalData);
-                                    }
-                                }
-                            });
-                        }
-                    })
-                }
-            }
-        })
-    },
 
     /**
      * 生命周期函数--监听页面显示

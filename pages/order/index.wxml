@@ -1,59 +1,72 @@
 <!--pages/order/index.wxml-->
 <view class='user' bindtap="toUsersDetail">
     <view class='user-left'>
-    <image src='{{userInfo.avatarUrl}}'></image>
+        <image src='{{userInfo.avatarUrl}}'></image>
     </view>
-    
+
     <view class='user-info'>
         <view class='user-name'>{{userInfo.nickName}}</view>
         <view class='ads-msg'>微信搜索“远识测评”订阅号，免费得测评卡</view>
     </view>
 </view>
 
+<view wx:if="{{userInfo.id}}">
 <view class='coupon'>
     <view class='coupon-left' bindtap="toMyCoupons">
-    <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
-    <text class='my-coupon'>我的优惠券</text>
-  </view>
-  <view class='coupon-right'>
-    <image src='/images/icon_jinru.png' class='right-icon'></image>
-    <text class='right-content' bindtap='goCoupon'>1张快过期</text>
-  </view>
-
+        <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
+        <text class='my-coupon'>我的优惠券</text>
+    </view>
+    <view class='coupon-right'>
+        <image src='/images/icon_jinru.png' class='right-icon'></image>
+        <text class='right-content' bindtap='goCoupon'>1张快过期</text>
+    </view>
+</view>
+</view>
+<view wx:else>
+<view class='coupon'>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+        <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
+        <text class='my-coupon' style="margin-top:15rpx;">我的优惠券</text>
+    </button>
+</view>
 </view>
 
-<view class='list-tab'>
-  <text class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试 （1）</text>
-  <text class='tab {{activeFinished}}' bindtap='activeFinished'>已完成测试</text>
+<view wx:if="{{userInfo.id}}" class='list-tab'>
+<text class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试 （1）</text>
+<text class='tab {{activeFinished}}' bindtap='activeFinished'>已完成测试</text>
+</view>
+<view wx:else class='list-tab'>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试 （1）</button>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeFinished}}' bindtap='activeFinished'>已完成测试</button>
 </view>
 
-<view class='order-list'>
+<view wx:if="{{userInfo.id}}" class='order-list'>
 <block wx:for="{{orders}}">
-  <view class='order-item'>
-    <view class='order-img'>
-      <image src='/demo/zhuanjia-001.gif'></image>
-    </view>
-    <view class='order-content'>
-      <view>
-        <text class='h1'>{{item.title}}</text>
-      </view>
-      <view>
-        <text class='price'>￥ {{item.payPrice}}</text>
-        <text class='price-msg'>活动结束恢复原价</text>
-      </view>
-      <view class='del-price'>原价：￥ {{item.price}}</view>
-      <view class='number'>数量：×{{item.remainingNumber}}份</view>
-    </view>
+    <view class='order-item'>
+        <view class='order-img'>
+            <image src='/demo/zhuanjia-001.gif'></image>
+        </view>
+        <view class='order-content'>
+            <view>
+                <text class='h1'>{{item.title}}</text>
+            </view>
+            <view>
+                <text class='price'>￥ {{item.payPrice}}</text>
+                <text class='price-msg'>活动结束恢复原价</text>
+            </view>
+            <view class='del-price'>原价：￥ {{item.price}}</view>
+            <view class='number'>数量：×{{item.remainingNumber}}份</view>
+        </view>
 
-  </view>
-  <view class='order-date p'>购买时间：{{item.payDate}}</view>
-  <view>
-    <view class='order-no p'>订单编号：{{item.orderNo}}</view>
-    <view class='copy-no' bindtap='copy' data-order-no='{{item.orderNo}}'>复制</view>
-  </view>
-  <view class='order-buttons'>
-    <text class='now active' bindtap='goEvaluate'>立即测评</text>
-    <text class='continue' bindtap='goEvaluate'>继续测评</text>
-  </view>
+    </view>
+    <view class='order-date p'>购买时间：{{item.payDate}}</view>
+    <view>
+        <view class='order-no p'>订单编号：{{item.orderNo}}</view>
+        <view class='copy-no' bindtap='copy' data-order-no='{{item.orderNo}}'>复制</view>
+    </view>
+    <view class='order-buttons'>
+        <text class='now active' bindtap='goEvaluate'>立即测评</text>
+        <text class='continue' bindtap='goEvaluate'>继续测评</text>
+    </view>
 </block>
 </view>
