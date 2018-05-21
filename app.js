@@ -1,7 +1,8 @@
 //app.js
 // const host = 'https://admin.gq1994.top/api'
-const host = 'http://yuanshiceping.com/api'
-// const host = 'https://api.jishiceping.com/api'
+//const host = 'http://yuanshiceping.com/api'
+ //const host = 'https://api.jishiceping.com/api'
+ const host = 'http://localhost:8000/api'
 App({
     onLaunch: function () {
         // 展示本地存储能力
