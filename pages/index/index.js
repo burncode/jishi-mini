@@ -39,9 +39,9 @@ Page({
      */
     onShow: function () {
         var This = this;
-        // interval = setInterval(function () {
-        //     This.getRandOrder();
-        // }, 5000);
+        interval = setInterval(function () {
+            This.getRandOrder();
+        }, 5000);
     },
 
     /**
