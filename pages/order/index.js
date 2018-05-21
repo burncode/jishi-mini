@@ -53,6 +53,11 @@ Page({
             orders: [],//置空
         })
     },
+    goComment:(data)=>{
+        wx.navigateTo({
+            url: '/pages/comment/comment?id=' + data.currentTarget.dataset.id,
+        });
+    },
     bindGetUserInfo: function (e) {
         console.log(e.detail.userInfo)
         var This = this;
