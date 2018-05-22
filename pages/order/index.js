@@ -46,14 +46,13 @@ Page({
         })
     },
     activeFinished: function (e) {
-
         this.setData({
             activeUnfinished: '',
             activeFinished: 'active',
             orders: [],//置空
         })
     },
-    goComment:(data)=>{
+    goComment: (data) => {
         wx.navigateTo({
             url: '/pages/comment/comment?id=' + data.currentTarget.dataset.id,
         });
@@ -89,7 +88,7 @@ Page({
                                         getApp().globalData.userInfo.sex = res.data.data.user.sex;
                                         getApp().globalData.userId = res.data.data.user.id;
                                         This.setData({
-                                            userInfo:getApp().globalData.userInfo,
+                                            userInfo: getApp().globalData.userInfo,
                                         });
                                     }
                                 }
@@ -115,7 +114,7 @@ Page({
                                             getApp().globalData.userInfo.sex = res.data.data.user.sex;
                                             getApp().globalData.userId = res.data.data.user.id;
                                             This.setData({
-                                                userInfo:getApp().globalData.userInfo,
+                                                userInfo: getApp().globalData.userInfo,
                                             });
                                         }
                                     }
@@ -124,7 +123,7 @@ Page({
                         }
                     })
                 }
-            }
+            },
         })
     },
 
@@ -147,9 +146,19 @@ Page({
                 if (history.current_key > 0) {
                     if (history.category_id == 1) {
                         if (question_no < app.globalData.questionANumber) {
-                            wx.navigateTo({
-                                url: '/pages/ceping/question-a'
+                            var category_id = 1;
+                            wx.setStorageSync('category_id', category_id)
+                            wx.request({
+                                url: app.globalData.host + '/questions?category_id=' + category_id,
+                                method: 'POST',
+                                success: function (res) {
+                                    wx.setStorageSync('a_questions', res.data)
+                                    wx.navigateTo({
+                                        url: '/pages/ceping/question-a'
+                                    })
+                                }
                             })
+
                         } else {
                             wx.navigateTo({
                                 url: '/pages/ceping/yindao-c'
@@ -160,9 +169,19 @@ Page({
                     } else if (history.category_id == 2) {
 
                         if (question_no < app.globalData.questionBNumber) {
-                            wx.navigateTo({
-                                url: '/pages/ceping/question-b'
+                            var category_id = 2;
+                            wx.setStorageSync('category_id', category_id)
+                            wx.request({
+                                url: app.globalData.host + '/questions?category_id=' + category_id,
+                                method: 'POST',
+                                success: function (res) {
+                                    wx.setStorageSync('b_questions', res.data)
+                                    wx.navigateTo({
+                                        url: '/pages/ceping/question-b'
+                                    })
+                                }
                             })
+
                         } else {
                             wx.navigateTo({
                                 url: '/pages/ceping/yindao-a'
@@ -172,9 +191,19 @@ Page({
                     } else if (history.category_id == 3) {
 
                         if (question_no < app.globalData.questionCNumber) {
-                            wx.navigateTo({
-                                url: '/pages/ceping/question-c'
+                            var category_id = 3;
+                            wx.setStorageSync('category_id', category_id)
+                            wx.request({
+                                url: app.globalData.host + '/questions?category_id=' + category_id,
+                                method: 'POST',
+                                success: function (res) {
+                                    wx.setStorageSync('c_questions', res.data)
+                                    wx.navigateTo({
+                                        url: '/pages/ceping/question-c'
+                                    })
+                                }
                             })
+
                         } else {
 
                         }

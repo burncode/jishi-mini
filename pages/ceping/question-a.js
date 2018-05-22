@@ -9,7 +9,7 @@ Page({
     wx.switchTab({
       url: app.globalData.timeOutUrl
     })
-    console.log("clicked confirm");
+
 
   },
   startTimer: function () {
@@ -32,26 +32,42 @@ Page({
     }, 1000)
   },
   timeOut: function () {
-    console.log('时间到');
+
   },
   displayButton: function () {
-    if (this.data.progress.current_no >= 59) {
+    console.log(this.data.progress.current_no)
+    if (this.data.progress.current_no >= 60) {
       var button_name = '提交答案'
       var bindfunction = 'submit'
+
+      this.setData({
+        button_name: button_name,
+        bindfunction: bindfunction,
+        selected: true,
+      })
     } else {
-      var button_name = '下一题'
-      var bindfunction = 'nextQuestion'
+      // var button_name = '下一题'
+      // var bindfunction = 'nextQuestion'
+      var current_key = this.data.current_key + 1
+      var progress = this.data.progress
+      progress.current_no += 1
+      progress.percent = progress.current_no / progress.question_count * 100;
+      this.setData({
+        progress: progress,
+        current_key: current_key,
+        items: [
+          { name: '1', value: '同意' },
+          { name: '2', value: '不同意' },
+        ],
+      })
     }
-    this.setData({
-      button_name: button_name,
-      bindfunction: bindfunction,
-    })
+
 
   },
   radioChange: function (e) {
-    this.setData({
-      selected:true,
-    })
+    // this.setData({
+    //   selected:true,
+    // })
 
     var a_questions = wx.getStorageSync('a_questions')
     var selected = e.detail.value
@@ -66,6 +82,7 @@ Page({
       current_key: this.data.current_key,
     }
     this.sendAnswer(answer)
+    this.nextQuestion()
   },
   sendAnswer: function (answer) {
     wx.request({
@@ -78,24 +95,11 @@ Page({
     })
   },
   nextQuestion: function (event) {
-    console.log('点击下一题')
     this.setData({
       seconds: app.globalData.questionASeconds,
-      selected:false,
     })
     this.displayButton(this.data.current_key)
-    var current_key = this.data.current_key + 1
-    var progress = this.data.progress
-    progress.current_no += 1
-    progress.percent = progress.current_no / progress.question_count * 100;
-    this.setData({
-      progress: progress,
-      current_key: current_key,
-      items: [
-        { name: '1', value: '同意' },
-        { name: '2', value: '不同意' },
-      ],
-    })
+
   },
   submit: function (event) {
     clearInterval(this.data.timer)
