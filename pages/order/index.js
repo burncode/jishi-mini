@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    subjectStatus: 0,
     activeUnfinished: 'active',
     activeFinished: '',
     userInfo: {},
@@ -122,7 +123,12 @@ Page({
       }
     })
   },
+  goReport: function() {
+    wx.navigateTo({
+      url: '/pages/report/report',
+    })
 
+  },
   goEvaluate: function () {
     //获取历史答题状态
     wx.request({
@@ -246,6 +252,36 @@ Page({
     this.setData({
       userInfo: getApp().globalData.userInfo
     });
+
+    console.log(this.data.userInfo)
+    var that = this
+    //获取历史答题状态
+    wx.request({
+      url: app.globalData.host + '/history',
+      method: 'POST',
+      data: {
+        member_id: app.globalData.userId,
+        subject_id: app.globalData.subjectId
+      },
+      success: function (res) {
+        var history = res.data.data;
+        if (history) {
+
+          var subject_status = history.subject_status
+console.log(history)
+
+          that.setData({
+            subjectStatus: subject_status
+          });
+
+        } else {
+          console.log('没有历史')
+        }
+
+
+      }
+    });
+
   },
 
   /**
