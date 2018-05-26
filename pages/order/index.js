@@ -4,6 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        subjectStatus: 0,
         activeUnfinished: 'active',
         activeFinished: '',
         userInfo: {},
@@ -46,14 +47,13 @@ Page({
         })
     },
     activeFinished: function (e) {
-
         this.setData({
             activeUnfinished: '',
             activeFinished: 'active',
             orders: [],//置空
         })
     },
-    goComment:(data)=>{
+    goComment: (data) => {
         wx.navigateTo({
             url: '/pages/comment/comment?id=' + data.currentTarget.dataset.id,
         });
@@ -89,7 +89,7 @@ Page({
                                         getApp().globalData.userInfo.sex = res.data.data.user.sex;
                                         getApp().globalData.userId = res.data.data.user.id;
                                         This.setData({
-                                            userInfo:getApp().globalData.userInfo,
+                                            userInfo: getApp().globalData.userInfo,
                                         });
                                     }
                                 }
@@ -115,7 +115,7 @@ Page({
                                             getApp().globalData.userInfo.sex = res.data.data.user.sex;
                                             getApp().globalData.userId = res.data.data.user.id;
                                             This.setData({
-                                                userInfo:getApp().globalData.userInfo,
+                                                userInfo: getApp().globalData.userInfo,
                                             });
                                         }
                                     }
@@ -124,10 +124,42 @@ Page({
                         }
                     })
                 }
+            },
+            complete: res => {
+                if (res.errMsg !== 'getUserInfo:ok') {
+                    wx.request({
+                        url: getApp().globalData.login.url,
+                        data: {
+                            js_code: code,
+                        },
+                        method: getApp().globalData.login.method,
+                        success: function (res) {
+                            if (res.statusCode === 200) {
+                                // 登录成功 将token存入本地
+                                getApp().globalData._token = res.data.data._token;
+                                getApp().globalData.userInfo.id = res.data.data.user.id;
+                                getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                                getApp().globalData.userInfo.name = res.data.data.user.name;
+                                getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                                getApp().globalData.userInfo.address = res.data.data.user.address;
+                                getApp().globalData.userInfo.sex = res.data.data.user.sex;
+                                getApp().globalData.userId = res.data.data.user.id;
+                                This.setData({
+                                    userInfo: getApp().globalData.userInfo,
+                                });
+                            }
+                        }
+                    });
+                }
             }
+        });
+    },
+    goReport: function () {
+        wx.navigateTo({
+            url: '/pages/report/report',
         })
     },
-
+    
     goEvaluate: function () {
         //获取历史答题状态
         wx.request({
@@ -147,9 +179,19 @@ Page({
                 if (history.current_key > 0) {
                     if (history.category_id == 1) {
                         if (question_no < app.globalData.questionANumber) {
-                            wx.navigateTo({
-                                url: '/pages/ceping/question-a'
+                            var category_id = 1;
+                            wx.setStorageSync('category_id', category_id)
+                            wx.request({
+                                url: app.globalData.host + '/questions?category_id=' + category_id,
+                                method: 'POST',
+                                success: function (res) {
+                                    wx.setStorageSync('a_questions', res.data)
+                                    wx.navigateTo({
+                                        url: '/pages/ceping/question-a'
+                                    })
+                                }
                             })
+
                         } else {
                             wx.navigateTo({
                                 url: '/pages/ceping/yindao-c'
@@ -160,9 +202,19 @@ Page({
                     } else if (history.category_id == 2) {
 
                         if (question_no < app.globalData.questionBNumber) {
-                            wx.navigateTo({
-                                url: '/pages/ceping/question-b'
+                            var category_id = 2;
+                            wx.setStorageSync('category_id', category_id)
+                            wx.request({
+                                url: app.globalData.host + '/questions?category_id=' + category_id,
+                                method: 'POST',
+                                success: function (res) {
+                                    wx.setStorageSync('b_questions', res.data)
+                                    wx.navigateTo({
+                                        url: '/pages/ceping/question-b'
+                                    })
+                                }
                             })
+
                         } else {
                             wx.navigateTo({
                                 url: '/pages/ceping/yindao-a'
@@ -172,9 +224,19 @@ Page({
                     } else if (history.category_id == 3) {
 
                         if (question_no < app.globalData.questionCNumber) {
-                            wx.navigateTo({
-                                url: '/pages/ceping/question-c'
+                            var category_id = 3;
+                            wx.setStorageSync('category_id', category_id)
+                            wx.request({
+                                url: app.globalData.host + '/questions?category_id=' + category_id,
+                                method: 'POST',
+                                success: function (res) {
+                                    wx.setStorageSync('c_questions', res.data)
+                                    wx.navigateTo({
+                                        url: '/pages/ceping/question-c'
+                                    })
+                                }
                             })
+
                         } else {
 
                         }
@@ -187,13 +249,15 @@ Page({
                 }
             }
         })
-    },
+    }
+    ,
 
     goCoupon: function () {
         wx.navigateTo({
             url: '/pages/coupon/send',
         })
-    },
+    }
+    ,
 
     copy: function (e) {
         console.log(e)
@@ -213,7 +277,8 @@ Page({
                 })
             }
         })
-    },
+    }
+    ,
     /**
      * 生命周期函数--监听页面加载
      */
@@ -221,49 +286,86 @@ Page({
         this.setData({
             userInfo: getApp().globalData.userInfo
         });
-    },
+
+        console.log(this.data.userInfo)
+        var that = this
+        //获取历史答题状态
+        wx.request({
+            url: app.globalData.host + '/history',
+            method: 'POST',
+            data: {
+                member_id: app.globalData.userId,
+                subject_id: app.globalData.subjectId
+            },
+            success: function (res) {
+                var history = res.data.data;
+                if (history) {
+
+                    var subject_status = history.subject_status
+                    console.log(history)
+
+                    that.setData({
+                        subjectStatus: subject_status
+                    });
+
+                } else {
+                    console.log('没有历史')
+                }
+
+
+            }
+        });
+
+    }
+    ,
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
 
-    },
+    }
+    ,
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
 
-    },
+    }
+    ,
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
 
-    },
+    }
+    ,
 
     /**
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
 
-    },
+    }
+    ,
 
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
 
-    },
+    }
+    ,
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
 
-    },
+    }
+    ,
 
     /**
      * 用户点击右上角分享

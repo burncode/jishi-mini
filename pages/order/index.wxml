@@ -18,7 +18,7 @@
     </view>
     <view class='coupon-right'>
         <image src='/images/icon_jinru.png' class='right-icon'></image>
-        <text class='right-content' bindtap='goCoupon'>1张快过期</text>
+        <text class='right-content' bindtap='goCoupon'></text>
     </view>
 </view>
 </view>
@@ -32,11 +32,11 @@
 </view>
 
 <view wx:if="{{userInfo.id}}" class='list-tab'>
-<text class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试 （1）</text>
+<text class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试</text>
 <text class='tab {{activeFinished}}' bindtap='activeFinished'>已完成测试</text>
 </view>
 <view wx:else class='list-tab'>
-<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试 （1）</button>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试</button>
 <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeFinished}}' bindtap='activeFinished'>已完成测试</button>
 </view>
 
@@ -55,7 +55,7 @@
                 <text class='price-msg'>活动结束恢复原价</text>
             </view>
             <view class='del-price'>原价：￥ {{item.price}}</view>
-            <view class='number'>数量：×{{item.remainingNumber}}份</view>
+            
         </view>
 
     </view>
@@ -65,8 +65,9 @@
         <view class='copy-no' bindtap='copy' data-order-no='{{item.orderNo}}'>复制</view>
     </view>
     <view class='order-buttons'>
-        <text class='now active' bindtap='goEvaluate'>立即测评</text>
-        <text class='continue' bindtap='goEvaluate'>继续测评</text>
+        <text wx:if="{{ subjectStatus == 0}}" class='now active' bindtap='goEvaluate'>立即测评</text>
+        <text wx:if="{{ subjectStatus == 1}}" class='now active' bindtap='goEvaluate'>继续测评</text>
+        <text wx:if="{{ subjectStatus == 2}}" class='now active' bindtap='goReport'>查看报告</text>
     </view>
     <view class='order-buttons'>
         <text class='now active' bindtap='goComment' data-id="{{item.id}}">立即评价</text>

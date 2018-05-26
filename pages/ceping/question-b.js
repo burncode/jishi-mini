@@ -2,14 +2,13 @@ const app = getApp()
 Page({
   confirm: function () {
 
-    console.log(app.globalData.timeOutUrl)
     this.setData({
       hidden: true
     });
     wx.switchTab({
       url: app.globalData.timeOutUrl
     })
-    console.log("clicked confirm");
+  
 
   },
   startTimer: function () {
@@ -39,8 +38,8 @@ Page({
       var button_name = '提交答案'
       var bindfunction = 'submit'
     } else {
-      var button_name = '下一题'
-      var bindfunction = 'nextQuestion'
+      // var button_name = '下一题'
+      // var bindfunction = 'nextQuestion'
     }
     this.setData({
       button_name: button_name,
@@ -49,10 +48,9 @@ Page({
 
   },
   radioChange: function (e) {
-    this.setData({
-      selected: true,
-    })
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
+    // this.setData({
+    //   selected: true,
+    // })
     var b_questions = wx.getStorageSync('b_questions')
     var selected = e.detail.value
     var category_id = wx.getStorageSync('category_id')
@@ -65,7 +63,8 @@ Page({
       selected: selected,
       current_key: this.data.current_key,
     }
-    console.log(this.sendAnswer(answer))
+    this.sendAnswer(answer)
+    this.nextQuestion()
   },
   sendAnswer: function (answer) {
     wx.request({
@@ -73,39 +72,48 @@ Page({
       method: 'POST',
       data: answer,
       success: function (msg) {
-        console.log(msg)
+
       },
     })
   },
   nextQuestion: function (event) {
     this.setData({
       seconds: app.globalData.questionBSeconds,
-      selected: false,
+      //selected: false,
     })
-    if (this.data.progress.current_no >= 149) {
+    var selected = false
+    if (this.data.progress.current_no >= 150) {
       var button_name = '提交答案'
       var bindfunction = 'submit'
+      selected = true
+      this.setData({
+        button_name: button_name,
+        bindfunction: bindfunction,
+        selected: selected,
+      })
     } else {
-      var button_name = '下一题'
-      var bindfunction = 'nextQuestion'
+      // var button_name = '下一题'
+      // var bindfunction = 'nextQuestion'
+      var current_key = this.data.current_key + 1
+      var progress = this.data.progress
+      progress.current_no += 1
+      progress.percent = progress.current_no / progress.question_count * 100;
+      this.setData({
+        progress: progress,
+        current_key: current_key,
+        items: [
+          { name: '1', value: 'A非常贴切描述我' },
+          { name: '2', value: 'A一般' },
+          { name: '3', value: '中立' },
+          { name: '4', value: 'B一般' },
+          { name: '5', value: 'B非常贴切描述我' },
+        ],
+      })
     }
-    var current_key = this.data.current_key + 1
-    var progress = this.data.progress
-    progress.current_no += 1
-    progress.percent = progress.current_no / progress.question_count * 100;
-    this.setData({
-      progress: progress,
-      current_key: current_key,
-      button_name: button_name,
-      bindfunction: bindfunction,
-      items: [
-        { name: '1', value: 'A非常贴切描述我' },
-        { name: '2', value: 'A一般' },
-        { name: '3', value: '中立' },
-        { name: '4', value: 'B一般' },
-        { name: '5', value: 'B非常贴切描述我' },
-      ],
-    })
+
+
+
+
   },
   submit: function (event) {
     clearInterval(this.data.timer)
@@ -118,7 +126,7 @@ Page({
       method: 'POST',
       data: data,
       success: function (msg) {
-        console.log(msg)
+      
       },
     })
     wx.navigateTo({
@@ -141,7 +149,7 @@ Page({
       { name: '4', value: 'B一般' },
       { name: '5', value: 'B非常贴切描述我' },
     ],
-    button_name: '下一题',
+    button_name: '',
     progress: {
       current_no: null,
       question_count: null,
@@ -171,7 +179,6 @@ Page({
     progress.current_no = current_no
     progress.question_count = question_count
 
-    console.log(b_questions.data[current_key])
     var bindfunction = 'nextQuestion'
     this.setData({
       progress: progress,
