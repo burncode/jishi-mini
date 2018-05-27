@@ -253,7 +253,6 @@ Page({
       userInfo: getApp().globalData.userInfo
     });
 
-    console.log(this.data.userInfo)
     var that = this
     //获取历史答题状态
     wx.request({
@@ -266,10 +265,7 @@ Page({
       success: function (res) {
         var history = res.data.data;
         if (history) {
-
           var subject_status = history.subject_status
-console.log(history)
-
           that.setData({
             subjectStatus: subject_status
           });

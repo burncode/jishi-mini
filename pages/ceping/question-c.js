@@ -113,12 +113,13 @@ Page({
       method: 'POST',
       data: data,
       success: function (msg) {
-console.log('做完了')
+        wx.switchTab({
+      url: '/pages/order/index',
+    })
       },
     })
-    // wx.navigateTo({
-    //   url: '/pages/ceping/yindao-b'
-    // })
+    
+
   },
   /**
    * 页面的初始数据
@@ -149,6 +150,7 @@ console.log('做完了')
 
     if (history.category_id == 3) {
       var current_key = history.current_key;
+      //$this->displayButton();
     } else {
       var current_key = 0;
 
@@ -175,7 +177,7 @@ console.log('做完了')
       ,
     })
 
-    this.displayButton()
+  
   },
 
   /**
