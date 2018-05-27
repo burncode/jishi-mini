@@ -64,15 +64,16 @@ Page({
       current_key: this.data.current_key,
     }
     this.sendAnswer(answer)
-    this.nextQuestion()
+    
   },
   sendAnswer: function (answer) {
+    var that = this;
     wx.request({
       url: app.globalData.host + '/answer',
       method: 'POST',
       data: answer,
       success: function (msg) {
-
+        that.nextQuestion();
       },
     })
   },

@@ -79,16 +79,16 @@ Page({
       selected: selected,
       current_key: this.data.current_key,
     }
-    this.sendAnswer(answer)
-    this.nextQuestion()
+    this.sendAnswer(answer)   
   },
   sendAnswer: function (answer) {
+    var that = this;
     wx.request({
       url: app.globalData.host + '/answer',
       method: 'POST',
       data: answer,
       success: function (msg) {
-
+        that.nextQuestion()
       },
     })
   },

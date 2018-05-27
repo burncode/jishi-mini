@@ -80,15 +80,16 @@ Page({
       current_key: this.data.current_key,
     }
     this.sendAnswer(answer)
-    this.nextQuestion()
+    
   },
   sendAnswer: function (answer) {
+    var that = this;
     wx.request({
       url: app.globalData.host + '/answer',
       method: 'POST',
       data: answer,
       success: function (msg) {
-
+        that.nextQuestion()
       },
     })
   },
@@ -107,6 +108,19 @@ Page({
       member_id: app.globalData.userId,
       category_id: wx.getStorageSync('category_id')
     }
+    //弹出等待提示
+    wx.showToast({
+      title: '报告正在努力生成中。。。',
+      icon: 'loading',
+      duration: 30000,
+      mask: true
+
+    })
+
+    //隐藏提交按钮
+    this.setData({
+      selected: false
+    });
     wx.request({
       url: app.globalData.host + '/grade',
       method: 'POST',
