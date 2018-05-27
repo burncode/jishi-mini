@@ -3,7 +3,6 @@ Page({
 
   confirm: function () {
 
-    console.log(app.globalData.timeOutUrl)
     this.setData({
       hidden: true
     });
@@ -32,7 +31,7 @@ Page({
     }, 1000)
   },
   timeOut: function () {
-    console.log('时间到');
+
   },
   displayButton: function () {
     if (this.data.progress.current_no >= 28) {
@@ -116,8 +115,7 @@ Page({
         wx.switchTab({
           url: '/pages/order/index',
           success: function (e) { 
-              console.log(555);
-              var page = getCurrentPages().pop(); 
+              var page = getCurrentPages().pop();
               if (page == undefined || page == null) return; 
                   page.onLoad(); 
           } 

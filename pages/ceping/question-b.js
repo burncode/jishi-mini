@@ -31,7 +31,7 @@ Page({
     }, 1000)
   },
   timeOut: function () {
-    console.log('时间到');
+
   },
   displayButton: function () {
     if (this.data.progress.current_no >= app.globalData.questionBNumber) {

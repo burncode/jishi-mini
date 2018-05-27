@@ -80,7 +80,6 @@ Page({
     onShareAppMessage: function (res) {
         if (res.from === 'button') {
             // 来自页面内转发按钮
-            console.log(res.target)
         }
         return {
             title: '/pages/index/detail页面转发标题',
@@ -89,7 +88,6 @@ Page({
     },
     getComments: function (id) {
         var This = this;
-        console.log(This.good_id);
         wx.request({
             url: getApp().globalData.getComments.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.getComments.method,

@@ -2,7 +2,6 @@ const app = getApp()
 Page({
   confirm: function () {
 
-    console.log(app.globalData.timeOutUrl)
     this.setData({
       hidden: true
     });
@@ -35,7 +34,6 @@ Page({
 
   },
   displayButton: function () {
-    console.log(this.data.progress.current_no)
     if (this.data.progress.current_no >= 60) {
       var button_name = '提交答案'
       var bindfunction = 'submit'
@@ -151,7 +149,6 @@ Page({
     this.startTimer()
     var a_questions = wx.getStorageSync('a_questions')
     var history = wx.getStorageSync('history')
-    console.log(history)
     if (history.category_id == 1) {
       var current_key = history.current_key;
      //$this->displayButton();

@@ -45,16 +45,13 @@ Page({
     },
     // 星星点击事件
     starTap: function (e) {
-        console.log(e)
         var index = e.currentTarget.dataset.index; // 获取当前点击的是第几颗星星
         var line = e.currentTarget.dataset.line; // 获取当前点击的是第几行
         var tempUserStars = this.data.userStars; // 暂存星星数组
         var len = tempUserStars[line].length; // 获取星星数组的长度
 
         var starTitleSelected = this.data.starTitleSelected;
-        console.log(starTitleSelected);
         var starTitle = this.data.starTitle;
-        console.log(starTitle);
         starTitleSelected[line] = starTitle[index];
 
         for (var i = 0; i < len; i++) {
@@ -127,7 +124,6 @@ Page({
      */
     onLoad: function (option) {
         // 拿到guid
-        console.log(option.id);
         let This = this;
         This.setData({
             good_id: option.id,

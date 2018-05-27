@@ -12,7 +12,6 @@ Page({
     onLoad: function (option) {
         // 拿到guid
         let This = this;
-        console.log(option.guid)
         wx.request({
             url: getApp().globalData.getOneNews.url + option.guid,
             method: getApp().globalData.getOneNews.method,
@@ -73,7 +72,6 @@ Page({
     onShareAppMessage: function (res) {
         if (res.from === 'button') {
             // 来自页面内转发按钮
-            console.log(res.target)
         }
         return {
             title: '轮播详情分享(lunbo-01)标题',

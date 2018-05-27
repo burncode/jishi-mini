@@ -69,7 +69,6 @@ Page({
     onSubmit: function (e) {
         var This = this;
 
-        console.log(this.data.name);
         var data = e.detail.value;
         data.sex = This.data.sex;
         wx.request({
@@ -91,7 +90,6 @@ Page({
                         content: res.data.message
                     })
                 } else if (res.statusCode === 422) {
-                    // console.log(res.data.errors);
                     var obj = res.data
                     This.setData({
                         disabled: false

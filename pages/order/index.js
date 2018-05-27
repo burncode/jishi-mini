@@ -59,7 +59,6 @@ Page({
         });
     },
     bindGetUserInfo: function (e) {
-        console.log(e.detail.userInfo)
         var This = this;
         // 小程序打开
         wx.login({
@@ -171,7 +170,6 @@ Page({
             },
             success: function (res) {
                 var history = res.data.data;
-                console.log(history)
                 wx.setStorageSync('history', history)
 
                 var question_no = history.current_key + 1
@@ -260,7 +258,6 @@ Page({
     ,
 
     copy: function (e) {
-        console.log(e)
         wx.setClipboardData({
             data: e.currentTarget.dataset.orderNo,
             success: function (res) {
@@ -272,7 +269,7 @@ Page({
                 })
                 wx.getClipboardData({
                     success: function (res) {
-                        console.log(res.data)
+
                     }
                 })
             }
@@ -287,7 +284,6 @@ Page({
     },
 
     copy: function (e) {
-        console.log(e)
         wx.setClipboardData({
             data: e.currentTarget.dataset.orderNo,
             success: function (res) {
@@ -299,7 +295,6 @@ Page({
                 })
                 wx.getClipboardData({
                     success: function (res) {
-                        console.log(res.data)
                     }
                 })
             }
@@ -331,7 +326,6 @@ Page({
                     });
 
                 } else {
-                    console.log('没有历史')
                 }
 
 

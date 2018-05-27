@@ -135,7 +135,6 @@ Page({
                 'Authorization': 'Bearer ' + getApp().globalData._token
             },
             success: function (res) {
-                console.log(res);
                 if (res.statusCode === 200) {
                     This.setData({
                         coupons: res.data.data.data,
