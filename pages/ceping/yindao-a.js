@@ -39,10 +39,10 @@ Page({
       },
       success: function (res) {
         var history = res.data.data;
-        console.log(history)
+
         wx.setStorageSync('history', history)
 
-        var question_no = history.current_key + 1
+        var question_no = history.current_key + 1;
 
         if (history.current_key > 0 && history.category_id == category_id) {
           if (history.category_id == 1) {

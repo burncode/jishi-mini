@@ -154,8 +154,10 @@ Page({
     console.log(history)
     if (history.category_id == 1) {
       var current_key = history.current_key;
+     //$this->displayButton();
     } else {
       var current_key = 0;
+
 
     }
 
@@ -174,7 +176,7 @@ Page({
       bindfunction: bindfunction
     })
 
-    this.displayButton()
+    
   },
 
   /**
