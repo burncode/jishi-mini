@@ -69,9 +69,9 @@
         <text wx:if="{{ subjectStatus == 1}}" class='now active' bindtap='goEvaluate'>继续测评</text>
         <text wx:if="{{ subjectStatus == 2}}" class='now active' bindtap='goReport'>查看报告</text>
     </view>
-    <view class='order-buttons'>
-        <text class='now active' bindtap='goComment' data-id="{{item.id}}">立即评价</text>
-        <text class='continue' bindtap=''>查看报告</text>
-    </view>
+    <!--<view class='order-buttons'>-->
+        <!--<text class='now active' bindtap='goComment' data-id="{{item.id}}">立即评价</text>-->
+        <!--<text class='continue' bindtap=''>查看报告</text>-->
+    <!--</view>-->
 </block>
 </view>

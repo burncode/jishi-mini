@@ -5,16 +5,13 @@ var interval;
 Page({
     data: {
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
-        imgUrls: [
-            '/demo/swiper.gif',
-            '/demo/swiper-002.gif'
-        ],
         indicatorDots: false,
         autoplay: false,
         interval: 5000,
         duration: 1000,
         rand_order: '',
         news: [],
+        banners: [],
         comments: [],
         goods: [],
     },
@@ -23,6 +20,7 @@ Page({
         var This = this;
         This.getRandOrder();
         This.getNews();
+        This.getBanners();
         This.getComments();
         This.getGoods();
     },
@@ -82,6 +80,31 @@ Page({
                 wx.showModal({
                     title: '提示',
                     content: '播报数据加载失败'
+                })
+            }
+        })
+    },
+    getBanners: function () {
+        var This = this;
+        wx.request({
+            url: getApp().globalData.get_banner_news.url, //仅为示例，并非真实的接口地址
+            method: getApp().globalData.get_banner_news.method,
+            success: function (res) {
+                if (res.statusCode === 200) {
+                    This.setData({
+                        banners: res.data.data,
+                    });
+                } else {
+                    wx.showModal({
+                        title: '提示',
+                        content: '专家专栏轮播数据加载失败'
+                    })
+                }
+            },
+            error: function () {
+                wx.showModal({
+                    title: '提示',
+                    content: '专家专栏轮播数据加载失败'
                 })
             }
         })
