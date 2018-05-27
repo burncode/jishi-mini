@@ -1,6 +1,6 @@
 //app.js
 // const host = 'https://admin.gq1994.top/api'
-// const host = 'http://yuanshiceping.com/api'
+// const host = 'http://192.168.0.7/api'
 const host = 'https://api.jishiceping.com/api'
 App({
     onLaunch: function () {
@@ -90,6 +90,16 @@ App({
         users_update: {
             url: host + '/users_update',
             method: 'post'
+        },
+        wechat_pay:{
+            createWechatOrder:{
+                url: host + '/wechat_pay/createWechatOrder',
+                method:'post'
+            },
+            createUserOrder:{
+                url: host + '/wechat_pay/createUserOrder',
+                method:'post'
+            },
         },
         userId: null,
         subjectId: 1,
