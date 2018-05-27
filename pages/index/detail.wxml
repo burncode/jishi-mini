@@ -12,7 +12,7 @@
 </text>
 
 
-<text class='block right'>
+<text class='block right' bindtap="zhifu">
     <text>立即抢购</text>
 </text>
 </view>

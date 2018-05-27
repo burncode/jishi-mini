@@ -8,7 +8,9 @@ Page({
         good_id: null,
         comments: [],
     },
-
+zhifu:()=>{
+  console.log(11111);
+},
     /**
      * 生命周期函数--监听页面加载
      */
