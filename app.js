@@ -96,8 +96,8 @@ App({
                 url: host + '/wechat_pay/createWechatOrder',
                 method:'post'
             },
-            createUserOrder:{
-                url: host + '/wechat_pay/createUserOrder',
+            createOrder:{
+                url: host + '/wechat_pay/createOrder',
                 method:'post'
             },
         },
