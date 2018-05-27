@@ -114,7 +114,13 @@ Page({
       data: data,
       success: function (msg) {
         wx.switchTab({
-      url: '/pages/order/index',
+          url: '/pages/order/index',
+          success: function (e) { 
+              console.log(555);
+              var page = getCurrentPages().pop(); 
+              if (page == undefined || page == null) return; 
+                  page.onLoad(); 
+          } 
     })
       },
     })
