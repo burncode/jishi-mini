@@ -8,9 +8,50 @@ Page({
         good_id: null,
         comments: [],
     },
-zhifu:()=>{
-  console.log(11111);
-},
+    zhifu:()=>{
+        wx.request({
+            url: getApp().globalData.wechat_pay.createOrder.url,
+            method: getApp().globalData.wechat_pay.createOrder.method,
+            header: {
+                'Accept': 'application/json',
+            },
+            data:{
+              openId:getApp().globalData.userInfo.open_id
+            },
+            success (res) {
+                let data = res.data;
+                console.log(data);
+                wx.requestPayment({
+                    timeStamp: data.timeStamp.toString(),
+                    nonceStr: data.nonceStr,
+                    package: data.package,
+                    signType: data.signType,
+                    paySign: data.paySign,
+                    success: function(res) {
+                        console.log('付款成功')
+                        console.log(res)
+                        wx.request({
+                            url: getApp().globalData.wechat_pay.createOrder.url,
+                            method: getApp().globalData.wechat_pay.createOrder.method,
+                            header: {
+                                'Accept': 'application/json',
+                            },
+                            data:{
+                                data:data
+                            },
+                            success (res) {
+
+                            }
+                        });
+                    },
+                    fail: function(res) {
+                        console.log('付款失败')
+                        console.log(res)
+                    }
+                })
+            }
+        });
+    },
     /**
      * 生命周期函数--监听页面加载
      */

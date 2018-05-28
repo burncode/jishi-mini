@@ -1,52 +1,55 @@
 <view class='row'>
-  <image class='icon' src='/images/icon_xiangqing.png'></image>
-  <text class='subject-name'>基石出品高中专业测评</text>
+    <image class='icon' src='/images/icon_xiangqing.png'></image>
+    <text class='subject-name'>基石出品高中专业测评</text>
 </view>
 
 
+<form bindsubmit="onSubmit" report-submit='true'>
 
 <view class='stars clear-both'>
-  <text class='block row h1'>该测评对你有帮助么？</text>
-  <block wx:for="{{starTypes}}" wx:key="id" wx:for-index="line">
-    <view class='item'>
-      <text class='block title'>{{item.title}}</text>
-      <view>
-        <view class="comment-star">
-          <view bindtap="starTap" data-line="{{line}}" data-index="{{index}}" class="star" wx:for="{{userStars[line]}}" wx:key="index">
-            <image src="{{item}}"></image>
-          </view>
-          <text class='block level'>{{starTitleSelected[line]}}</text>
+    <text class='block row h1'>该测评对你有帮助么？</text>
+    <block wx:for="{{starTypes}}" wx:key="id" wx:for-index="line">
+        <view class='item'>
+            <text class='block title'>{{item.title}}</text>
+            <view>
+                <view class="comment-star">
+                    <view bindtap="starTap" data-line="{{line}}" data-index="{{index}}" class="star"
+                          wx:for="{{userStars[line]}}" wx:key="index">
+                        <image src="{{item}}"></image>
+                    </view>
+                    <text class='block level'>{{starTitleSelected[line]}}</text>
+                </view>
+            </view>
+
+
         </view>
-      </view>
-
-
-    </view>
-  </block>
+    </block>
 </view>
 
 <view class='content'>
-  <textarea placeholder='说说你的测试心得，分享给想测评的Ta吧～' maxlength="{{noteMaxLen}}" bindinput="bindWordLimit">
-  </textarea>
-  <text class='remainer'>剩余{{noteMaxLen - currentNoteLen}}字</text>
+    <textarea name="content" placeholder='说说你的测试心得，分享给想测评的Ta吧～' maxlength="{{noteMaxLen}}" bindinput="bindWordLimit">
+   {{content}}
+    </textarea>
+    <text class='remainer'>剩余{{noteMaxLen - currentNoteLen}}字</text>
 </view>
 
-<button bindtap='submit'>发布</button>
+<button formType="submit">发布</button>
+</form>
 
-
-<!--弹窗-->
+        <!--弹窗-->
 <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
 <view class="modal-dialog" wx:if="{{showModal}}">
-  <view class="modal-title"></view>
-  <view class="modal-content">
+<view class="modal-title"></view>
+<view class="modal-content">
     <view class="modal-input">
-      <image src='/images/icon_zhifuchenggong.png'></image>
-      <text class='block h1'>感谢您的评价！</text>
+        <image src='/images/icon_zhifuchenggong.png'></image>
+        <text class='block h1'>感谢您的评价！</text>
     </view>
-  </view>
-  <view class="modal-footer">
+</view>
+<view class="modal-footer">
     <view class="btn-cancel" bindtap="goHome" data-status="cancel">返回首页</view>
     <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">
-    <button open-type='share' bindtap='hideModal'>分享给好友</button>
+        <button open-type='share' bindtap='hideModal'>分享给好友</button>
     </view>
-  </view>
+</view>
 </view>
