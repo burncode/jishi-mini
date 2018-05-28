@@ -1,5 +1,49 @@
 // pages/comment/comment.js
 Page({
+    onSubmit: function (e) {
+
+        var This = this;
+
+        var data = e.detail.value;
+        wx.request({
+            url: getApp().globalData.add_comment.url, //仅为示例，并非真实的接口地址
+            method: getApp().globalData.add_comment.method,
+            data: data,
+            header: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + getApp().globalData._token
+            },
+            success: function (res) {
+                if (res.statusCode === 200) {
+                    This.submit();
+                    // wx.showModal({
+                    //     title: '提示',
+                    //     content: res.data.message
+                    // })
+                } else if (res.statusCode === 422) {
+                    var obj = res.data
+                    This.setData({
+                        disabled: false
+                    });
+                    wx.showModal({
+                        title: '提示',
+                        content: res.data.errors[Object.keys(res.data.errors)[0]][0]
+                    });
+                } else {
+                    wx.showModal({
+                        title: '提示',
+                        content: res.data
+                    })
+                }
+            },
+            error: function () {
+                wx.showModal({
+                    title: '提示',
+                    content: '提交失败'
+                })
+            }
+        })
+    },
     goHome: function () {
         wx.switchTab({
             url: '/pages/index/index',
@@ -29,6 +73,7 @@ Page({
     },
     submit: function () {
         //提交到后台
+        console.log(this.data);
 
 
         this.showDialogBtn()

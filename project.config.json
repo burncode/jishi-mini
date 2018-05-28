@@ -153,6 +153,12 @@
 					"name": "测评报告",
 					"pathName": "pages/report/report",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评论",
+					"pathName": "pages/comment/comment",
+					"query": ""
 				}
 			]
 		}
