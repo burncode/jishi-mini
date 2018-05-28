@@ -1,14 +1,18 @@
 const app = getApp()
 Page({
   confirm: function () {
-
     this.setData({
       hidden: true
     });
     wx.switchTab({
-      url: app.globalData.timeOutUrl
-    })
-  
+      url: app.globalData.timeOutUrl,
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      },
+    });
+
 
   },
   startTimer: function () {
@@ -17,7 +21,6 @@ Page({
       var seconds = that.data.seconds
       seconds--
       if (seconds <= 0) {
-        that.timeOut()
         clearInterval(timer)
         that.setData({
           hidden: false
@@ -30,27 +33,22 @@ Page({
       })
     }, 1000)
   },
-  timeOut: function () {
 
-  },
   displayButton: function () {
     if (this.data.progress.current_no >= app.globalData.questionBNumber) {
       var button_name = '提交答案'
       var bindfunction = 'submit'
+      this.setData({
+        button_name: button_name,
+        bindfunction: bindfunction,
+      })
     } else {
-      // var button_name = '下一题'
-      // var bindfunction = 'nextQuestion'
+
     }
-    this.setData({
-      button_name: button_name,
-      bindfunction: bindfunction,
-    })
+    
 
   },
   radioChange: function (e) {
-    // this.setData({
-    //   selected: true,
-    // })
     var b_questions = wx.getStorageSync('b_questions')
     var selected = e.detail.value
     var category_id = wx.getStorageSync('category_id')
@@ -64,7 +62,7 @@ Page({
       current_key: this.data.current_key,
     }
     this.sendAnswer(answer)
-    
+
   },
   sendAnswer: function (answer) {
     var that = this;
@@ -93,8 +91,6 @@ Page({
         selected: selected,
       })
     } else {
-      // var button_name = '下一题'
-      // var bindfunction = 'nextQuestion'
       var current_key = this.data.current_key + 1
       var progress = this.data.progress
       progress.current_no += 1
@@ -127,7 +123,7 @@ Page({
       method: 'POST',
       data: data,
       success: function (msg) {
-      
+
       },
     })
     wx.navigateTo({
@@ -168,11 +164,13 @@ Page({
     var history = wx.getStorageSync('history')
     if (history.category_id == 2) {
       var current_key = history.current_key;
+      //答题中断，返回答题
+      current_key += 1;
     } else {
       var current_key = 0;
 
     }
-   
+
     var current_no = current_key + 1
     var question_count = b_questions.data.length
     var progress = this.data.progress;

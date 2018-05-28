@@ -2,12 +2,16 @@ const app = getApp()
 Page({
 
   confirm: function () {
-
     this.setData({
       hidden: true
     });
     wx.switchTab({
-      url: app.globalData.timeOutUrl
+      url: app.globalData.timeOutUrl,
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      }
     })
 
   },
@@ -17,7 +21,6 @@ Page({
       var seconds = that.data.seconds
       seconds--
       if (seconds <= 0) {
-        that.timeOut()
         clearInterval(timer)
         that.setData({
           hidden: false
@@ -30,14 +33,12 @@ Page({
       })
     }, 1000)
   },
-  timeOut: function () {
 
-  },
   displayButton: function () {
     if (this.data.progress.current_no >= 28) {
       var button_name = '提交答案'
       var bindfunction = 'submit'
-    
+
       this.setData({
         button_name: button_name,
         bindfunction: bindfunction,
@@ -64,9 +65,6 @@ Page({
 
   },
   radioChange: function (e) {
-    // this.setData({
-    //   selected: true,
-    // })
     var c_questions = wx.getStorageSync('c_questions')
     var selected = e.detail.value
     var category_id = wx.getStorageSync('category_id')
@@ -79,9 +77,10 @@ Page({
       selected: selected,
       current_key: this.data.current_key,
     }
+
     this.sendAnswer(answer)
-    
   },
+
   sendAnswer: function (answer) {
     var that = this;
     wx.request({
@@ -93,15 +92,17 @@ Page({
       },
     })
   },
+
   nextQuestion: function (event) {
     this.setData({
       seconds: app.globalData.questionCSeconds,
-     // selected: false,
+      // selected: false,
     })
-    
+
     this.displayButton(this.data.current_key)
 
   },
+
   submit: function (event) {
     clearInterval(this.data.timer)
     var data = {
@@ -110,17 +111,17 @@ Page({
     }
     //弹出等待提示
     wx.showToast({
-      title: '报告正在努力生成中。。。',
+      title: '报告生成中',
       icon: 'loading',
       duration: 30000,
       mask: true
-
     })
 
     //隐藏提交按钮
     this.setData({
       selected: false
     });
+
     wx.request({
       url: app.globalData.host + '/grade',
       method: 'POST',
@@ -128,15 +129,15 @@ Page({
       success: function (msg) {
         wx.switchTab({
           url: '/pages/order/index',
-          success: function (e) { 
-              var page = getCurrentPages().pop();
-              if (page == undefined || page == null) return; 
-                  page.onLoad(); 
-          } 
-    })
+          success: function (e) {
+            var page = getCurrentPages().pop();
+            if (page == undefined || page == null) return;
+            page.onLoad();
+          }
+        })
       },
     })
-    
+
 
   },
   /**
@@ -162,16 +163,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('页面加载开始');
     this.startTimer()
     var c_questions = wx.getStorageSync('c_questions')
     var history = wx.getStorageSync('history')
+    console.log('从本地缓存中获取历史记录：');
+    console.log(history);
 
     if (history.category_id == 3) {
       var current_key = history.current_key;
-      //$this->displayButton();
+      //答题中断，返回答题
+      current_key += 1;
+
     } else {
       var current_key = 0;
-
     }
 
     var current_no = current_key + 1
@@ -195,7 +200,7 @@ Page({
       ,
     })
 
-  
+
   },
 
   /**

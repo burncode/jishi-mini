@@ -160,6 +160,7 @@ Page({
     },
 
     goEvaluate: function () {
+      console.log('点击继续测评或者立即测评');
         //获取历史答题状态
         wx.request({
             url: app.globalData.host + '/history',
@@ -249,34 +250,6 @@ Page({
         })
     },
 
-
-    goCoupon: function () {
-        wx.navigateTo({
-            url: '/pages/coupon/send',
-        })
-    }
-    ,
-
-    copy: function (e) {
-        wx.setClipboardData({
-            data: e.currentTarget.dataset.orderNo,
-            success: function (res) {
-                wx.showToast({
-                    title: '复制成功',
-                    icon: 'succes',
-                    duration: 1000,
-                    mask: true
-                })
-                wx.getClipboardData({
-                    success: function (res) {
-
-                    }
-                })
-            }
-        })
-    }
-    ,
-
     goCoupon: function () {
         wx.navigateTo({
             url: '/pages/coupon/send',
@@ -319,6 +292,8 @@ Page({
             },
             success: function (res) {
                 var history = res.data.data;
+                console.log('获取答题历史成功：');
+                console.log(history);
                 if (history) {
                     var subject_status = history.subject_status
                     that.setData({

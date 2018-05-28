@@ -41,7 +41,7 @@
 </view>
 
 <view wx:if="{{userInfo.id}}" class='order-list'>
-<block wx:for="{{orders}}">
+<block wx:for="{{orders}}" wx:key='key'>
     <view class='order-item'>
         <view class='order-img'>
             <image src='/demo/zhuanjia-001.gif'></image>
