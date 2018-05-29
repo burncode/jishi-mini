@@ -12,6 +12,13 @@ Page({
     zhifu:function(){
         let This = this;
         console.log(This.data);
+        if (!getApp().globalData.userInfo.open_id){
+            wx.showModal({
+                title: '提示',
+                content: '请先登录！'
+            })
+            return;
+        }
         wx.request({
             url: getApp().globalData.wechat_pay.createWechatOrder.url,
             method: getApp().globalData.wechat_pay.createWechatOrder.method,
