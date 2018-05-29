@@ -73,3 +73,41 @@ button::after {
 .clear-both {
   overflow: hidden;
 }
+
+.options text.block {
+  width: 520rpx;
+  height: 35rpx;
+
+}
+.options radio {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 25rpx;
+}
+view {
+  overflow: hidden;
+}
+/*radio默认样式重置*/
+/* radio {
+  width: 33rpx;
+  height: 33rpx;
+  border: 4rpx solid #00479d;
+  border-radius: 50%;
+background-color: #00479d;
+}
+ 
+radio .wx-radio-input {
+
+background-color: #fff;
+
+}
+ 
+radio .wx-radio-input.wx-radio-input-checked {
+background-color: green;
+
+}
+ 
+radio .wx-radio-input.wx-radio-input-checked::before {
+     background-color: yellow;
+} */
+/*radio默认样式重置*/
