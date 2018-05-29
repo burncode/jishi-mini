@@ -91,6 +91,10 @@ App({
             url: host + '/users_update',
             method: 'post'
         },
+        add_comment: {
+            url: host + '/comments',
+            method: 'post'
+        },
         wechat_pay:{
             createWechatOrder:{
                 url: host + '/wechat_pay/createWechatOrder',
