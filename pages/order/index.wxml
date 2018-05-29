@@ -65,13 +65,11 @@
         <view class='copy-no' bindtap='copy' data-order-no='{{item.orderNo}}'>复制</view>
     </view>
     <view class='order-buttons'>
-        <text wx:if="{{ subjectStatus == 0}}" class='now active' bindtap='goEvaluate'>立即测评</text>
-        <text wx:if="{{ subjectStatus == 1}}" class='now active' bindtap='goEvaluate'>继续测评</text>
-        <text wx:if="{{ subjectStatus == 2}}" class='now active' bindtap='goReport'>查看报告</text>
-    </view>
-    <view class='order-buttons'>
-        <text class='now active' bindtap='goComment' data-id="{{item.id}}">立即评价</text>
-        <text class='continue' bindtap=''>查看报告</text>
+        <text wx:if="{{ item.subject_status == 0}}" class='now active' bindtap='toUsersDetail' data-order-no='{{item.orderNo}}'>立即测评</text>
+        <text wx:if="{{ item.subject_status == 1}}" class='now active' bindtap='goEvaluate' data-order-no='{{item.orderNo}}'>继续测评</text>
+        
+        <text wx:if="{{ item.subject_status == 2}}" class='now active' bindtap='goReport' data-order-no='{{item.orderNo}}'>查看报告</text>
+        <text wx:if="{{ item.subject_status == 2}}" class='now' bindtap='goComment' data-id="{{item.id}}" data-order-no='{{item.orderNo}}'>立即评价</text>
     </view>
 </block>
 </view>
