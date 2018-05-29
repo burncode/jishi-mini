@@ -76,7 +76,7 @@ button::after {
 
 .options text.block {
   width: 520rpx;
-  height: 35rpx;
+  height: auto;
 
 }
 .options radio {
