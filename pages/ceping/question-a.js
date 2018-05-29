@@ -6,7 +6,12 @@ Page({
       hidden: true
     });
     wx.switchTab({
-      url: app.globalData.timeOutUrl
+      url: app.globalData.timeOutUrl,
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      }
     })
 
 
@@ -17,7 +22,6 @@ Page({
       var seconds = that.data.seconds
       seconds--
       if (seconds <= 0) {
-        that.timeOut()
         clearInterval(timer)
         that.setData({
           hidden: false
@@ -30,9 +34,7 @@ Page({
       })
     }, 1000)
   },
-  timeOut: function () {
 
-  },
   displayButton: function () {
     if (this.data.progress.current_no >= 60) {
       var button_name = '提交答案'
@@ -44,8 +46,7 @@ Page({
         selected: true,
       })
     } else {
-      // var button_name = '下一题'
-      // var bindfunction = 'nextQuestion'
+
       var current_key = this.data.current_key + 1
       var progress = this.data.progress
       progress.current_no += 1
@@ -63,10 +64,6 @@ Page({
 
   },
   radioChange: function (e) {
-    // this.setData({
-    //   selected:true,
-    // })
-
     var a_questions = wx.getStorageSync('a_questions')
     var selected = e.detail.value
     var category_id = wx.getStorageSync('category_id')
@@ -80,15 +77,15 @@ Page({
       current_key: this.data.current_key,
     }
     this.sendAnswer(answer)
-    this.nextQuestion()
   },
   sendAnswer: function (answer) {
+    var that = this;
     wx.request({
       url: app.globalData.host + '/answer',
       method: 'POST',
       data: answer,
       success: function (msg) {
-
+        that.nextQuestion()
       },
     })
   },
@@ -151,11 +148,10 @@ Page({
     var history = wx.getStorageSync('history')
     if (history.category_id == 1) {
       var current_key = history.current_key;
-     //$this->displayButton();
+      //答题中断，返回答题
+      current_key += 1;
     } else {
       var current_key = 0;
-
-
     }
 
     var current_no = current_key + 1
@@ -173,7 +169,7 @@ Page({
       bindfunction: bindfunction
     })
 
-    
+
   },
 
   /**

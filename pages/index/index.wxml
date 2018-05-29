@@ -1,68 +1,74 @@
 <view>
-    <swiper indicator-dots="{{indicatorDots}}"
-            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots='true'
-            autoplay='true'>
-        <block wx:for="{{banners}}">
-            <swiper-item data-id="{{item.id}}" bindtap="toNewsDetail">
-                <image src="{{item.banner}}" class="slide-image" width="355" height="150"/>
-            </swiper-item>
-        </block>
-    </swiper>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots='true' autoplay='true'>
+    <block wx:for="{{banners}}" wx:key='banner-key'>
+      <swiper-item data-id="{{item.id}}" bindtap="toNewsDetail">
+        <image src="{{item.banner}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
 
-    <view wx:if="{{rand_order}}" class='bobao'>
-        <view class='bobao-img'>
-            <image src='/images/icon_ceping.png'/>
-            <text>播报</text>
-        </view>
-        <view class='bobao-content'>{{rand_order}}</view>
+  <view wx:if="{{rand_order}}" class='bobao'>
+    <view class='bobao-img'>
+      <image src='/images/icon_ceping.png' />
+      <text>播报</text>
     </view>
+    <view class='bobao-content'>{{rand_order}}</view>
+  </view>
 
+  <view class='bg-white'>
     <view class='h1'>专家专栏</view>
-    <view wx:for="{{news}}" class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
-        <view class='zhuanjia-img'>
-            <image src='{{item.banner}}'/>
-        </view>
-        <view class='zhuanjia-content'>
-            <view class='h2'>{{item.title}}</view>
-            <view class='p'>{{item.brief}}</view>
-            <view class='hits'>{{item.read_num}}人阅读</view>
-        </view>
+    <view wx:for="{{news}}" wx:key='news-key' class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
+      <view class='zhuanjia-img'>
+        <image src='{{item.banner}}' />
+      </view>
+      <view class='zhuanjia-content'>
+        <view class='h2'>{{item.title}}</view>
+        <view class='p'>{{item.brief}}</view>
+        <view class='hits'>{{item.read_num}}人阅读</view>
+      </view>
     </view>
 
+  </view>
+
+  <view class='bg-white'>
     <view wx:if="{{goods.length}}" class='h1'>十年，我们只做这一款产品</view>
-    <view wx:for="{{goods}}" data-id="{{item.id}}" bindtap="toGoodsDetail">
-        <view class='block'>
-            <view class='zhuanjia-img'>
-                <image src='{{item.goods_image}}'/>
-            </view>
-            <view class='zhuanjia-content'>
-                <view class='h2'>{{item.goods_name}}</view>
-                <view class='p'>{{item.describe}}</view>
-                <view class='hits'>10万+阅读</view>
-            </view>
-        </view>
-
-        <view wx:if="{{item.price_level==1}}" class='huodong'>
-            <text class='price'>￥ {{item.price}}</text>
-        </view>
-        <view wx:if="{{item.price_level==2}}" class='huodong'>
-            <text class='price'>免费</text>
-        </view>
-        <view wx:if="{{item.price_level==3}}" class='huodong'>
-            <text class='price'>￥ {{item.activity_price}}</text>
-            <text class='del-price'>￥{{item.price}}</text>
-            <text class='price-content'>活动结束恢复原价</text>
-        </view>
-    </view>
-
-    <view class='h1'>用数据说话</view>
-    <view wx:for="{{comments}}" class='block'>
+    <view wx:for="{{goods}}" wx:key="goods-key" data-id="{{item.id}}" bindtap="toGoodsDetail">
+      <view class='block'>
         <view class='zhuanjia-img'>
-            <image src='{{item.user_head}}'/>
+          <image src='{{item.goods_image}}' />
         </view>
         <view class='zhuanjia-content'>
-            <view class='p'>{{item.content}}</view>
-            <view class='date'>{{item.updated_at}}</view>
+          <view class='h2'>{{item.goods_name}}</view>
+          <view class='p'>{{item.describe}}</view>
+          <view class='hits'>10万+阅读</view>
         </view>
+      </view>
+
+      <view wx:if="{{item.price_level==1}}" class='huodong'>
+        <text class='price'>￥ {{item.price}}</text>
+      </view>
+      <view wx:if="{{item.price_level==2}}" class='huodong'>
+        <text class='price'>免费</text>
+      </view>
+      <view wx:if="{{item.price_level==3}}" class='huodong'>
+        <text class='price'>￥ {{item.activity_price}}</text>
+        <text class='del-price'>￥{{item.price}}</text>
+        <text class='price-content'>活动结束恢复原价</text>
+      </view>
     </view>
+  </view>
+
+  <view class='bg-white'>
+    <view class='h1'>用数据说话</view>
+    <view wx:for="{{comments}}" wx:key="comment-key" class='block'>
+      <view class='zhuanjia-img'>
+        <image class='profile' src='{{item.user_head}}' />
+      </view>
+      <view class='zhuanjia-content'>
+        <view class='p'>{{item.content}}</view>
+        <view class='date'>{{item.updated_at}}</view>
+      </view>
+    </view>
+  </view>
+
 </view>

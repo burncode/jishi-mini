@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      reportUrl: app.globalData.host + '/report/' + app.globalData.userId
+      reportUrl: app.globalData.host + '/report/' + app.globalData.userId+'?order_number='+options.order_number
     })
   },
 

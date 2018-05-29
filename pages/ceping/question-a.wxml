@@ -11,9 +11,11 @@
 <view>
   <radio-group class="radio-group" bindchange="radioChange">
     <label class="radio" wx:for="{{items}}" wx:key="key">
-      <view>
-        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-      </view>
+  <view class='options'>
+  <text class='block left'>{{item.value}}</text>
+   <radio class='block right' value="{{item.name}}" checked="{{item.checked}}"/>     
+  </view>
+
 
     </label>
   </radio-group>

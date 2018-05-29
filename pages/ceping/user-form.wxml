@@ -1,36 +1,58 @@
-<!--pages/ceping/user-form.wxml-->
-<view class='h1 center'>
-    <text class='point'>·</text>
-    <text class='title blue bold'>请填写相关个人信息</text>
-    <text class='point'>·</text>
+
+<view class='h1 center zc'>
+  <text class='point'>·</text>
+  <text class='title blue bold'>请填写相关个人信息</text>
+  <text class='point'>·</text>
 </view>
 
 <form bindsubmit="onSubmit" report-submit='true'>
-<view>
+  <view class='zc'>
     <text class='block'>姓名</text>
-    <input placeholder="请输入您的姓名" name="name" value="{{name}}"/>
-</view>
-<text>\n</text>
-<view class='sex'>
+    <input placeholder="请输入您的姓名" name="name" value="{{name}}" />
+  </view>
+  <text>\n</text>
+  <view class='zc sex'>
     <text class='block'>性别</text>
     <radio-group class="radio-group" bindchange="radioChange">
-        <label class="radio">
-            <radio value="1" wx:if="sex==1" checked/>男
-            <radio value="2" wx:if="sex==2" checked/>女
-        </label>
+      <label class="radio">
+        <radio value="1" checked="{{ sex==1?'true':''}}" />男
+        <radio value="2" checked="{{ sex==2?'true':''}}" />女
+      </label>
     </radio-group>
-</view>
-<text>\n</text>
-<text>\n</text>
-<view>
+  </view>
+  <text>\n</text>
+  <view class='zc'>
     <text class='block'>手机号</text>
-    <input placeholder="请输入您的手机号" name="tel" value="{{tel}}"/>
-</view>
-<text>\n</text>
-<view>
+    <input placeholder="请输入您的手机号" name="tel" value="{{tel}}" />
+  </view>
+  <text>\n</text>
+  <view class='zc'>
     <text class='block'>地址</text>
-    <input placeholder="请输入您的具体地址（到市）" name="address" value="{{address}}"/>
-</view>
-<text>\n</text>
-<button formType="submit">马上开始</button>
+    <input bindtap="showDistpicker" placeholder="请选择所在地区" name="address" value="{{address}}" />
+  </view>
+
+  <text>\n</text>
+  <button class='zc' formType="submit">马上开始</button>
 </form>
+
+<view class="distpicker" hidden="{{showDistpicker ? '' : 'true'}}">
+  <view class="distpicker-btn">
+    <view class="distpicker-cancel-btn" bindtap="distpickerCancel">取消</view>
+    <view class="distpicker-sure-btn" bindtap="distpickerSure">确定</view>
+  </view>
+  <picker-view indicator-style="height: 40px;" class="distpicker-content" value="{{value}}" bindchange="changeArea">
+    <!-- 省 -->
+    <picker-view-column>
+      <view wx:for="{{provinceName}}" wx:key="province" class="area-item">{{item}}</view>
+    </picker-view-column>
+    <!-- 市 -->
+    <picker-view-column>
+      <view wx:for="{{cityName}}" wx:key="city" class="area-item">{{item}}</view>
+    </picker-view-column>
+    <!-- 区 -->
+    <picker-view-column>
+      <view wx:for="{{districtName}}" wx:key="district" class="area-item">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+<view class="mask" catchtap="distpickerCancel" hidden="{{!showDistpicker}}"></view>

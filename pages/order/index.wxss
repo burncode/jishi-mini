@@ -143,6 +143,7 @@ page {
 .order-content {
   float: left;
   width: 430rpx;
+  margin-top: 35rpx;
 }
 
 .order-content .h1 {

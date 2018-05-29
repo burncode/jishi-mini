@@ -2,6 +2,7 @@
 // const host = 'https://admin.gq1994.top/api'
 // const host = 'http://192.168.0.7/api'
 const host = 'https://api.jishiceping.com/api'
+//const host = 'http://localhost:8000/api'
 App({
     onLaunch: function () {
         // 展示本地存储能力
@@ -111,7 +112,7 @@ App({
         questionBNumber: 150,
         questionCNumber: 28,
         questionASeconds: 15,
-        questionBSeconds: 15,
+        questionBSeconds: 1500,
         questionCSeconds: 15,
         timeOutUrl: "/pages/order/index",//答题中断跳转地址
     }
