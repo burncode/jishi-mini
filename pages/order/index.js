@@ -142,9 +142,10 @@ Page({
             }
         });
     },
-    goReport: function () {
+    goReport: function (e) {
+      var order_number = e.currentTarget.dataset.orderNo;
         wx.navigateTo({
-            url: '/pages/report/report',
+            url: '/pages/report/report?order_number='+order_number,
         })
     },
 
