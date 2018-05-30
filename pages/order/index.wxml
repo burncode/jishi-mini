@@ -72,7 +72,7 @@
         
         <text wx:if="{{ item.subject_status == 2}}" class='now active' bindtap='goReport' data-order-no='{{item.orderNo}}'>查看报告</text>
         <text wx:if="{{ item.subject_status == 2}}" class='now' bindtap='goComment' data-id="{{item.id}}" data-order-no='{{item.orderNo}}'>立即评价</text>
-        <view>{{ item.last }}</view>
+        <view wx:if="{{ item.subject_status == 1}}" >{{ item.last }}</view>
     </view>
 </block>
 </view>

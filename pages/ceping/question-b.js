@@ -60,6 +60,7 @@ Page({
       question_id: question_id,
       selected: selected,
       current_key: this.data.current_key,
+      order_number: wx.getStorageSync('order_number'),
     }
     this.sendAnswer(answer)
 
@@ -116,8 +117,9 @@ Page({
     clearInterval(this.data.timer)
     var data = {
       member_id: app.globalData.userId,
-      category_id: wx.getStorageSync('category_id')
-    }
+      category_id: wx.getStorageSync('category_id'),
+      order_number: wx.getStorageSync('order_number'),
+    };
     wx.request({
       url: app.globalData.host + '/grade',
       method: 'POST',

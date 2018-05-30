@@ -69,6 +69,7 @@ Page({
     var selected = e.detail.value
     var category_id = wx.getStorageSync('category_id')
     var question_id = c_questions.data[this.data.current_key].id
+    var order_number = wx.getStorageSync('order_number');
     var answer = {
       member_id: app.globalData.userId,
       subject_id: app.globalData.subjectId,
@@ -76,6 +77,7 @@ Page({
       question_id: question_id,
       selected: selected,
       current_key: this.data.current_key,
+      order_number: order_number,
     }
 
     this.sendAnswer(answer)
@@ -107,7 +109,8 @@ Page({
     clearInterval(this.data.timer)
     var data = {
       member_id: app.globalData.userId,
-      category_id: wx.getStorageSync('category_id')
+      category_id: wx.getStorageSync('category_id'),
+      order_number: wx.getStorageSync('order_number'),
     }
     //弹出等待提示
     wx.showToast({
