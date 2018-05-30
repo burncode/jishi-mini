@@ -13,7 +13,7 @@ Page({
         orders: [],
     },
     toMyCoupons: function () {
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/coupon/index'
         })
     },
@@ -24,7 +24,7 @@ Page({
       wx.setStorageSync('order_number', order_number);
       console.log('订单号：'+order_number);
 
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/ceping/user-form',
         });
     },
@@ -43,7 +43,7 @@ Page({
         })
     },
     goComment: (data) => {
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/comment/comment?id=' + data.currentTarget.dataset.id,
         });
     },
@@ -144,7 +144,7 @@ Page({
     },
     goReport: function (e) {
       var order_number = e.currentTarget.dataset.orderNo;
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/report/report?order_number='+order_number,
         })
     },
@@ -178,14 +178,14 @@ Page({
                                 method: 'POST',
                                 success: function (res) {
                                     wx.setStorageSync('a_questions', res.data)
-                                    wx.navigateTo({
+                                    wx.redirectTo({
                                         url: '/pages/ceping/question-a'
                                     })
                                 }
                             })
 
                         } else {
-                            wx.navigateTo({
+                            wx.redirectTo({
                                 url: '/pages/ceping/yindao-c'
                             })
 
@@ -201,14 +201,14 @@ Page({
                                 method: 'POST',
                                 success: function (res) {
                                     wx.setStorageSync('b_questions', res.data)
-                                    wx.navigateTo({
+                                    wx.redirectTo({
                                         url: '/pages/ceping/question-b'
                                     })
                                 }
                             })
 
                         } else {
-                            wx.navigateTo({
+                            wx.redirectTo({
                                 url: '/pages/ceping/yindao-a'
                             })
 
@@ -223,7 +223,7 @@ Page({
                                 method: 'POST',
                                 success: function (res) {
                                     wx.setStorageSync('c_questions', res.data)
-                                    wx.navigateTo({
+                                    wx.redirectTo({
                                         url: '/pages/ceping/question-c'
                                     })
                                 }
@@ -234,7 +234,7 @@ Page({
                         }
                     }
                 } else {
-                    wx.navigateTo({
+                    wx.redirectTo({
                         url: '/pages/ceping/yindao-b'
                     })
 
@@ -244,7 +244,7 @@ Page({
     },
 
     goCoupon: function () {
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/coupon/send',
         })
     },

@@ -146,7 +146,7 @@ App({
         questionBNumber: 150,
         questionCNumber: 28,
         questionASeconds: 15,
-        questionBSeconds: 1500,
+        questionBSeconds: 15,
         questionCSeconds: 15,
         timeOutUrl: "/pages/order/index",//答题中断跳转地址
     }

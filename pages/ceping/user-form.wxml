@@ -28,7 +28,7 @@
   <text>\n</text>
   <view class='zc'>
     <text class='block'>地址</text>
-    <input bindtap="showDistpicker" placeholder="请选择所在地区" name="address" value="{{address}}" />
+    <input disabled='true' bindtap="showDistpicker" placeholder="请选择所在地区" name="address" value="{{address}}" />
   </view>
 
   <text>\n</text>

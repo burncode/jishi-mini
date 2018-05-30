@@ -110,7 +110,7 @@ Page({
 
       },
     })
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/ceping/yindao-c'
     })
   },
