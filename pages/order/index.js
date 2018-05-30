@@ -53,6 +53,7 @@ Page({
         wx.login({
             success: function (res) {
                 var code = res.code;
+                console.log(code);
                 if (res.code) {
                     wx.getUserInfo({
                         withCredentials: true,
