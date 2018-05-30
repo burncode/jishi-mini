@@ -5,7 +5,6 @@ Page({
      * 页面的初始数据
      */
     data: {},
-
     /**
      * 生命周期函数--监听页面加载
      */
@@ -19,9 +18,11 @@ Page({
                 'Accept': 'application/json',
             },
             success (res) {
-                This.setData(res.data.data)
+                res.data.data.content= getApp().convertHtmlToText(res.data.data.content);
+                This.setData(res.data.data);
+
             }
-        })
+        });
     },
 
     /**
