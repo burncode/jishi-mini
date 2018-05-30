@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   startB: function (event) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/ceping/question-b'
     })
 
@@ -49,11 +49,11 @@ Page({
           if (history.category_id == 2) {
 
             if (question_no < app.globalData.questionBNumber) {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/ceping/question-b'
               })
             } else {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/ceping/yindao-a'
               })
 
