@@ -159,6 +159,12 @@
 					"name": "评论",
 					"pathName": "pages/comment/comment",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/order/index",
+					"query": ""
 				}
 			]
 		}
