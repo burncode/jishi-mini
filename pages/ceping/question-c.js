@@ -1,6 +1,5 @@
 const app = getApp()
 Page({
-
   confirm: function () {
     this.setData({
       hidden: true
@@ -18,6 +17,7 @@ Page({
   startTimer: function () {
     var that = this
     var timer = setInterval(function () {
+      var progress = that.data.progress;
       var seconds = that.data.seconds
       seconds--
       if (seconds <= 0) {
@@ -27,8 +27,14 @@ Page({
         });
         return false
       }
+      if (seconds < 10) {
+        progress.leading_zero = 0;
+      } else {
+        progress.leading_zero = '';
+      }
+      progress.seconds = seconds;
       that.setData({
-        seconds: seconds,
+        progress: progress,
         timer: timer,
       })
     }, 1000)
@@ -50,9 +56,12 @@ Page({
       var progress = this.data.progress
       progress.current_no += 1
       progress.percent = progress.current_no / progress.question_count * 100;
+      progress.seconds = this.data.seconds;
+      progress.leading_zero = '';
       this.setData({
         progress: progress,
         current_key: current_key,
+        selected_key: null,
         items: [
           { name: '1', value: c_questions.data[current_key].sub_questions[0].title },
           { name: '2', value: c_questions.data[current_key].sub_questions[1].title },
@@ -70,6 +79,10 @@ Page({
     var category_id = wx.getStorageSync('category_id')
     var question_id = c_questions.data[this.data.current_key].id
     var order_number = wx.getStorageSync('order_number');
+    var selected_key = selected - 1;
+    this.setData({
+      selected_key: selected_key,
+    });
     var answer = {
       member_id: app.globalData.userId,
       subject_id: app.globalData.subjectId,
@@ -90,7 +103,9 @@ Page({
       method: 'POST',
       data: answer,
       success: function (msg) {
-        that.nextQuestion()
+        setTimeout(function () {
+          that.nextQuestion();
+        }, 300)
       },
     })
   },
@@ -98,7 +113,6 @@ Page({
   nextQuestion: function (event) {
     this.setData({
       seconds: app.globalData.questionCSeconds,
-      // selected: false,
     })
 
     this.displayButton(this.data.current_key)
@@ -158,6 +172,7 @@ Page({
       current_no: null,
       question_count: null,
       percent: null,
+      leading_zero: '',
 
     },
   },
@@ -167,7 +182,7 @@ Page({
    */
   onLoad: function (options) {
     console.log('页面加载开始');
-    this.startTimer()
+    
     var c_questions = wx.getStorageSync('c_questions')
     var history = wx.getStorageSync('history')
     console.log('从本地缓存中获取历史记录：');
@@ -188,7 +203,12 @@ Page({
     progress.percent = current_no / question_count * 100;
     progress.current_no = current_no
     progress.question_count = question_count
-
+    progress.seconds = this.data.seconds;
+    if (progress.seconds < 10) {
+      progress.leading_zero = 0;
+    } else {
+      progress.leading_zero = '';
+    }
     var bindfunction = 'nextQuestion'
     this.setData({
       progress: progress,
@@ -203,7 +223,7 @@ Page({
       ,
     })
 
-
+    this.startTimer()
   },
 
   /**

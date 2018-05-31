@@ -75,11 +75,12 @@ button::after {
 }
 
 .options text.block {
-  width: 520rpx;
+  width: 500rpx;
   height: auto;
 
 }
 .options radio {
+  display: none;
   width: 35rpx;
   height: 35rpx;
   margin-right: 25rpx;
@@ -87,27 +88,24 @@ button::after {
 view {
   overflow: hidden;
 }
-/*radio默认样式重置*/
-/* radio {
-  width: 33rpx;
-  height: 33rpx;
-  border: 4rpx solid #00479d;
-  border-radius: 50%;
-background-color: #00479d;
-}
- 
-radio .wx-radio-input {
 
-background-color: #fff;
-
+.options {
+  width: 600rpx;
+  height: auto;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 30rpx;
+  font-size: 34rpx;
+  line-height: 50rpx;
 }
- 
-radio .wx-radio-input.wx-radio-input-checked {
-background-color: green;
+.option-ckecked {
+
+  background-color: #00479d;
+  border-radius: 10rpx;
+  color: white;
 
 }
- 
-radio .wx-radio-input.wx-radio-input-checked::before {
-     background-color: yellow;
-} */
-/*radio默认样式重置*/
+
+ .timer {
+   float: right;
+} 
