@@ -14,34 +14,8 @@
     </view>
     <view class='bobao-content'>{{rand_order}}</view>
   </view>
-
-  <view class='bg-white'>
-    <view class='h1'>专家专栏</view>
-    <view wx:for="{{news}}" wx:key='news-key' class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
-      <view class='zhuanjia-img'>
-        <image src='{{item.banner}}' />
-      </view>
-      <view class='zhuanjia-content'>
-        <view class='h2'>{{item.title}}</view>
-        <view class='p'>{{item.keyword}}</view>
-        <view class='hits'>{{item.read_num}}人阅读</view>
-      </view>
-    </view>
-    <view wx:for="{{news}}" wx:key='news-key' class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
-      <view class='zhuanjia-img'>
-        <image src='{{item.banner}}' />
-      </view>
-      <view class='zhuanjia-content'>
-        <view class='h2'>{{item.title}}</view>
-        <view class='p'>{{item.keyword}}</view>
-        <view class='hits'>{{item.read_num}}人阅读</view>
-      </view>
-    </view>
-
-  </view>
-
-  <view class='bg-white'>
-    <view wx:if="{{goods.length}}" class='h1'>十年，我们只做这一款产品</view>
+<view class='bg-white'>
+    <view wx:if="{{goods.length}}" class='h1'>十二年，我们只做这一款产品</view>
     <view wx:for="{{goods}}" wx:key="goods-key" data-id="{{item.id}}" bindtap="toGoodsDetail">
       <view class='block'>
         <view class='zhuanjia-img'>
@@ -64,6 +38,29 @@
         <text class='price'>￥ {{item.activity_price}}</text>
         <text class='del-price'>￥{{item.price}}</text>
         <text class='price-content'>活动结束恢复原价</text>
+      </view>
+    </view>
+  </view>
+  <view class='bg-white'>
+    <view class='h1'>专家专栏</view>
+    <view wx:for="{{news}}" wx:key='news-key' class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
+      <view class='zhuanjia-img'>
+        <image src='{{item.banner}}' />
+      </view>
+      <view class='zhuanjia-content'>
+        <view class='h2'>{{item.title}}</view>
+        <view class='p'>{{item.keyword}}</view>
+        <view class='hits'>{{item.read_num}}人阅读</view>
+      </view>
+    </view>
+    <view wx:for="{{news}}" wx:key='news-key' class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
+      <view class='zhuanjia-img'>
+        <image src='{{item.banner}}' />
+      </view>
+      <view class='zhuanjia-content'>
+        <view class='h2'>{{item.title}}</view>
+        <view class='p'>{{item.keyword}}</view>
+        <view class='hits'>{{item.read_num}}人阅读</view>
       </view>
     </view>
   </view>

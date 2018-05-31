@@ -100,7 +100,7 @@ swiper image{
   color:  #1A4B97;
 }
 .date {
-  margin-top: 30rpx; 
+  margin-top: 10rpx; 
   font-size: 22rpx;
   color: #b2b2b2;
 
