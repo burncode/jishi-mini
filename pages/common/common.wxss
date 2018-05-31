@@ -90,13 +90,16 @@ view {
 }
 
 .options {
-  width: 600rpx;
+  width: 550rpx;
   height: auto;
   padding-top: 30rpx;
   padding-bottom: 30rpx;
   padding-left: 30rpx;
   font-size: 34rpx;
   line-height: 50rpx;
+  border:#dedede solid 2rpx;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
 }
 .option-ckecked {
 

@@ -18,7 +18,7 @@ Page({
     var that = this
     var timer = setInterval(function () {
       var progress = that.data.progress;
-      var seconds = that.data.seconds
+      var seconds = progress.seconds
       seconds--
       if (seconds <= 0) {
         clearInterval(timer)
@@ -128,7 +128,7 @@ Page({
     }
     //弹出等待提示
     wx.showToast({
-      title: '报告生成中',
+      title: '数据处理中',
       icon: 'loading',
       duration: 30000,
       mask: true
@@ -144,14 +144,20 @@ Page({
       method: 'POST',
       data: data,
       success: function (msg) {
-        wx.switchTab({
-          url: '/pages/order/index',
-          success: function (e) {
-            var page = getCurrentPages().pop();
-            if (page == undefined || page == null) return;
-            page.onLoad();
-          }
+        wx.redirectTo({
+          url: '/pages/letter/letter',
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
         })
+        // wx.switchTab({
+        //   url: '/pages/order/index',
+        //   success: function (e) {
+        //     var page = getCurrentPages().pop();
+        //     if (page == undefined || page == null) return;
+        //     page.onLoad();
+        //   }
+        // })
       },
     })
 

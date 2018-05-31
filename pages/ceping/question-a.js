@@ -20,7 +20,7 @@ Page({
     var that = this
     var timer = setInterval(function () {
       var progress = that.data.progress;
-      var seconds = that.data.seconds
+      var seconds = progress.seconds
       seconds--
       if (seconds <= 0) {
         clearInterval(timer)

@@ -165,6 +165,12 @@
 					"name": "订单列表",
 					"pathName": "pages/order/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "一封信",
+					"pathName": "pages/letter/letter",
+					"query": ""
 				}
 			]
 		}
