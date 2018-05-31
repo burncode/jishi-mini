@@ -14,7 +14,7 @@ Page({
     if (canIGo) {
       var order_number = wx.getStorageSync('order_number');
       console.log(order_number);
-      wx.navigateTo({
+      wx.navigateBack({
         url: '/pages/report/report?order_number=' + order_number,
       })
     } else {
