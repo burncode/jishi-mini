@@ -87,7 +87,7 @@ text.p {
 
 }
 
-text.right {
+view.right {
 
   display: block;
   width: 150rpx;
@@ -96,16 +96,18 @@ text.right {
   border-radius: 10rpx;
 }
 
-.right text {
+.right button {
+  position: static;
   margin:  auto;
-  margin-top: 28rpx;
+  margin-top: 22rpx;
+  background-color: #e64340;
 
   display: block;
-  width: 120rpx;
-  height: 120rpx;
+  width: 150rpx;
+  height: 150rpx;
     text-align: center;
     color: white;
     font-size: 50rpx;
-    line-height: 50rpx;
+    line-height: 55rpx;
     font-weight: bold;
 }

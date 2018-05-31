@@ -38,10 +38,12 @@ Page({
     wx.request({
       url: reportUrl,
       success: function(res){
-        that.setData({
-          canIGo: true,
-        })
-
+        //等五秒再看结果
+        setTimeout(function(){
+          that.setData({
+            canIGo: true,
+          })
+        },5000);
       }
     });
 

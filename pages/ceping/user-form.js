@@ -158,8 +158,10 @@ Page({
     },
     onSubmit: function (e) {
         var This = this;
-
+        var order_number = wx.getStorageSync('order_number');
+        
         var data = e.detail.value;
+        data.order_number = order_number;
         data.sex = This.data.sex;
         wx.request({
             url: getApp().globalData.users_update.url, //仅为示例，并非真实的接口地址
@@ -171,21 +173,22 @@ Page({
             },
             success: function (res) {
                 if (res.statusCode === 200) {
-                    getApp().globalData.userInfo.name = res.data.name;
-                    getApp().globalData.userInfo.tel = res.data.tel;
-                    getApp().globalData.userInfo.address = res.data.address;
-                    getApp().globalData.userInfo.sex = res.data.sex;
-                    wx.showModal({
-                        title: '提示',
-                        content: res.data.message,
-                        success: function(res) {
-                          if (res.confirm) {
-                            console.log('用户点击确定')
-                            This.goEvaluate();
-                          }
+                  This.goEvaluate();
+                    // getApp().globalData.userInfo.name = res.data.name;
+                    // getApp().globalData.userInfo.tel = res.data.tel;
+                    // getApp().globalData.userInfo.address = res.data.address;
+                    // getApp().globalData.userInfo.sex = res.data.sex;
+                    // wx.showModal({
+                    //     title: '提示',
+                    //     content: res.data.message,
+                    //     success: function(res) {
+                    //       if (res.confirm) {
+                    //         console.log('用户点击确定')
+                            
+                    //       }
 
-                        }
-                    })
+                    //     }
+                    // })
                 } else if (res.statusCode === 422) {
                     var obj = res.data
                     This.setData({
@@ -219,7 +222,7 @@ Page({
     },
     goEvaluate: function(e)
   {
-      console.log('点击确认开始测评');
+      console.log('开始测评');
       var order_number = wx.getStorageSync('order_number');
       console.log('获取订单号：' + order_number);
       wx.request({
