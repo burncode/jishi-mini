@@ -24,7 +24,7 @@ Page({
       wx.setStorageSync('order_number', order_number);
       console.log('订单号：'+order_number);
 
-        wx.redirectTo({
+      wx.navigateTo({
             url: '/pages/ceping/user-form',
         });
     },
