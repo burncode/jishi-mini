@@ -8,6 +8,7 @@ Page({
   data: {
     orderNumber:0,
     userId:0,
+    imageUrl: "https://api.jishiceping.com/images/cover.png",
   },
 
   /**9
@@ -71,7 +72,7 @@ Page({
     return {
       title: '分享报告',
       path: '/pages/report/report?user_id='+this.userId+'&order_number='+this.orderNumber,
-      imageUrl: "https://api.jishiceping.com/images/cover.png",
+      imageUrl: this.imageUrl,
       success: (res) => {
         console.log("转发成功", res);
         wx.navigateBack();
