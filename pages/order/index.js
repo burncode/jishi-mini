@@ -145,7 +145,7 @@ Page({
     },
     goReport: function (e) {
       var order_number = e.currentTarget.dataset.orderNo;
-        wx.redirectTo({
+      wx.navigateTo({
             url: '/pages/report/report?order_number='+order_number,
         })
     },
