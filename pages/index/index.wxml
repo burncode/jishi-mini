@@ -27,6 +27,16 @@
         <view class='hits'>{{item.read_num}}人阅读</view>
       </view>
     </view>
+    <view wx:for="{{news}}" wx:key='news-key' class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
+      <view class='zhuanjia-img'>
+        <image src='{{item.banner}}' />
+      </view>
+      <view class='zhuanjia-content'>
+        <view class='h2'>{{item.title}}</view>
+        <view class='p'>{{item.keyword}}</view>
+        <view class='hits'>{{item.read_num}}人阅读</view>
+      </view>
+    </view>
 
   </view>
 
@@ -40,7 +50,7 @@
         <view class='zhuanjia-content'>
           <view class='h2'>{{item.goods_name}}</view>
           <view class='p'>{{item.describe}}</view>
-          <view class='hits'>10万+阅读</view>
+          <view class='hits'><span>10万</span>人已测</view>
         </view>
       </view>
 
@@ -59,9 +69,9 @@
   </view>
 
   <view class='bg-white'>
-    <view class='h1'>用数据说话</view>
-    <view wx:for="{{comments}}" wx:key="comment-key" class='block'>
-      <view class='zhuanjia-img'>
+    <view class='h1 comment-h1'>用数据说话</view>
+    <view wx:for="{{comments}}" wx:key="comment-key" class='comments'>
+      <view class='comments-img'>
         <image class='profile' src='{{item.user_head}}' />
       </view>
       <view class='zhuanjia-content'>
