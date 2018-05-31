@@ -11,9 +11,9 @@
     <text class='tishi2'>22道题目 | 10项专业报告 | 10W+已测试</text>
 </text>
 
-<text class='block right' bindtap="zhifu">
-    <text>立即抢购</text>
-</text>
+<view class='block right' bindtap="zhifu">
+    <button>立即抢购</button>
+</view>
 
 </view>
 <view>
