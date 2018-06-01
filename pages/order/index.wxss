@@ -143,6 +143,7 @@ page {
 .order-content {
   float: left;
   width: 430rpx;
+  margin-top: 35rpx;
 }
 
 .order-content .h1 {
@@ -230,4 +231,16 @@ page {
   background-color: #00479d;
   margin-right: 40rpx;
   color: #fff;
+}
+.order-buttons view {
+  float: right;
+  width: auto;
+  height: 68rpx;
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #00479d;
 }

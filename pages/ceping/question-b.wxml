@@ -3,11 +3,11 @@
 <text>\n</text>
 <view class='option'>
 <view class='harf-left'>
-<text class='block'>A</text>
+<text class='block letter-a'>A</text>
 <text class='block'>{{question_items[current_key].sub_questions[0].title}}</text>
 </view>
 <view class='harf-right'>
-<text class='block'>B</text>
+<text class='block letter-b'>B</text>
 <text class='block'>{{question_items[current_key].sub_questions[1].title}}</text>
 </view>
 
@@ -15,19 +15,17 @@
 <text>\n</text>
 <view>
 <radio-group class="radio-group" bindchange="radioChange">
-  <label class="radio" wx:for="{{items}}" wx:key="item-key">
-  <view>
-      <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  <label class="radio" wx:for="{{items}}" wx:key="item-key" wx:for-index>
+  <view class="options {{index == selected_key ?'option-ckecked':''}}">
+  <text class='block left'>{{item.value}}</text>
+   <radio class='block right' value="{{item.name}}" checked="{{item.checked}}" data-index="{{ index }}"/>     
   </view>
-
   </label>
 </radio-group>
 </view>
 
 <text>\n</text>
-<view class='timer'>
-    <text>{{seconds}}</text>
-</view>
+
 <button wx:if="{{selected}}" bindtap='{{bindfunction}}'>{{button_name}}</button>
 
 

@@ -7,38 +7,25 @@
     <text class='huodong'>限时活动价：</text>
     <text class='price b'>{{activity_price}}</text>
     <text class='delete'>{{price}}</text>
-    <text class='block tishi'>(您有20元的优惠券，可在购买时直接抵扣)</text>
-    <text class='tishi2'>22道题目 | 10项专业报告 | 10W+已测试</text>
+    <!-- <text class='block tishi'>(您有20元的优惠券，可在购买时直接抵扣)</text>  -->
+    <text class='tishi2'>\n 22道题目 | 10项专业报告 | 10W+已测试</text>
 </text>
 
-
-<text class='block right' bindtap="zhifu">
-    <text>立即抢购</text>
-</text>
+<view class='block right' bindtap="zhifu">
+    <button><p>立即</p><p>抢购</p></button>
 </view>
-<view>
-
-<text class='h1 block'>测评介绍</text>
-<text class='p'>{{describe}}</text>
 
 </view>
 <view>
-
-<text class='h1 block'>测评需知</text>
-<text class='p'>
-    {{need_know}}
-</text>
-
+  <text class='h1 block'>测评介绍</text>
+  <text class='p'>{{describe}}</text>
 </view>
 <view>
-
-<text class='h1 block'>案例介绍</text>
-<text class='p'>
-    {{example}}
-</text>
-
+  <text class='h1 block'>测评需知</text>
+  <text class='p'>
+      {{need_know}}
+  </text>
 </view>
-
 
 <view class='h1'>用户评价</view>
 

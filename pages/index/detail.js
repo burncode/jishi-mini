@@ -8,15 +8,31 @@ Page({
         good_id: null,
         comments: [],
     },
-    zhifu:()=>{
+
+    zhifu:function(){
+        let This = this;
+        console.log(This.data);
+        if (!getApp().globalData.userInfo.open_id){
+            wx.showModal({
+                title: '提示',
+                content: '请先登录！'
+            })
+            return;
+        }
         wx.request({
-            url: getApp().globalData.wechat_pay.createOrder.url,
-            method: getApp().globalData.wechat_pay.createOrder.method,
+            url: getApp().globalData.wechat_pay.createWechatOrder.url,
+            method: getApp().globalData.wechat_pay.createWechatOrder.method,
             header: {
                 'Accept': 'application/json',
             },
             data:{
-              openId:getApp().globalData.userInfo.open_id
+                openId:getApp().globalData.userInfo.open_id,
+                goodsId:This.data.good_id,
+                price:This.data.price,
+                activity_price:This.data.activity_price,
+                goodName:This.data.goods_name,
+                price_level:This.data.price_level,
+                coupon_price:20,
             },
             success (res) {
                 let data = res.data;
@@ -30,19 +46,6 @@ Page({
                     success: function(res) {
                         console.log('付款成功')
                         console.log(res)
-                        wx.request({
-                            url: getApp().globalData.wechat_pay.createOrder.url,
-                            method: getApp().globalData.wechat_pay.createOrder.method,
-                            header: {
-                                'Accept': 'application/json',
-                            },
-                            data:{
-                                data:data
-                            },
-                            success (res) {
-
-                            }
-                        });
                     },
                     fail: function(res) {
                         console.log('付款失败')
@@ -130,7 +133,7 @@ Page({
         }
     },
     getComments: function (id) {
-        var This = this;
+        let This = this;
         wx.request({
             url: getApp().globalData.getComments.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.getComments.method,

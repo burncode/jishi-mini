@@ -19,7 +19,7 @@ progress {
   text-align: left;
 }
 .harf-right {
-  width: 35%;
+  width: 40%;
   float: left;
 }
 .harf-right text.block {
@@ -35,10 +35,16 @@ radio {
   margin-bottom: 30rpx;
 }
 
-.timer {
-   position: fixed;
-  bottom: 150rpx;
-  width: 100%;
-  margin-left: 0;
-  text-align: center;
+.letter-a {
+  font-weight: bold;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #00479d;
+}
+
+.letter-b {
+  font-weight: bold;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #f99310;
 }
