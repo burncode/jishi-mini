@@ -8,16 +8,13 @@ Page({
   data: {
     orderNumber:0,
     userId:0,
-    imageUrl: "https://api.jishiceping.com/images/cover.png",
+    imageUrl: "https://api.jishiceping.com/images/report_share.jpg",
   },
 
   /**9
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData);
-    console.log(options.order_number);                 console.log(options.user_id);
-    console.log(app.globalData.hroot + "/images/cover.png");
     this.setData({
       orderNumber:options.order_number,
       userId:options.user_id,
@@ -70,7 +67,8 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '分享报告',
+      title: '高考考生测评',
+      desc:'一个决定一生的测评',
       path: '/pages/report/report?user_id='+this.userId+'&order_number='+this.orderNumber,
       imageUrl: this.imageUrl,
       success: (res) => {

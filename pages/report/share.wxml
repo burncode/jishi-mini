@@ -1,2 +1,2 @@
-<image src='{{imageUrl}}' ></image>
+<image src='{{imageUrl}}'></image>
 <button type="primary" open-type="share">分享报告</button>

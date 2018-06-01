@@ -13,8 +13,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var userId = options.user_id ? options.user_id : app.globalData.userId;
     this.setData({
-      reportUrl: app.globalData.host + '/report/' + app.globalData.userId+'?order_number='+options.order_number
+      reportUrl: app.globalData.host + '/report/' + userId +'?order_number='+options.order_number
     })
   },
 
