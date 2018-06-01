@@ -17,6 +17,7 @@
     "pages/coupon/index",
     "pages/coupon/send",
     "pages/comment/comment",
+    "pages/letter/letter",
     "pages/report/report",
     "pages/logs/logs"
   ],

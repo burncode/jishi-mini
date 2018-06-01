@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   startB: function (event) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/ceping/question-b'
     })
 
@@ -18,7 +18,8 @@ Page({
    */
   onLoad: function (options) {
     var category_id = 2;
-    wx.setStorageSync('category_id', category_id)
+    wx.setStorageSync('category_id', category_id);
+    
     wx.request({
       url: app.globalData.host + '/questions?category_id=' + category_id,
       method: 'POST',
@@ -29,12 +30,14 @@ Page({
     })
 
     //获取历史答题状态
+    
     wx.request({
       url: app.globalData.host + '/history',
       method: 'POST',
       data: {
         member_id: app.globalData.userId,
-        subject_id: app.globalData.subjectId
+        subject_id: app.globalData.subjectId,
+        order_number: wx.getStorageSync('order_number')
       },
       success: function (res) {
         var history = res.data.data;
@@ -46,11 +49,11 @@ Page({
           if (history.category_id == 2) {
 
             if (question_no < app.globalData.questionBNumber) {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/ceping/question-b'
               })
             } else {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/ceping/yindao-a'
               })
 

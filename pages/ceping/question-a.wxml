@@ -9,20 +9,18 @@
 </view>
 <text>\n</text>
 <view>
-  <radio-group class="radio-group" bindchange="radioChange">
-    <label class="radio" wx:for="{{items}}" wx:key="key">
-      <view>
-        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-      </view>
-
-    </label>
-  </radio-group>
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}" wx:key="item-key" wx:for-index>
+  <view class="options {{index == selected_key ?'option-ckecked':''}}">
+  <text class='block left'>{{item.value}}</text>
+   <radio class='block right' value="{{item.name}}" checked="{{item.checked}}" data-index="{{ index }}"/>     
+  </view>
+  </label>
+</radio-group>
 </view>
 
 <text>\n</text>
-<view class='timer'>
-    <text>{{seconds}}</text>
-</view>
+
 <button wx:if="{{selected}}" bindtap='{{bindfunction}}'>{{button_name}}</button>
 
 <modal hidden="{{hidden}}" title="" confirm-text="好的" bindconfirm="confirm" no-cancel="true">

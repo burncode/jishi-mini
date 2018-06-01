@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   startA: function (event) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/ceping/question-a'
     })
 
@@ -35,7 +35,8 @@ Page({
       method: 'POST',
       data: {
         member_id: app.globalData.userId,
-        subject_id: app.globalData.subjectId
+        subject_id: app.globalData.subjectId,
+        order_number: wx.getStorageSync('order_number'),
       },
       success: function (res) {
         var history = res.data.data;
@@ -47,11 +48,11 @@ Page({
         if (history.current_key > 0 && history.category_id == category_id) {
           if (history.category_id == 1) {
             if (question_no < app.globalData.questionANumber) {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/ceping/question-a'
               })
             } else {
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '/pages/ceping/yindao-c'
               })
 

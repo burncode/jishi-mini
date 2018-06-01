@@ -8,24 +8,23 @@ Page({
         activeUnfinished: 'active',
         activeFinished: '',
         userInfo: {},
-        orders: [
-            {
-                title: '高考专业测评',
-                payPrice: 998.00,
-                price: 1100.00,
-                remainingNumber: 33,
-                payDate: '2018-03-12 22:23',
-                orderNo: '12457854598547545',
-            },
-        ],
+        histories_finished: [],
+        histories_unfinished:[],
+        orders: [],
     },
     toMyCoupons: function () {
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/coupon/index'
         })
     },
     toUsersDetail: function (data) {
-        wx.navigateTo({
+      console.log('点击立即测评，填写个人信息：');
+      console.log('将本次测评相关订单号存入缓存待用');
+      var order_number = data.currentTarget.dataset.orderNo;
+      wx.setStorageSync('order_number', order_number);
+      console.log('订单号：'+order_number);
+
+      wx.navigateTo({
             url: '/pages/ceping/user-form',
         });
     },
@@ -33,28 +32,18 @@ Page({
         this.setData({
             activeUnfinished: 'active',
             activeFinished: '',
-            orders: [
-                {
-                    title: '高考专业测评',
-                    payPrice: 998.00,
-                    price: 1100.00,
-                    remainingNumber: 33,
-                    payDate: '2018-03-12 22:23',
-                    orderNo: '12457854598547545',
-                },
-
-            ],
+            orders: this.data.histories_unfinished,
         })
     },
     activeFinished: function (e) {
         this.setData({
             activeUnfinished: '',
             activeFinished: 'active',
-            orders: [],//置空
+            orders: this.data.histories_finished,
         })
     },
     goComment: (data) => {
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/comment/comment?id=' + data.currentTarget.dataset.id,
         });
     },
@@ -64,6 +53,7 @@ Page({
         wx.login({
             success: function (res) {
                 var code = res.code;
+                console.log(code);
                 if (res.code) {
                     wx.getUserInfo({
                         withCredentials: true,
@@ -153,21 +143,25 @@ Page({
             }
         });
     },
-    goReport: function () {
-        wx.navigateTo({
-            url: '/pages/report/report',
+    goReport: function (e) {
+      var order_number = e.currentTarget.dataset.orderNo;
+      wx.navigateTo({
+            url: '/pages/report/report?order_number='+order_number,
         })
     },
 
-    goEvaluate: function () {
-      console.log('点击继续测评或者立即测评');
+    goEvaluate: function (e) {
+      console.log(e);
+      console.log('点击继续测评');
         //获取历史答题状态
+        var order_number = e.currentTarget.dataset.orderNo;
         wx.request({
             url: app.globalData.host + '/history',
             method: 'POST',
             data: {
                 member_id: app.globalData.userId,
-                subject_id: app.globalData.subjectId
+                subject_id: app.globalData.subjectId,
+                order_number: order_number,
             },
             success: function (res) {
                 var history = res.data.data;
@@ -185,14 +179,14 @@ Page({
                                 method: 'POST',
                                 success: function (res) {
                                     wx.setStorageSync('a_questions', res.data)
-                                    wx.navigateTo({
+                                    wx.redirectTo({
                                         url: '/pages/ceping/question-a'
                                     })
                                 }
                             })
 
                         } else {
-                            wx.navigateTo({
+                            wx.redirectTo({
                                 url: '/pages/ceping/yindao-c'
                             })
 
@@ -208,14 +202,14 @@ Page({
                                 method: 'POST',
                                 success: function (res) {
                                     wx.setStorageSync('b_questions', res.data)
-                                    wx.navigateTo({
+                                    wx.redirectTo({
                                         url: '/pages/ceping/question-b'
                                     })
                                 }
                             })
 
                         } else {
-                            wx.navigateTo({
+                            wx.redirectTo({
                                 url: '/pages/ceping/yindao-a'
                             })
 
@@ -230,7 +224,7 @@ Page({
                                 method: 'POST',
                                 success: function (res) {
                                     wx.setStorageSync('c_questions', res.data)
-                                    wx.navigateTo({
+                                    wx.redirectTo({
                                         url: '/pages/ceping/question-c'
                                     })
                                 }
@@ -241,7 +235,7 @@ Page({
                         }
                     }
                 } else {
-                    wx.navigateTo({
+                    wx.redirectTo({
                         url: '/pages/ceping/yindao-b'
                     })
 
@@ -251,7 +245,7 @@ Page({
     },
 
     goCoupon: function () {
-        wx.navigateTo({
+        wx.redirectTo({
             url: '/pages/coupon/send',
         })
     },
@@ -282,30 +276,32 @@ Page({
         });
 
         var that = this
-        //获取历史答题状态
+        //获取订单列表
         wx.request({
-            url: app.globalData.host + '/history',
-            method: 'POST',
-            data: {
-                member_id: app.globalData.userId,
-                subject_id: app.globalData.subjectId
-            },
-            success: function (res) {
-                var history = res.data.data;
-                console.log('获取答题历史成功：');
-                console.log(history);
-                if (history) {
-                    var subject_status = history.subject_status
-                    that.setData({
-                        subjectStatus: subject_status
-                    });
+          url: app.globalData.host + '/histories',
+          method: 'POST',
+          data: {
+            member_id: app.globalData.userId,
+            subject_id: app.globalData.subjectId
+          },
+          success: function (res) {
+            var histories_finished = res.data.data.finished;
+            var histories_unfinished = res.data.data.unfinished;
+            console.log('获取订单列表成功：');
+            console.log('获取已完成订单列表：');
+            console.log(histories_finished);
+            console.log('获取未完成订单列表：');
+            console.log(histories_unfinished);
 
-                } else {
-                }
+            that.setData({
+              orders: histories_unfinished,
+              histories_unfinished: histories_unfinished,
+              histories_finished: histories_finished,
+            });
 
-
-            }
+          }
         });
+  
 
     },
 

@@ -73,3 +73,42 @@ button::after {
 .clear-both {
   overflow: hidden;
 }
+
+.options text.block {
+  width: 500rpx;
+  height: auto;
+
+}
+.options radio {
+  display: none;
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 25rpx;
+}
+view {
+  overflow: hidden;
+}
+
+.options {
+  width: 550rpx;
+  height: auto;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 30rpx;
+  font-size: 34rpx;
+  line-height: 50rpx;
+  border:#dedede solid 2rpx;
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
+}
+.option-ckecked {
+
+  background-color: #00479d;
+  border-radius: 10rpx;
+  color: white;
+
+}
+
+ .timer {
+   float: right;
+} 

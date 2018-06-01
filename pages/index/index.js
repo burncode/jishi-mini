@@ -138,9 +138,13 @@ Page({
             method: getApp().globalData.getComments.method,
             success: function (res) {
                 if (res.statusCode === 200) {
-                    This.setData({
-                        comments: res.data.data.data,
-                    });
+                  // 评论内容去掉html标签
+                  for (var i in res.data.data.data){
+                    res.data.data.data[i].content = getApp().convertHtmlToText(res.data.data.data[i].content);
+                  }
+                  This.setData({
+                      comments: res.data.data.data,
+                  });
                 } else {
                     wx.showModal({
                         title: '提示',

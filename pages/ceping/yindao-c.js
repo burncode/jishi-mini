@@ -1,7 +1,7 @@
 const app = getApp()
 Page({
   startC: function (event) {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/ceping/question-c'
     })
 
@@ -35,7 +35,8 @@ Page({
       method: 'POST',
       data: {
         member_id: app.globalData.userId,
-        subject_id: app.globalData.subjectId
+        subject_id: app.globalData.subjectId,
+        order_number: wx.getStorageSync('order_number'),
       },
       success: function (res) {
         var history = res.data.data;
@@ -48,7 +49,7 @@ Page({
             if (history.category_id == 3) {
 
                 if (question_no < app.globalData.questionCNumber) {
-                    wx.navigateTo({
+                    wx.redirectTo({
                         url: '/pages/ceping/question-c'
                     })
                 } else {
