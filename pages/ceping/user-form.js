@@ -220,8 +220,7 @@ Page({
     radioChange: function (e) {
         this.data.sex = e.detail.value;
     },
-    goEvaluate: function(e)
-  {
+    goEvaluate: function(e) {
       console.log('开始测评');
       var order_number = wx.getStorageSync('order_number');
       console.log('获取订单号：' + order_number);

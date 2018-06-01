@@ -2,15 +2,13 @@
 <view>
 <image src='/images/icon_zhifuchenggong.png'></image>
 <text class='block success-msg'>支付成功</text>
-<text class='block'>
-    <text class='product-name'>基石测试</text>
-    <text class='price'>￥{{price}}</text>
-</text>
+<text>\n</text>
+<text class='block price'>￥{{price}}</text>
 
 <text>\n</text>
 
-<button class='ceping'>立即测评</button>
-
+<button class='ceping' bindtap='toUsersDetail'>立即测评</button>
+<button class=''>申请咨询</button>
 <button class='share'>分享优惠给好友，自己还能得现金</button>
 <button class='go-home'>返回首页</button>
 <text class='block share-text'>分享此链接给好友，好友得免费测评机会！</text>

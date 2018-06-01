@@ -48,6 +48,7 @@ App({
             }
         })
     },
+    // 过滤html标签
     convertHtmlToText: function convertHtmlToText(inputText) {
         var returnText = "" + inputText;
         returnText = returnText.replace(/<\/div>/ig, '\r\n');

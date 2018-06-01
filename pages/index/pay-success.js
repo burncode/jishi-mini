@@ -5,15 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    price:1700
+    price:998,
+    order_id:0
   
   },
-
+  toUsersDetail: function (data) {
+    wx.redirectTo({
+      url: '/pages/ceping/user-form',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    console.log(options);
+    wx.setStorageSync('order_number', options.order_id);
   },
 
   /**

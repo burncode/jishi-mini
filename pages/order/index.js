@@ -1,4 +1,4 @@
-const app = getApp()
+const app = getApp();
 Page({
     /**
      * 页面的初始数据
@@ -13,7 +13,7 @@ Page({
         orders: [],
     },
     toMyCoupons: function () {
-        wx.redirectTo({
+      wx.navigateTo({
             url: '/pages/coupon/index'
         })
     },
@@ -43,7 +43,7 @@ Page({
         })
     },
     goComment: (data) => {
-        wx.redirectTo({
+      wx.navigateTo({
             url: '/pages/comment/comment?id=' + data.currentTarget.dataset.id,
         });
     },
@@ -58,27 +58,27 @@ Page({
                     wx.getUserInfo({
                         withCredentials: true,
                         success: res => {
-                            getApp().globalData.userInfo = e.detail.userInfo;
+                            app.globalData.userInfo = e.detail.userInfo;
                             wx.request({
-                                url: getApp().globalData.login.url,
+                                url: app.globalData.login.url,
                                 data: {
                                     js_code: code,
                                     name: e.detail.userInfo.nickName,
                                     head_url: e.detail.userInfo.avatarUrl,
                                 },
-                                method: getApp().globalData.login.method,
+                                method: app.globalData.login.method,
                                 success: function (res) {
                                     if (res.statusCode === 200) {
                                         // 登录成功 将token存入本地
-                                        getApp().globalData._token = res.data.data._token;
-                                        getApp().globalData.userInfo.id = res.data.data.user.id;
-                                        getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                        getApp().globalData.userInfo.name = res.data.data.user.name;
-                                        getApp().globalData.userInfo.address = res.data.data.user.address;
-                                        getApp().globalData.userInfo.sex = res.data.data.user.sex;
-                                        getApp().globalData.userId = res.data.data.user.id;
+                                        app.globalData._token = res.data.data._token;
+                                        app.globalData.userInfo.id = res.data.data.user.id;
+                                        app.globalData.userInfo.tel = res.data.data.user.tel;
+                                        app.globalData.userInfo.name = res.data.data.user.name;
+                                        app.globalData.userInfo.address = res.data.data.user.address;
+                                        app.globalData.userInfo.sex = res.data.data.user.sex;
+                                        app.globalData.userId = res.data.data.user.id;
                                         This.setData({
-                                            userInfo: getApp().globalData.userInfo,
+                                            userInfo: app.globalData.userInfo,
                                         });
                                     }
                                 }
@@ -87,24 +87,24 @@ Page({
                         complete: res => {
                             if (res.errMsg !== 'getUserInfo:ok') {
                                 wx.request({
-                                    url: getApp().globalData.login.url,
+                                    url: app.globalData.login.url,
                                     data: {
                                         js_code: code,
                                     },
-                                    method: getApp().globalData.login.method,
+                                    method: app.globalData.login.method,
                                     success: function (res) {
                                         if (res.statusCode === 200) {
                                             // 登录成功 将token存入本地
-                                            getApp().globalData._token = res.data.data._token;
-                                            getApp().globalData.userInfo.id = res.data.data.user.id;
-                                            getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                            getApp().globalData.userInfo.name = res.data.data.user.name;
-                                            getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                            getApp().globalData.userInfo.address = res.data.data.user.address;
-                                            getApp().globalData.userInfo.sex = res.data.data.user.sex;
-                                            getApp().globalData.userId = res.data.data.user.id;
+                                            app.globalData._token = res.data.data._token;
+                                            app.globalData.userInfo.id = res.data.data.user.id;
+                                            app.globalData.userInfo.tel = res.data.data.user.tel;
+                                            app.globalData.userInfo.name = res.data.data.user.name;
+                                            app.globalData.userInfo.tel = res.data.data.user.tel;
+                                            app.globalData.userInfo.address = res.data.data.user.address;
+                                            app.globalData.userInfo.sex = res.data.data.user.sex;
+                                            app.globalData.userId = res.data.data.user.id;
                                             This.setData({
-                                                userInfo: getApp().globalData.userInfo,
+                                                userInfo: app.globalData.userInfo,
                                             });
                                         }
                                     }
@@ -117,24 +117,24 @@ Page({
             complete: res => {
                 if (res.errMsg !== 'getUserInfo:ok') {
                     wx.request({
-                        url: getApp().globalData.login.url,
+                        url: app.globalData.login.url,
                         data: {
                             js_code: code,
                         },
-                        method: getApp().globalData.login.method,
+                        method: app.globalData.login.method,
                         success: function (res) {
                             if (res.statusCode === 200) {
                                 // 登录成功 将token存入本地
-                                getApp().globalData._token = res.data.data._token;
-                                getApp().globalData.userInfo.id = res.data.data.user.id;
-                                getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                getApp().globalData.userInfo.name = res.data.data.user.name;
-                                getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                                getApp().globalData.userInfo.address = res.data.data.user.address;
-                                getApp().globalData.userInfo.sex = res.data.data.user.sex;
-                                getApp().globalData.userId = res.data.data.user.id;
+                                app.globalData._token = res.data.data._token;
+                                app.globalData.userInfo.id = res.data.data.user.id;
+                                app.globalData.userInfo.tel = res.data.data.user.tel;
+                                app.globalData.userInfo.name = res.data.data.user.name;
+                                app.globalData.userInfo.tel = res.data.data.user.tel;
+                                app.globalData.userInfo.address = res.data.data.user.address;
+                                app.globalData.userInfo.sex = res.data.data.user.sex;
+                                app.globalData.userId = res.data.data.user.id;
                                 This.setData({
-                                    userInfo: getApp().globalData.userInfo,
+                                    userInfo: app.globalData.userInfo,
                                 });
                             }
                         }
@@ -147,7 +147,7 @@ Page({
       var order_number = e.currentTarget.dataset.orderNo;
       wx.navigateTo({
             url: '/pages/report/report?order_number='+order_number,
-        })
+      })
     },
 
     goEvaluate: function (e) {
@@ -272,37 +272,8 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            userInfo: getApp().globalData.userInfo
+            userInfo: app.globalData.userInfo
         });
-
-        var that = this
-        //获取订单列表
-        wx.request({
-          url: app.globalData.host + '/histories',
-          method: 'POST',
-          data: {
-            member_id: app.globalData.userId,
-            subject_id: app.globalData.subjectId
-          },
-          success: function (res) {
-            var histories_finished = res.data.data.finished;
-            var histories_unfinished = res.data.data.unfinished;
-            console.log('获取订单列表成功：');
-            console.log('获取已完成订单列表：');
-            console.log(histories_finished);
-            console.log('获取未完成订单列表：');
-            console.log(histories_unfinished);
-
-            that.setData({
-              orders: histories_unfinished,
-              histories_unfinished: histories_unfinished,
-              histories_finished: histories_finished,
-            });
-
-          }
-        });
-  
-
     },
 
     /**
@@ -316,7 +287,30 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      this.setData({
+        activeUnfinished: 'active',
+        activeFinished: '',
+        orders: this.data.histories_unfinished,
+      })
+      //获取订单列表
+      var that = this;
+      wx.request({
+        url: app.globalData.host + '/histories',
+        method: 'POST',
+        data: {
+          member_id: app.globalData.userId,
+          subject_id: app.globalData.subjectId
+        },
+        success: function (res) {
+          var histories_finished = res.data.data.finished;
+          var histories_unfinished = res.data.data.unfinished;
+          that.setData({
+            orders: histories_unfinished,
+            histories_unfinished: histories_unfinished,
+            histories_finished: histories_finished,
+          });
+        },
+      });
     },
 
     /**
@@ -337,7 +331,34 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+      let that= this;
+      wx.showNavigationBarLoading()
+      //获取订单列表
+      wx.request({
+        url: app.globalData.host + '/histories',
+        method: 'POST',
+        data: {
+          member_id: app.globalData.userId,
+          subject_id: app.globalData.subjectId
+        },
+        success: function (res) {
+          var histories_finished = res.data.data.finished;
+          var histories_unfinished = res.data.data.unfinished;
+          that.setData({
+            orders: histories_unfinished,
+            histories_unfinished: histories_unfinished,
+            histories_finished: histories_finished,
+          });
+        },
+        fail: function () {
+          wx.hideNavigationBarLoading() //完成停止加载
+          wx.stopPullDownRefresh() //停止下拉刷新
+        },
+        complete: function() {
+          wx.hideNavigationBarLoading() //完成停止加载
+          wx.stopPullDownRefresh() //停止下拉刷新
+        }
+      });
     },
 
     /**
