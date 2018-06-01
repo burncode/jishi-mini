@@ -1,4 +1,5 @@
 // pages/index/detail.js
+const app = getApp();
 Page({
 
     /**
@@ -9,51 +10,154 @@ Page({
         comments: [],
     },
 
-    zhifu:function(){
+    zhifu:function() {
         let This = this;
-        console.log(This.data);
         if (!getApp().globalData.userInfo.open_id){
-            wx.showModal({
-                title: '提示',
-                content: '请先登录！'
-            })
-            return;
-        }
-        wx.request({
+          // 小程序打开
+          wx.login({
+            success: function (res) {
+              var code = res.code;
+              console.log(code);
+              if (res.code) {
+                wx.getUserInfo({
+                  withCredentials: true,
+                  success: res => {
+                    app.globalData.userInfo = e.detail.userInfo;
+                    wx.request({
+                      url: app.globalData.login.url,
+                      data: {
+                        js_code: code,
+                        name: e.detail.userInfo.nickName,
+                        head_url: e.detail.userInfo.avatarUrl,
+                      },
+                      method: app.globalData.login.method,
+                      success: function (res) {
+                        if (res.statusCode === 200) {
+                          // 登录成功 将token存入本地
+                          app.globalData._token = res.data.data._token;
+                          app.globalData.userInfo.id = res.data.data.user.id;
+                          app.globalData.userInfo.tel = res.data.data.user.tel;
+                          app.globalData.userInfo.name = res.data.data.user.name;
+                          app.globalData.userInfo.address = res.data.data.user.address;
+                          app.globalData.userInfo.sex = res.data.data.user.sex;
+                          app.globalData.userId = res.data.data.user.id;
+                          This.setData({
+                            userInfo: app.globalData.userInfo,
+                          });
+                        }
+                      }
+                    });
+                  },
+                  complete: res => {
+                    if (res.errMsg !== 'getUserInfo:ok') {
+                      wx.request({
+                        url: app.globalData.login.url,
+                        data: {
+                          js_code: code,
+                        },
+                        method: app.globalData.login.method,
+                        success: function (res) {
+                          if (res.statusCode === 200) {
+                            // 登录成功 将token存入本地
+                            app.globalData._token = res.data.data._token;
+                            app.globalData.userInfo.id = res.data.data.user.id;
+                            app.globalData.userInfo.tel = res.data.data.user.tel;
+                            app.globalData.userInfo.name = res.data.data.user.name;
+                            app.globalData.userInfo.tel = res.data.data.user.tel;
+                            app.globalData.userInfo.address = res.data.data.user.address;
+                            app.globalData.userInfo.sex = res.data.data.user.sex;
+                            app.globalData.userId = res.data.data.user.id;
+                            This.setData({
+                              userInfo: app.globalData.userInfo,
+                            });
+                          }
+                        },
+                      });
+                    }
+                  }
+                })
+              }
+            },
+            complete: res => {
+              if (res.errMsg !== 'getUserInfo:ok') {
+                wx.request({
+                  url: app.globalData.login.url,
+                  data: {
+                    js_code: code,
+                  },
+                  method: app.globalData.login.method,
+                  success: function (res) {
+                    if (res.statusCode === 200) {
+                      // 登录成功 将token存入本地
+                      app.globalData._token = res.data.data._token;
+                      app.globalData.userInfo.id = res.data.data.user.id;
+                      app.globalData.userInfo.tel = res.data.data.user.tel;
+                      app.globalData.userInfo.name = res.data.data.user.name;
+                      app.globalData.userInfo.tel = res.data.data.user.tel;
+                      app.globalData.userInfo.address = res.data.data.user.address;
+                      app.globalData.userInfo.sex = res.data.data.user.sex;
+                      app.globalData.userId = res.data.data.user.id;
+                      This.setData({
+                        userInfo: app.globalData.userInfo,
+                      });
+                    }
+                  }
+                });
+              }
+            }
+          });
+        } else {
+          wx.request({
             url: getApp().globalData.wechat_pay.createWechatOrder.url,
             method: getApp().globalData.wechat_pay.createWechatOrder.method,
             header: {
-                'Accept': 'application/json',
+              'Accept': 'application/json',
             },
-            data:{
-                openId:getApp().globalData.userInfo.open_id,
-                goodsId:This.data.good_id,
-                price:This.data.price,
-                activity_price:This.data.activity_price,
-                goodName:This.data.goods_name,
-                price_level:This.data.price_level,
-                coupon_price:20,
+            data: {
+              openId: getApp().globalData.userInfo.open_id,
+              goodsId: This.data.good_id,
+              price: This.data.price,
+              activity_price: This.data.activity_price,
+              goodName: This.data.goods_name,
+              price_level: This.data.price_level,
+              coupon_price: 20,
             },
-            success (res) {
-                let data = res.data;
-                console.log(data);
-                wx.requestPayment({
-                    timeStamp: data.timeStamp.toString(),
-                    nonceStr: data.nonceStr,
-                    package: data.package,
-                    signType: data.signType,
-                    paySign: data.paySign,
-                    success: function(res) {
-                        console.log('付款成功')
-                        console.log(res)
-                    },
-                    fail: function(res) {
-                        console.log('付款失败')
-                        console.log(res)
+            success(res) {
+              let data = res.data;
+              console.log(data);
+              wx.requestPayment({
+                timeStamp: data.timeStamp.toString(),
+                nonceStr: data.nonceStr,
+                package: data.package,
+                signType: data.signType,
+                paySign: data.paySign,
+                success: function (res) {
+                  console.log(res)
+                  wx.redirectTo({
+                    url: '/pages/index/pay-success?order_id=' + data.order.order_id,
+                  });
+                },
+                fail: function (res) {
+                  console.log('付款失败')
+                  wx.showModal({
+                    title: '支付',
+                    content: '付款失败',
+                    success: function (res) {
+                      if (res.confirm) {
+                        console.log('用户点击确定')
+                      } else if (res.cancel) {
+                        console.log('用户点击取消')
+                      }
                     }
-                })
+                  })
+                },
+                complete: function () {
+                  console.log('完成请求')
+                }
+              })
             }
-        });
+          });
+        }
     },
     /**
      * 生命周期函数--监听页面加载

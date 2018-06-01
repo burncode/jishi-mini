@@ -4,8 +4,7 @@
   overflow: hidden;
 }
 view {
-  margin-left: 40rpx;
-  margin-right: 40rpx;
+  padding:0 40rpx;
 }
 image {
   display: block;
@@ -17,18 +16,10 @@ image {
 
 .success-msg {
   text-align: center;
-  width: 100%;
 }
-
-.product-name {
-  float: left;
-  margin-left: 5rpx;
-}
-
 .price {
-  float: right;
   font-weight: bold;
-  margin-right: 10rpx;
+  text-align: center;
 }
 
 button {
@@ -42,9 +33,7 @@ button {
 
 .share-text {
   color: #ababab;
-  margin-bottom: 20rpx;
   text-align: center;
   font-size: 32rpx;
-  position: fixed;
-  bottom: 0;
+  padding-top:160rpx;
 }

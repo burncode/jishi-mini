@@ -31,12 +31,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      console.log('已知用户信息：');
-      console.log(getApp().globalData.userInfo);
+      
         this.setData(getApp().globalData.userInfo);
-        // 载入时要显示再隐藏一下才能显示数据，如果有解决方法可以在issue提一下，不胜感激:-)
-        // 初始化数据
-        this.setAreaData()
+
     },
     setAreaData: function (p, c, d) {
       var p = p || 0 // provinceSelIndex
@@ -86,6 +83,9 @@ Page({
       this.setAreaData(p, c, d)
     },
     showDistpicker: function () {
+      // 载入时要显示再隐藏一下才能显示数据，如果有解决方法可以在issue提一下，不胜感激:-)
+      // 初始化数据
+      this.setAreaData()
       this.setData({
         showDistpicker: true
       })
@@ -220,8 +220,7 @@ Page({
     radioChange: function (e) {
         this.data.sex = e.detail.value;
     },
-    goEvaluate: function(e)
-  {
+    goEvaluate: function(e) {
       console.log('开始测评');
       var order_number = wx.getStorageSync('order_number');
       console.log('获取订单号：' + order_number);

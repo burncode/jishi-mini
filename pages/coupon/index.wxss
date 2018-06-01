@@ -80,3 +80,10 @@ page {
   font-size: 22rpx;
   color: #cccccc;
 }
+
+.no-coupons{
+  padding-top: 20rpx;
+  font-size: 26rpx;
+  color: #cccccc;
+  text-align: center;
+}
