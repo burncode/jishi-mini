@@ -13,9 +13,8 @@ Page({
     var canIGo = this.data.canIGo;
     if (canIGo) {
       var order_number = wx.getStorageSync('order_number');
-      console.log(order_number);
       wx.navigateTo({
-        url: '/pages/report/report?order_number=' + order_number,
+        url: '/pages/report/report?order_number=' + order_number ,
       })
     } else {
       wx.showToast({
@@ -82,7 +81,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    
   },
 
   /**
