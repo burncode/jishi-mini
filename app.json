@@ -20,7 +20,8 @@
     "pages/comment/comment",
     "pages/letter/letter",
     "pages/report/report",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/home/home"
   ],
   "window": {
     "backgroundTextStyle": "light",
