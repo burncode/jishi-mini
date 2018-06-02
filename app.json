@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/home/home",
     "pages/report/share",
     "pages/index/lunbo-01",
     "pages/index/detail",
@@ -19,7 +19,8 @@
     "pages/coupon/send",
     "pages/comment/comment",
     "pages/letter/letter",
-    "pages/report/report"
+    "pages/report/report",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,7 +32,7 @@
     "selectedColor": "#00479d",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "/images/Tab_home.png",
         "selectedIconPath": "/images/Tab_home_sel.png"

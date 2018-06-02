@@ -245,7 +245,6 @@ page {
   color: #00479d;
 }
 button.present {
-  position: static;
   float: right;
   width: 150rpx;
   height: 72rpx;

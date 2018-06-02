@@ -2,13 +2,13 @@
 <template is="progress" data="{{progress}}" />
 <text>\n</text>
 <view class='option'>
-<view class='harf-left'>
-<text class='block letter-a'>A</text>
-<text class='block'>{{question_items[current_key].sub_questions[0].title}}</text>
-</view>
-<view class='harf-right'>
-<text class='block letter-b'>B</text>
-<text class='block'>{{question_items[current_key].sub_questions[1].title}}</text>
+  <view class='harf-left'>
+  <text class='block letter-a'>A</text>
+  <text class='block'>{{question_items[current_key].sub_questions[0].title}}</text>
+  </view>
+  <view class='harf-right'>
+  <text class='block letter-b'>B</text>
+  <text class='block'>{{question_items[current_key].sub_questions[1].title}}</text>
 </view>
 
 </view>

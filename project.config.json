@@ -121,12 +121,6 @@
 				{
 					"id": -1,
 					"name": "评价",
-					"pathName": "pages/comment/commont",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "评价",
 					"pathName": "pages/comment/comment",
 					"query": ""
 				},

@@ -29,6 +29,7 @@ progress {
 .option {
   overflow: hidden;
   margin-bottom: 30rpx;
+  min-height: 200rpx;
 }
 
 radio {

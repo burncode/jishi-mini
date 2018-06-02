@@ -26,11 +26,8 @@ Page({
     var userId = options.user_id ? options.user_id : app.globalData.userId;
     console.log(app.globalData.host + '/report/' + userId + '?order_number=' + options.order_number);
     this.setData({
-      reportUrl: app.globalData.host + '/report/' + userId +'?order_number='+options.order_number
-    });
-    // wx.showShareMenu({
-    //   withShareTicket: true
-    // })
+      reportUrl: app.globalData.host + '/report/' + userId + '?order_number=' + options.order_number+'#wechat_redirect'
+    })
   },
 
   /**
@@ -79,6 +76,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    console.log('/pages/report/report?order_number=8a9c3e24657711e89b6f00163e0e96d7');
+    return {
+      title: '报告',
+      path: '/pages/report/report?order_number=8a9c3e24657711e89b6f00163e0e96d7'
+    }
   }
 })

@@ -128,6 +128,7 @@ Page({
         console.log('点击继续测评');
         //获取历史答题状态
         var order_number = e.currentTarget.dataset.orderNo;
+        wx.setStorageSync('order_number', order_number);
         wx.request({
             url: app.globalData.host + '/history',
             method: 'POST',
@@ -188,7 +189,7 @@ Page({
 
                         }
                     } else if (history.category_id == 3) {
-
+                    
                         if (question_no < app.globalData.questionCNumber) {
                             var category_id = 3;
                             wx.setStorageSync('category_id', category_id)
@@ -204,7 +205,20 @@ Page({
                             })
 
                         } else {
-
+                          history.current_key -= 1;
+                          wx.setStorageSync('history', history)
+                          var category_id = 3;
+                          wx.setStorageSync('category_id', category_id)
+                          wx.request({
+                            url: app.globalData.host + '/questions?category_id=' + category_id,
+                            method: 'POST',
+                            success: function (res) {
+                              wx.setStorageSync('c_questions', res.data)
+                              wx.redirectTo({
+                                url: '/pages/ceping/question-c'
+                              })
+                            }
+                          })
                         }
                     }
                 } else {
@@ -363,5 +377,4 @@ Page({
             }
         }
     },
-
 })
