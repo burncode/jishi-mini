@@ -8,17 +8,6 @@ Page({
   data: {
     reportUrl: null
   },
-  onShareAppMessage: function (res) {
-    console.log(res);
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
-    return {
-      title: '报告',
-      path: '/page/report/report?order_number=' + order_number
-    }
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -76,10 +65,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    console.log('/pages/report/report?order_number=8a9c3e24657711e89b6f00163e0e96d7');
+    let order_number = wx.getStorageSync('order_number');
+    console.log(order_number);
     return {
       title: '报告',
-      path: '/pages/report/report?order_number=8a9c3e24657711e89b6f00163e0e96d7'
+      path: '/pages/report/report?order_number=' + order_number
     }
   }
 })

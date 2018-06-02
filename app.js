@@ -160,9 +160,9 @@ App({
         questionANumber: 60,
         questionBNumber: 150,
         questionCNumber: 28,
-        questionASeconds: 1500000,
-        questionBSeconds: 150000000,
-        questionCSeconds: 1500000,
+        questionASeconds: 15,
+        questionBSeconds: 15,
+        questionCSeconds: 15,
         timeOutUrl: "/pages/order/index",//答题中断跳转地址
     }
 })

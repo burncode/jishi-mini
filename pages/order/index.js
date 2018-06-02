@@ -118,6 +118,7 @@ Page({
     },
     goReport: function (e) {
         var order_number = e.currentTarget.dataset.orderNo;
+        wx.setStorageSync('order_number', order_number);
         wx.navigateTo({
             url: '/pages/report/report?order_number=' + order_number,
         })
