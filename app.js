@@ -1,11 +1,11 @@
 //app.js
 // const host = 'https://admin.gq1994.top/api'
-//const host = 'http://yuanshiceping.com/api'
+// const host = 'http://yuanshiceping.com/api'
  const host = 'https://api.jishiceping.com/api';
 
 //  const host = 'http://localhost:8000/api'
 App({
-    onLaunch: function () {
+    onLaunch: function (option) {
         //检测网络状态
         wx.onNetworkStatusChange(function (res) {
             getApp().globalData.networtStatus = res;
@@ -45,13 +45,29 @@ App({
                                         getApp().globalData.userInfo.address = res.data.data.user.address;
                                         getApp().globalData.userInfo.sex = res.data.data.user.sex;
                                         getApp().globalData.userId = res.data.data.user.id;
+                                        // 分享进来的
+                                        if (option.query.order_id) {
+                                            getApp().globalData.order_id = option.query.order_id;
+                                            var order_id = option.query.order_id;
+                                            getApp().receiveOrder(order_id);
+                                        }
                                     }
                                 }
                             });
                         },
+                        fail:function (res) {
+                            // 分享进来的
+                            if (option.query.order_id) {
+                                getApp().globalData.order_id = option.query.order_id;
+                                wx.showModal({
+                                    title: '提示',
+                                    content: '请先进入我的页面登录再领取'
+                                })
+                            }
+                        }
                     })
                 }
-            }
+            },
         })
     },
     // 过滤html标签
@@ -88,6 +104,36 @@ App({
         returnText = returnText.replace(/>/gi, '>');
 
         return returnText;
+    },
+    receiveOrder:function (order_id) {
+        wx.request({
+            url: getApp().globalData.receiveOrder.url + order_id,
+            method: getApp().globalData.receiveOrder.method,
+            header: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + getApp().globalData._token
+            },
+            success:function (res) {
+                console.log(res);
+                if (res.statusCode===200){
+                    wx.showModal({
+                        title: '提示',
+                        content: '领取成功'
+                    })
+                }else{
+                    wx.showModal({
+                        title: '提示',
+                        content: res.data.message
+                    })
+                }
+            },
+            fail:function (res) {
+                wx.showModal({
+                    title: '提示',
+                    content: '领取失败'
+                })
+            }
+        });
     },
     globalData: {
         userInfo: {},
@@ -139,6 +185,10 @@ App({
         },
         sendOrder: {
             url: host + '/gifts/send/',
+            method: 'post'
+        },
+        receiveOrder:{
+            url: host + '/gifts/',
             method: 'post'
         },
         wechat_pay: {

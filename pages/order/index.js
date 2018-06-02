@@ -80,6 +80,14 @@ Page({
                                         This.setData({
                                             userInfo: app.globalData.userInfo,
                                         });
+                                        // 分享进来的
+                                        console.log(getApp().globalData.order_id);
+                                        console.log(app.globalData);
+                                        console.log(1);
+                                        if (app.globalData.order_id) {
+                                            console.log(1);
+                                            getApp().receiveOrder(app.globalData.order_id);
+                                        }
                                     }
                                 }
                             });
@@ -106,6 +114,10 @@ Page({
                                             This.setData({
                                                 userInfo: app.globalData.userInfo,
                                             });
+                                            // 分享进来的
+                                            if (app.globalData.order_id) {
+                                                getApp().receiveOrder(app.globalData.order_id);
+                                            }
                                         }
                                     }
                                 });
@@ -359,10 +371,10 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function (e) {
-        console.log(e);
-        if (e.target.dataset.id) {
-            var id = e.target.dataset.id;
+    onShareAppMessage: function (res) {
+        console.log(res);
+        if (res.target.dataset.share_id) {
+            var id = res.target.dataset.share_id;
             var This = this;
             wx.request({
                 url: app.globalData.sendOrder.url + id,
@@ -372,9 +384,10 @@ Page({
                     'Authorization': 'Bearer ' + getApp().globalData._token
                 },
             });
+            console.log('/pages/index/index?order_id=' + id);
             return {
                 title: This.data.userInfo.name + '赠送您一张测评卡，速来领取',
-                path: '/pages/index/index?order_id=' + e.target.dataset.id
+                path: '/pages/index/index?order_id=' + id
             }
         }
     },
