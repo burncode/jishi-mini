@@ -9,22 +9,22 @@ Page({
         activeFinished: '',
         userInfo: {},
         histories_finished: [],
-        histories_unfinished:[],
+        histories_unfinished: [],
         orders: [],
     },
     toMyCoupons: function () {
-      wx.navigateTo({
+        wx.navigateTo({
             url: '/pages/coupon/index'
         })
     },
     toUsersDetail: function (data) {
-      console.log('点击立即测评，填写个人信息：');
-      console.log('将本次测评相关订单号存入缓存待用');
-      var order_number = data.currentTarget.dataset.orderNo;
-      wx.setStorageSync('order_number', order_number);
-      console.log('订单号：'+order_number);
+        console.log('点击立即测评，填写个人信息：');
+        console.log('将本次测评相关订单号存入缓存待用');
+        var order_number = data.currentTarget.dataset.orderNo;
+        wx.setStorageSync('order_number', order_number);
+        console.log('订单号：' + order_number);
 
-      wx.navigateTo({
+        wx.navigateTo({
             url: '/pages/ceping/user-form',
         });
     },
@@ -43,7 +43,7 @@ Page({
         })
     },
     goComment: (data) => {
-      wx.navigateTo({
+        wx.navigateTo({
             url: '/pages/comment/comment?id=' + data.currentTarget.dataset.id,
         });
     },
@@ -114,45 +114,18 @@ Page({
                     })
                 }
             },
-            complete: res => {
-                if (res.errMsg !== 'getUserInfo:ok') {
-                    wx.request({
-                        url: app.globalData.login.url,
-                        data: {
-                            js_code: code,
-                        },
-                        method: app.globalData.login.method,
-                        success: function (res) {
-                            if (res.statusCode === 200) {
-                                // 登录成功 将token存入本地
-                                app.globalData._token = res.data.data._token;
-                                app.globalData.userInfo.id = res.data.data.user.id;
-                                app.globalData.userInfo.tel = res.data.data.user.tel;
-                                app.globalData.userInfo.name = res.data.data.user.name;
-                                app.globalData.userInfo.tel = res.data.data.user.tel;
-                                app.globalData.userInfo.address = res.data.data.user.address;
-                                app.globalData.userInfo.sex = res.data.data.user.sex;
-                                app.globalData.userId = res.data.data.user.id;
-                                This.setData({
-                                    userInfo: app.globalData.userInfo,
-                                });
-                            }
-                        }
-                    });
-                }
-            }
         });
     },
     goReport: function (e) {
-      var order_number = e.currentTarget.dataset.orderNo;
-      wx.navigateTo({
-            url: '/pages/report/report?order_number='+order_number,
-      })
+        var order_number = e.currentTarget.dataset.orderNo;
+        wx.navigateTo({
+            url: '/pages/report/report?order_number=' + order_number,
+        })
     },
 
     goEvaluate: function (e) {
-      console.log(e);
-      console.log('点击继续测评');
+        console.log(e);
+        console.log('点击继续测评');
         //获取历史答题状态
         var order_number = e.currentTarget.dataset.orderNo;
         wx.request({
@@ -287,30 +260,30 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      this.setData({
-        activeUnfinished: 'active',
-        activeFinished: '',
-        orders: this.data.histories_unfinished,
-      })
-      //获取订单列表
-      var that = this;
-      wx.request({
-        url: app.globalData.host + '/histories',
-        method: 'POST',
-        data: {
-          member_id: app.globalData.userId,
-          subject_id: app.globalData.subjectId
-        },
-        success: function (res) {
-          var histories_finished = res.data.data.finished;
-          var histories_unfinished = res.data.data.unfinished;
-          that.setData({
-            orders: histories_unfinished,
-            histories_unfinished: histories_unfinished,
-            histories_finished: histories_finished,
-          });
-        },
-      });
+        this.setData({
+            activeUnfinished: 'active',
+            activeFinished: '',
+            orders: this.data.histories_unfinished,
+        })
+        //获取订单列表
+        var that = this;
+        wx.request({
+            url: app.globalData.host + '/histories',
+            method: 'POST',
+            data: {
+                member_id: app.globalData.userId,
+                subject_id: app.globalData.subjectId
+            },
+            success: function (res) {
+                var histories_finished = res.data.data.finished;
+                var histories_unfinished = res.data.data.unfinished;
+                that.setData({
+                    orders: histories_unfinished,
+                    histories_unfinished: histories_unfinished,
+                    histories_finished: histories_finished,
+                });
+            },
+        });
     },
 
     /**
@@ -331,34 +304,34 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-      let that= this;
-      wx.showNavigationBarLoading()
-      //获取订单列表
-      wx.request({
-        url: app.globalData.host + '/histories',
-        method: 'POST',
-        data: {
-          member_id: app.globalData.userId,
-          subject_id: app.globalData.subjectId
-        },
-        success: function (res) {
-          var histories_finished = res.data.data.finished;
-          var histories_unfinished = res.data.data.unfinished;
-          that.setData({
-            orders: histories_unfinished,
-            histories_unfinished: histories_unfinished,
-            histories_finished: histories_finished,
-          });
-        },
-        fail: function () {
-          wx.hideNavigationBarLoading() //完成停止加载
-          wx.stopPullDownRefresh() //停止下拉刷新
-        },
-        complete: function() {
-          wx.hideNavigationBarLoading() //完成停止加载
-          wx.stopPullDownRefresh() //停止下拉刷新
-        }
-      });
+        let that = this;
+        wx.showNavigationBarLoading()
+        //获取订单列表
+        wx.request({
+            url: app.globalData.host + '/histories',
+            method: 'POST',
+            data: {
+                member_id: app.globalData.userId,
+                subject_id: app.globalData.subjectId
+            },
+            success: function (res) {
+                var histories_finished = res.data.data.finished;
+                var histories_unfinished = res.data.data.unfinished;
+                that.setData({
+                    orders: histories_unfinished,
+                    histories_unfinished: histories_unfinished,
+                    histories_finished: histories_finished,
+                });
+            },
+            fail: function () {
+                wx.hideNavigationBarLoading() //完成停止加载
+                wx.stopPullDownRefresh() //停止下拉刷新
+            },
+            complete: function () {
+                wx.hideNavigationBarLoading() //完成停止加载
+                wx.stopPullDownRefresh() //停止下拉刷新
+            }
+        });
     },
 
     /**
@@ -371,7 +344,23 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
+    onShareAppMessage: function (e) {
+        if (e.target.dataset.id) {
+            var id = e.target.dataset.id;
+            var This = this;
+            wx.request({
+                url: app.globalData.sendOrder.url + id,
+                method: app.globalData.sendOrder.method,
+                header: {
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + getApp().globalData._token
+                },
+            });
+            return {
+                title: This.data.userInfo.name + '赠送您一张测评卡，速来领取',
+                path: '/pages/index/index?order_id=' + e.target.dataset.id
+            }
+        }
+    },
 
-    }
 })
