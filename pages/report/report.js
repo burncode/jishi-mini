@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     var userId = options.user_id ? options.user_id : app.globalData.userId;
     this.setData({
-      reportUrl: app.globalData.host + '/report/' + userId +'?order_number='+options.order_number
+      reportUrl: app.globalData.host + '/report/' + userId + '?order_number=' + options.order_number+'#wechat_redirect'
     })
   },
 
