@@ -80,7 +80,6 @@ text.p {
 
 .empty-line {
   overflow: hidden;
-
   display: block;
   width: 100%;
   height: 80rpx;

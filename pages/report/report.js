@@ -8,15 +8,29 @@ Page({
   data: {
     reportUrl: null
   },
-
+  onShareAppMessage: function (res) {
+    console.log(res);
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '报告',
+      path: '/page/report/report?order_number=' + order_number
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var userId = options.user_id ? options.user_id : app.globalData.userId;
+    console.log(app.globalData.host + '/report/' + userId + '?order_number=' + options.order_number);
     this.setData({
       reportUrl: app.globalData.host + '/report/' + userId +'?order_number='+options.order_number
-    })
+    });
+    // wx.showShareMenu({
+    //   withShareTicket: true
+    // })
   },
 
   /**
