@@ -67,10 +67,10 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '高考考生测评',
-      desc:'一个决定一生的测评',
+      title: '我的高考测评',
+      desc:'我的测评结果你也来看看吧！',
       path: '/pages/report/report?user_id='+this.userId+'&order_number='+this.orderNumber,
-      imageUrl: this.imageUrl,
+      imageUrl: this.data.imageUrl,
       success: (res) => {
         console.log("转发成功", res);
         wx.navigateBack();

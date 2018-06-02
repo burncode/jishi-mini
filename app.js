@@ -2,7 +2,6 @@
 // const host = 'https://admin.gq1994.top/api'
 // const host = 'http://192.168.199.110/api'
 const host = 'https://api.jishiceping.com/api';
-const hroot = 'https://api.jishiceping.com';
 
 //  const host = 'http://localhost:8000/api'
 App({
