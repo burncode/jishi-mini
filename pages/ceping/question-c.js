@@ -5,13 +5,8 @@ Page({
       hidden: true
     });
     wx.switchTab({
-      url: app.globalData.timeOutUrl,
-      success: function (e) {
-        var page = getCurrentPages().pop();
-        if (page == undefined || page == null) return;
-        page.onLoad();
-      }
-    })
+      url: app.globalData.timeOutUrl
+    });
 
   },
   startTimer: function () {
@@ -123,15 +118,15 @@ Page({
     clearInterval(this.data.timer)
     //提交前检测网络状态
 
-    if (!getApp().globalData.networtStatus.isConnected) {
-      wx.showToast({
-        title: '网络状态差',
-        icon: 'loading',
-        duration: 1000,
-        mask: true
-      });
-      return false;
-    }
+      if (!getApp().globalData.networtStatus.isConnected) {
+        wx.showToast({
+          title: '网络状态差',
+          icon: 'loading',
+          duration: 1000,
+          mask: true
+        });
+        return false;
+      }  
 
     var data = {
       member_id: app.globalData.userId,
