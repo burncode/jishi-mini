@@ -121,6 +121,18 @@ Page({
 
   submit: function (event) {
     clearInterval(this.data.timer)
+    //提交前检测网络状态
+
+    if (!getApp().globalData.networtStatus.isConnected) {
+      wx.showToast({
+        title: '网络状态差',
+        icon: 'loading',
+        duration: 1000,
+        mask: true
+      });
+      return false;
+    }
+
     var data = {
       member_id: app.globalData.userId,
       category_id: wx.getStorageSync('category_id'),
@@ -146,9 +158,9 @@ Page({
       success: function (msg) {
         wx.redirectTo({
           url: '/pages/letter/letter',
-          success: function(res) {},
-          fail: function(res) {},
-          complete: function(res) {},
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
         })
         // wx.switchTab({
         //   url: '/pages/order/index',
@@ -158,6 +170,11 @@ Page({
         //     page.onLoad();
         //   }
         // })
+      },
+      complete: function () {
+        this.setData({
+          selected: true
+        });
       },
     })
 
@@ -188,7 +205,7 @@ Page({
    */
   onLoad: function (options) {
     console.log('页面加载开始');
-    
+
     var c_questions = wx.getStorageSync('c_questions')
     var history = wx.getStorageSync('history')
     console.log('从本地缓存中获取历史记录：');
