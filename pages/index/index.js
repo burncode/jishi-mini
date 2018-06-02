@@ -16,7 +16,33 @@ Page({
         goods: [],
     },
 
-    onLoad: function () {
+    onLoad: function (option) {
+        console.log(option);
+        // 分享进来的
+        if (option.order_id) {
+            wx.request({
+                url: app.globalData.receiveOrder.url + option.id,
+                method: app.globalData.receiveOrder.method,
+                header: {
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' + getApp().globalData._token
+                },
+                success:function (res) {
+                    if (res.statusCode===200){
+                        wx.showModal({
+                            title: '提示',
+                            content: '领取成功'
+                        })
+                    }
+                },
+                fail:function (res) {
+                    wx.showModal({
+                        title: '提示',
+                        content: '领取失败'
+                    })
+                }
+            });
+        }
         var This = this;
         This.getRandOrder();
         This.getNews();
@@ -138,13 +164,13 @@ Page({
             method: getApp().globalData.getComments.method,
             success: function (res) {
                 if (res.statusCode === 200) {
-                  // 评论内容去掉html标签
-                  for (var i in res.data.data.data){
-                    res.data.data.data[i].content = getApp().convertHtmlToText(res.data.data.data[i].content);
-                  }
-                  This.setData({
-                      comments: res.data.data.data,
-                  });
+                    // 评论内容去掉html标签
+                    for (var i in res.data.data.data) {
+                        res.data.data.data[i].content = getApp().convertHtmlToText(res.data.data.data[i].content);
+                    }
+                    This.setData({
+                        comments: res.data.data.data,
+                    });
                 } else {
                     wx.showModal({
                         title: '提示',
