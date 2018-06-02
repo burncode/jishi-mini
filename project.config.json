@@ -171,6 +171,12 @@
 					"name": "一封信",
 					"pathName": "pages/letter/letter",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "领取优惠券",
+					"pathName": "pages/index/pay-success",
+					"query": ""
 				}
 			]
 		}

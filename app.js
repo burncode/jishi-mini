@@ -1,7 +1,8 @@
 //app.js
 // const host = 'https://admin.gq1994.top/api'
 // const host = 'http://192.168.199.110/api'
-const host = 'https://api.jishiceping.com/api'
+const host = 'https://api.jishiceping.com/api';
+
 //  const host = 'http://localhost:8000/api'
 App({
     onLaunch: function () {
@@ -48,6 +49,7 @@ App({
             }
         })
     },
+    // 过滤html标签
     convertHtmlToText: function convertHtmlToText(inputText) {
         var returnText = "" + inputText;
         returnText = returnText.replace(/<\/div>/ig, '\r\n');

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/report/share",
     "pages/index/index",
     "pages/index/lunbo-01",
     "pages/index/detail",

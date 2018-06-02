@@ -11,8 +11,8 @@
 </view>
 
 <view wx:if="{{userInfo.id}}">
-<view class='coupon'>
-    <view class='coupon-left' bindtap="toMyCoupons">
+<view class='coupon' bindtap="toMyCoupons">
+    <view class='coupon-left'>
         <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
         <text class='my-coupon'>我的优惠券</text>
     </view>
@@ -36,8 +36,8 @@
 <text class='tab {{activeFinished}}' bindtap='activeFinished'>已完成</text>
 </view>
 <view wx:else class='list-tab'>
-<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成测试</button>
-<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeFinished}}' bindtap='activeFinished'>已完成测试</button>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成</button>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='tab {{activeFinished}}' bindtap='activeFinished'>已完成</button>
 </view>
 
 <view wx:if="{{userInfo.id}}" class='order-list'>
