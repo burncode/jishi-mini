@@ -17,32 +17,6 @@ Page({
     },
 
     onLoad: function (option) {
-        console.log(option);
-        // 分享进来的
-        if (option.order_id) {
-            wx.request({
-                url: app.globalData.receiveOrder.url + option.id,
-                method: app.globalData.receiveOrder.method,
-                header: {
-                    'Accept': 'application/json',
-                    'Authorization': 'Bearer ' + getApp().globalData._token
-                },
-                success:function (res) {
-                    if (res.statusCode===200){
-                        wx.showModal({
-                            title: '提示',
-                            content: '领取成功'
-                        })
-                    }
-                },
-                fail:function (res) {
-                    wx.showModal({
-                        title: '提示',
-                        content: '领取失败'
-                    })
-                }
-            });
-        }
         var This = this;
         This.getRandOrder();
         This.getNews();

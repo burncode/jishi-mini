@@ -80,6 +80,14 @@ Page({
                                         This.setData({
                                             userInfo: app.globalData.userInfo,
                                         });
+                                        // 分享进来的
+                                        console.log(getApp().globalData.order_id);
+                                        console.log(app.globalData);
+                                        console.log(1);
+                                        if (app.globalData.order_id) {
+                                            console.log(1);
+                                            getApp().receiveOrder(app.globalData.order_id);
+                                        }
                                     }
                                 }
                             });
@@ -106,6 +114,10 @@ Page({
                                             This.setData({
                                                 userInfo: app.globalData.userInfo,
                                             });
+                                            // 分享进来的
+                                            if (app.globalData.order_id) {
+                                                getApp().receiveOrder(app.globalData.order_id);
+                                            }
                                         }
                                     }
                                 });
@@ -357,6 +369,7 @@ Page({
                     'Authorization': 'Bearer ' + getApp().globalData._token
                 },
             });
+            console.log('/pages/index/index?order_id=' + id);
             return {
                 title: This.data.userInfo.name + '赠送您一张测评卡，速来领取',
                 path: '/pages/index/index?order_id=' + id
