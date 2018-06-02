@@ -19,8 +19,7 @@
     "pages/coupon/send",
     "pages/comment/comment",
     "pages/letter/letter",
-    "pages/report/report",
-    "pages/logs/logs"
+    "pages/report/report"
   ],
   "window": {
     "backgroundTextStyle": "light",
