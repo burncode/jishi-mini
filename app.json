@@ -24,7 +24,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "基石测评",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

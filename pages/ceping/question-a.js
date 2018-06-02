@@ -6,15 +6,8 @@ Page({
       hidden: true
     });
     wx.switchTab({
-      url: app.globalData.timeOutUrl,
-      success: function (e) {
-        var page = getCurrentPages().pop();
-        if (page == undefined || page == null) return;
-        page.onLoad();
-      }
-    })
-
-
+      url: app.globalData.timeOutUrl
+    });
   },
   startTimer: function () {
     var that = this
@@ -102,7 +95,7 @@ Page({
       success: function (msg) {
         setTimeout(function () {
           that.nextQuestion();
-        }, 300)
+        }, 50)
       },
     })
   },
