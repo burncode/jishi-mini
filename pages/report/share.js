@@ -32,6 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    
   },
 
   /**
@@ -66,10 +67,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    var pathStr = '/pages/report/report?user_id=' + this.data.userId + '&order_number=' + this.data.orderNumber;
     return {
       title: '我的高考测评',
       desc:'我的测评结果你也来看看吧！',
-      path: '/pages/report/report?user_id='+this.userId+'&order_number='+this.orderNumber,
+      path: pathStr,
       imageUrl: this.data.imageUrl,
       success: (res) => {
         console.log("转发成功", res);
