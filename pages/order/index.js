@@ -345,6 +345,7 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function (e) {
+        console.log(e);
         if (e.target.dataset.id) {
             var id = e.target.dataset.id;
             var This = this;

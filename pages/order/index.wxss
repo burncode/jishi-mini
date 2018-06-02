@@ -244,3 +244,17 @@ page {
   text-align: center;
   color: #00479d;
 }
+button.present {
+  position: static;
+  float: right;
+  width: 150rpx;
+  height: 72rpx;
+  margin-top: 30rpx;
+  border: solid #00479d 2rpx;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  text-align: center;
+  color: #00479d;
+}
