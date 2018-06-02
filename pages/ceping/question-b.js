@@ -185,7 +185,6 @@ Page({
       var current_key = 0;
 
     }
-
     var current_no = current_key + 1
     var question_count = b_questions.data.length
     var progress = this.data.progress;

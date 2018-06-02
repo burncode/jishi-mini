@@ -115,6 +115,7 @@ Page({
   },
 
   submit: function (event) {
+    let that = this;
     clearInterval(this.data.timer)
     //提交前检测网络状态
 
@@ -167,7 +168,7 @@ Page({
         // })
       },
       complete: function () {
-        this.setData({
+        that.setData({
           selected: true
         });
       },
