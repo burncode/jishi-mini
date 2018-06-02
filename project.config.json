@@ -108,12 +108,6 @@
 				},
 				{
 					"id": -1,
-					"name": "订单列表页",
-					"pathName": "pages/order/index",
-					"query": ""
-				},
-				{
-					"id": -1,
 					"name": "优惠券列表",
 					"pathName": "pages/coupon/index",
 					"query": ""
@@ -134,18 +128,6 @@
 					"id": -1,
 					"name": "评价",
 					"pathName": "pages/comment/comment",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "订单列表",
-					"pathName": "pages/order/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "测评报告",
-					"pathName": "pages/report/report",
 					"query": ""
 				},
 				{

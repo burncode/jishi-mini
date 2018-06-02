@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/report/share",
     "pages/index/index",
+    "pages/report/share",
     "pages/index/lunbo-01",
     "pages/index/detail",
     "pages/index/detail-news",

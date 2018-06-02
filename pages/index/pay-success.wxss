@@ -3,7 +3,7 @@
   display: block;
   overflow: hidden;
 }
-view {
+.view {
   padding:0 40rpx;
 }
 image {
@@ -35,5 +35,7 @@ button {
   color: #ababab;
   text-align: center;
   font-size: 32rpx;
-  padding-top:160rpx;
+  position: fixed;
+  bottom:0;
+  width: 100%;
 }

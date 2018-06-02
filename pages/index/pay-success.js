@@ -15,6 +15,14 @@ Page({
     })
   },
   /**
+   * 回到首页
+   */
+  goHome:function () {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
