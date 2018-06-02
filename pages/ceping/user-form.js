@@ -32,8 +32,6 @@ Page({
      */
     onLoad: function (options) {
       
-        this.setData(getApp().globalData.userInfo);
-
     },
     setAreaData: function (p, c, d) {
       var p = p || 0 // provinceSelIndex
@@ -201,7 +199,7 @@ Page({
                 } else {
                     wx.showModal({
                         title: '提示',
-                        content: res.data
+                        content: '网络错误'
                     })
                 }
             },
