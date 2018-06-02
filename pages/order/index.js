@@ -344,10 +344,10 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function (e) {
-        console.log(e);
-        if (e.target.dataset.id) {
-            var id = e.target.dataset.id;
+    onShareAppMessage: function (res) {
+        console.log(res);
+        if (res.target.dataset.share_id) {
+            var id = res.target.dataset.share_id;
             var This = this;
             wx.request({
                 url: app.globalData.sendOrder.url + id,
@@ -359,7 +359,7 @@ Page({
             });
             return {
                 title: This.data.userInfo.name + '赠送您一张测评卡，速来领取',
-                path: '/pages/index/index?order_id=' + e.target.dataset.id
+                path: '/pages/index/index?order_id=' + id
             }
         }
     },
