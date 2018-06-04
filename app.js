@@ -201,6 +201,14 @@ App({
                 method: 'post'
             },
         },
+        gift_sends: {
+            url: host + '/gifts/sendOrders',
+            method: 'get'
+        },
+        gift_receives: {
+            url: host + '/gifts/receiveOrders',
+            method: 'get'
+        },
         networtStatus: {
             isConnected: true,
             networkType: null
