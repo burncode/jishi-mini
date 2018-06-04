@@ -7,4 +7,4 @@
         <text class='p'>{{content}}</text>
     </view>
 </view>
-<button open-type="share">分享给好友</button>
+<button class="fenxiang" open-type="share">分享给好友</button>

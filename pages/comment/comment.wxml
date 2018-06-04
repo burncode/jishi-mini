@@ -49,7 +49,7 @@
 <view class="modal-footer">
     <view class="btn-cancel" bindtap="goHome" data-status="cancel">返回首页</view>
     <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">
-        <button open-type='share' bindtap='hideModal'>分享给好友</button>
+        <button class="fenxiang" open-type='share' bindtap='hideModal'>分享给好友</button>
     </view>
 </view>
 </view>

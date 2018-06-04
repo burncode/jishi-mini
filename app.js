@@ -3,7 +3,7 @@
 // const host = 'http://yuanshiceping.com/api'
  const host = 'https://api.jishiceping.com/api';
 
-//  const host = 'http://localhost:8000/api'
+//  const host = 'http://www.xyy.com/api'
 App({
     onLaunch: function (option) {
         //检测网络状态

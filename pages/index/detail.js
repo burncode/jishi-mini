@@ -74,7 +74,7 @@ Page({
     },
 
     bindGetUserInfo: function (e) {
-        var This = this;
+        let This = this;
         // 小程序打开
         wx.login({
             success: function (res) {
@@ -106,6 +106,7 @@ Page({
                                         This.setData({
                                             userInfo: app.globalData.userInfo,
                                         });
+                                        This.zhifu();
                                     }
                                 }
                             });

@@ -43,7 +43,7 @@ text.indent-block {
   text-indent: 40rpx;
 }
 
-button {
+.fenxiang {
   color: #fff;
   background-color: #00479d;
   border-radius: 0;

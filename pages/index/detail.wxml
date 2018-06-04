@@ -1,5 +1,5 @@
 <!--pages/index/detail.wxml-->
-<image src='/demo/swiper-002.gif'/>
+<image src="{{goods_image}}"/>
 <text>\n</text>
 <view class='qiangou clear-both'>
 <text class='left'>
@@ -12,10 +12,11 @@
 </text>
 
 <view wx:if="{{userInfo.id}}" class='block right' bindtap="zhifu">
-    <button><p>立即</p><p>抢购</p></button>
+    <button>立即抢购</button>
 </view>
 <view wx:else class='block right'>
-    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"><p>立即</p><p>抢购</p></button>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">立即抢购
+    </button>
 </view>
 
 </view>
@@ -45,4 +46,4 @@
 </view>
 
 <view class='empty-line'></view>
-<button open-type="share">分享给好友</button>
+<button open-type="share" class="fenxiang">分享给好友</button>
