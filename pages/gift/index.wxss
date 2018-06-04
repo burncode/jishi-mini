@@ -360,8 +360,19 @@ button.present {
 }
 
 .font-size-25{
-    font-size:25rpx
+    font-size:25rpx;
+    margin-top:43rpx;
 }
 .font-size-36{
     font-size:36rpx
+}
+
+.btn-blue{
+   color:#fff;
+   background-color:#00479d;
+   width:68%;
+   border-radius:15rpx;
+   font-size:42rpx;
+   height:64rpx;
+   margin-left:48rpx;
 }

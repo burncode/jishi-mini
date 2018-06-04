@@ -46,18 +46,18 @@
         <view class="flex-1">
             <text class="time-code content-center tab-view-title">报告</text>
             <label wx:if="{{ (item.user.subject_status == 0 || item.user.subject_status == 1)&& tab=='send'}}"
-                   class='now active content-center m-t-30'>未测评
+                   class='btn-blue now active content-center m-t-30'>未测评
             </label>
             <label wx:if="{{ item.user.subject_status == 0 && tab=='receive'}}"
-                   class='now active content-center m-t-30' bindtap='toUsersDetail'
+                   class='btn-blue now active content-center m-t-30' bindtap='toUsersDetail'
                    data-order_no='{{item.order.order_id}}'>立即测评
             </label>
             <label wx:if="{{ item.user.subject_status == 1 && tab=='receive'}}"
-                   class='now active content-center m-t-30' bindtap='goEvaluate'
+                   class='btn-blue now active content-center m-t-30' bindtap='goEvaluate'
                    data-order_no='{{item.order.order_id}}'>继续测评
             </label>
-            <label wx:if="{{ item.user.subject_status == 2}}" class='now active content-center m-t-30'
-                   bindtap='goReport' data-order-no='{{item.order.order_id}}'>查看报告
+            <label wx:if="{{ item.user.subject_status == 2}}" class='btn-blue now active content-center m-t-30'
+                   bindtap='goReport' data-order-no='{{item.order.order_id}}'>查看
             </label>
         </view>
     </view>
