@@ -381,18 +381,32 @@ Page({
         if (res.target.dataset.share_id) {
             var id = res.target.dataset.share_id;
             var This = this;
-            wx.request({
-                url: app.globalData.sendOrder.url + id,
-                method: app.globalData.sendOrder.method,
-                header: {
-                    'Accept': 'application/json',
-                    'Authorization': 'Bearer ' + getApp().globalData._token
-                },
-            });
             console.log('/pages/index/index?order_id=' + id);
             return {
                 title: This.data.userInfo.name + '赠送您一张测评卡，速来领取',
-                path: '/pages/index/index?order_id=' + id
+                path: '/pages/index/index?order_id=' + id,
+                success:function (res) {
+                    wx.request({
+                        url: app.globalData.sendOrder.url + id,
+                        method: app.globalData.sendOrder.method,
+                        header: {
+                            'Accept': 'application/json',
+                            'Authorization': 'Bearer ' + getApp().globalData._token
+                        },
+                        success:function (res) {
+                            wx.showModal({
+                                title: '提示',
+                                content: res.data.message
+                            })
+                        }
+                    });
+                },
+                fail:function (res) {
+                    wx.showModal({
+                        title: '提示',
+                        content: '转发失败'
+                    })
+                }
             }
         }
     },

@@ -8,7 +8,7 @@ Page({
         subjectStatus: 0,
         activeUnfinished: 'active',
         activeFinished: '',
-        tab:'send',
+        tab: 'send',
         gifts: [],
         page: 1,
         total_page: 1,
@@ -64,9 +64,9 @@ Page({
     onPullDownRefresh: function () {
         // 页面进来 请求房源数据
         wx.showNavigationBarLoading()
-        if (this.data.tab==='send'){
+        if (this.data.tab === 'send') {
             this.getSends({});
-        }else{
+        } else {
             this.getReceives({});
         }
         wx.hideNavigationBarLoading() //完成停止加载
@@ -132,6 +132,17 @@ Page({
 
     getSends: function (data) {
         var This = this;
+        This.setData({
+            activeUnfinished: 'active',
+            tab: 'send',
+            activeFinished: '',
+            gifts: [],
+            page: 1,
+            total_page: 1,
+            next_page_url: '',
+            moreLoading: false,
+            moreLoadingComplete: false,
+        });
         wx.request({
             url: getApp().globalData.gift_sends.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.gift_sends.method,
@@ -167,6 +178,18 @@ Page({
     },
     getReceives: function (data) {
         var This = this;
+        console.log(This.data);
+        This.setData({
+            activeUnfinished: '',
+            activeFinished: 'active',
+            tab: 'receive',
+            gifts: [],
+            page: 1,
+            total_page: 1,
+            next_page_url: '',
+            moreLoading: false,
+            moreLoadingComplete: false,
+        });
         wx.request({
             url: getApp().globalData.gift_receives.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.gift_receives.method,
@@ -219,21 +242,9 @@ Page({
     },
     activeUnfinished: function (e) {
         this.getSends({});
-        this.setData({
-            activeUnfinished: 'active',
-            tab: 'send',
-            activeFinished: '',
-            orders: this.data.histories_unfinished,
-        })
     },
     activeFinished: function (e) {
         this.getReceives({});
-        this.setData({
-            activeUnfinished: '',
-            activeFinished: 'active',
-            tab: 'receive',
-            orders: this.data.histories_finished,
-        })
     },
     goReport: function (e) {
         var order_number = e.currentTarget.dataset.orderNo;
