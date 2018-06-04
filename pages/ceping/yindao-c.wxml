@@ -27,4 +27,4 @@
 </view>
 </view>
 
-<button bindtap='startC'>马上开始</button>
+<button  class="fenxiang" bindtap='startC'>马上开始</button>

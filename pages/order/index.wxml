@@ -88,11 +88,11 @@
     </view>
 
     <view class='order-buttons'>
-      <text wx:if="{{ item.subject_status == 0 && item.class_id >= 2}}" class='now active' bindtap='toPhone'>申请咨询</text>    
+      <text wx:if="{{ item.subject_status <= 1 && item.class_id >= 2}}" class='now active' bindtap='toPhone'>申请咨询</text>    
       <text wx:if="{{ item.subject_status == 0 && (item.class_id == 1 || item.class_id == 3)}}" class='now active' bindtap='toUsersDetail' data-order-no='{{item.orderNo}}'>立即测评</text>
       <button open-type="share" wx:if="{{ item.subject_status == 0 && (item.class_id == 1|| item.class_id == 3)}}" class='now present' data-share_id='{{item.id}}'>赠送</button>
 
-      <text wx:if="{{ item.subject_status == 1 && (item.class_id == 1|| item.class_id == 3)}}" class='now active' bindtap='goEvaluate' data-order-no='{{item.orderNo}}'>继续测评</text>
+      <text wx:if="{{ item.subject_status == 1 && (item.class_id == 1 || item.class_id == 3)}}" class='now active' bindtap='goEvaluate' data-order-no='{{item.orderNo}}'>继续测评</text>
         
       <text wx:if="{{ item.subject_status == 2 && (item.class_id == 1 || item.class_id == 3)}}" class='now active' bindtap='goReport' data-order-no='{{item.orderNo}}'>查看报告</text>
       <text wx:if="{{ item.subject_status == 2}}" class='now' bindtap='goComment' data-id="{{item.id}}" data-order-no='{{item.orderNo}}'>立即评价</text>

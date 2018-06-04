@@ -21,7 +21,7 @@
 
 <text>\n</text>
 
-<button wx:if="{{selected}}" bindtap='{{bindfunction}}'>{{button_name}}</button>
+<button class="fenxiang" wx:if="{{selected}}" bindtap='{{bindfunction}}'>{{button_name}}</button>
 
 
 <modal hidden="{{hidden}}" title="" confirm-text="好的" bindconfirm="confirm" no-cancel="true">
