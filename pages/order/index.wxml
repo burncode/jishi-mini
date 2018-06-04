@@ -31,17 +31,29 @@
 <!--</view>-->
 <!--</view>-->
 
-<!--礼物中心-->
+        <!--礼物中心-->
+<view wx:if="{{userInfo.id}}">
 <view class='coupon' bindtap="toMyGifts">
-<view class='coupon-left'>
-    <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
-    <text class='my-coupon'>礼物中心</text>
+    <view class='coupon-left'>
+        <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
+        <text class='my-coupon'>礼物中心</text>
+    </view>
+    <view class='coupon-right'>
+        <image src='/images/icon_jinru.png' class='right-icon'></image>
+        <text class='right-content' bindtap='goCoupon'></text>
+    </view>
 </view>
-<view class='coupon-right'>
-    <image src='/images/icon_jinru.png' class='right-icon'></image>
-    <text class='right-content' bindtap='goCoupon'></text>
+</view>
+<view wx:else>
+<view class='coupon'>
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+<image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
+<text class='my-coupon' style="margin-top:15rpx;">礼物中心</text>
+</button>
 </view>
 </view>
+
+
 
 <view wx:if="{{userInfo.id}}" class='list-tab'>
 <text class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成</text>

@@ -7,7 +7,6 @@
     </text>
 </view>
 
-        <!--我送出的-->
 <view class='order-list' wx:if="{{gifts.length}}">
 <view wx:for="{{gifts}}">
     <view class='order-item' bindtap="toGoodDetail" data-id="{{item.order.goods.id}}">
@@ -40,7 +39,8 @@
             <text class="time-code content-center m-t-30 font-size-25">{{item.user.receive_time}}</text>
         </view>
         <view class="flex-1">
-            <text class="time-code content-center tab-view-title">领取人</text>
+            <text class="time-code content-center tab-view-title" wx:if="{{ tab=='receive'}}">赠送人</text>
+            <text class="time-code content-center tab-view-title" wx:if="{{ tab=='send'}}">领取人</text>
             <text class="time-code content-center m-t-30 font-size-36">{{item.user.name}}</text>
         </view>
         <view class="flex-1">
