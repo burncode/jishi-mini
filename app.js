@@ -1,7 +1,7 @@
 //app.js
 // const host = 'https://admin.gq1994.top/api'
-// const host = 'http://yuanshiceping.com/api'
- const host = 'https://api.jishiceping.com/api';
+const host = 'http://yuanshiceping.com/api'
+ // const host = 'https://api.jishiceping.com/api';
 
 //  const host = 'http://localhost:8000/api'
 App({
@@ -200,6 +200,14 @@ App({
                 url: host + '/wechat_pay/createOrder',
                 method: 'post'
             },
+        },
+        gift_sends: {
+            url: host + '/gifts/sendOrders',
+            method: 'get'
+        },
+        gift_receives: {
+            url: host + '/gifts/receiveOrders',
+            method: 'get'
         },
         networtStatus: {
             isConnected: true,

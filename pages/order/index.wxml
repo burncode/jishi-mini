@@ -10,24 +10,36 @@
     </view>
 </view>
 
-<view wx:if="{{userInfo.id}}">
-<view class='coupon' bindtap="toMyCoupons">
-    <view class='coupon-left'>
-        <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
-        <text class='my-coupon'>我的优惠券</text>
-    </view>
-    <view class='coupon-right'>
-        <image src='/images/icon_jinru.png' class='right-icon'></image>
-        <text class='right-content' bindtap='goCoupon'></text>
-    </view>
+<!--<view wx:if="{{userInfo.id}}">-->
+<!--<view class='coupon' bindtap="toMyCoupons">-->
+    <!--<view class='coupon-left'>-->
+        <!--<image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>-->
+        <!--<text class='my-coupon'>我的优惠券</text>-->
+    <!--</view>-->
+    <!--<view class='coupon-right'>-->
+        <!--<image src='/images/icon_jinru.png' class='right-icon'></image>-->
+        <!--<text class='right-content' bindtap='goCoupon'></text>-->
+    <!--</view>-->
+<!--</view>-->
+<!--</view>-->
+<!--<view wx:else>-->
+<!--<view class='coupon'>-->
+    <!--<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">-->
+        <!--<image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>-->
+        <!--<text class='my-coupon' style="margin-top:15rpx;">我的优惠券</text>-->
+    <!--</button>-->
+<!--</view>-->
+<!--</view>-->
+
+<!--礼物中心-->
+<view class='coupon' bindtap="toMyGifts">
+<view class='coupon-left'>
+    <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
+    <text class='my-coupon'>礼物中心</text>
 </view>
-</view>
-<view wx:else>
-<view class='coupon'>
-    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
-        <image class='coupon-icon' src='/images/icon_youhuiquan.png'></image>
-        <text class='my-coupon' style="margin-top:15rpx;">我的优惠券</text>
-    </button>
+<view class='coupon-right'>
+    <image src='/images/icon_jinru.png' class='right-icon'></image>
+    <text class='right-content' bindtap='goCoupon'></text>
 </view>
 </view>
 

@@ -17,6 +17,11 @@ Page({
             url: '/pages/coupon/index'
         })
     },
+    toMyGifts: function () {
+        wx.navigateTo({
+            url: '/pages/gift/index'
+        })
+    },
     toUsersDetail: function (data) {
         console.log('点击立即测评，填写个人信息：');
         console.log('将本次测评相关订单号存入缓存待用');
