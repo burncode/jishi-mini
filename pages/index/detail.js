@@ -14,15 +14,6 @@ Page({
     zhifu: function () {
         let This = this;
         console.log(This.data);
-        console.log({
-            openId: This.data.userInfo.open_id,
-            goodsId: This.data.good_id,
-            price: This.data.price,
-            activity_price: This.data.activity_price,
-            goodName: This.data.goods_name,
-            price_level: This.data.price_level,
-            coupon_price: 20,
-        });
         wx.request({
             url: getApp().globalData.wechat_pay.createWechatOrder.url,
             method: getApp().globalData.wechat_pay.createWechatOrder.method,
@@ -32,11 +23,12 @@ Page({
             data: {
                 openId: This.data.userInfo.open_id,
                 goodsId: This.data.good_id,
+                class_id: This.data.class_id,
                 price: This.data.price,
                 activity_price: This.data.activity_price,
                 goodName: This.data.goods_name,
                 price_level: This.data.price_level,
-                coupon_price: 20,
+               
             },
             success(res) {
                 let data = res.data;
@@ -48,7 +40,7 @@ Page({
                     paySign: data.paySign,
                     success: function (res) {
                         wx.redirectTo({
-                            url: '/pages/index/pay-success?order_id=' + data.order.order_id,
+                            url: '/pages/index/pay-success?order_id=' + data.order.order_id + '&class_id=' + data.order.class_id,
                         });
                     },
                     fail: function (res) {
@@ -233,6 +225,7 @@ Page({
             },
             success: function (res) {
                 if (res.statusCode === 200) {
+                  console.log(res.data.data);
                     This.setData({
                         comments: res.data.data,
                     });

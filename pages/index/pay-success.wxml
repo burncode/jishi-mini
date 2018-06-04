@@ -4,12 +4,9 @@
     <image src='/images/icon_zhifuchenggong.png'></image>
     <text class='block success-msg'>支付成功</text>
     <text>\n</text>
-    <text class='block price'>￥{{price}}</text>
-
     <text>\n</text>
-
-    <button class='ceping' bindtap='toUsersDetail'>立即测评</button>
-    <button class=''>申请咨询</button>
+    <button class='ceping' wx:if="{{class_id==1 || class_id==3}}" bindtap='toUsersDetail'>立即测评</button>
+    <button class='ceping' wx:if="{{class_id==2 || class_id==3}}" bindtap='toPhone'>申请咨询</button>
     <button bindtap='goHome'>返回首页</button>
   </view>
   <text class='block share-text'>分享此链接给好友，好友得免费测评机会！</text>

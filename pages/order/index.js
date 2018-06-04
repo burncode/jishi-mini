@@ -12,6 +12,11 @@ Page({
         histories_unfinished: [],
         orders: [],
     },
+    toPhone: function() {
+      wx.makePhoneCall({
+        phoneNumber: app.globalData.consultationPhone
+      })
+    },
     toMyCoupons: function () {
         wx.navigateTo({
             url: '/pages/coupon/index'

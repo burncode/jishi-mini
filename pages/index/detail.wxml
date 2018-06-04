@@ -4,13 +4,15 @@
 <view class='qiangou clear-both'>
 <text class='left'>
     <text class='block h1'>{{goods_name}}</text>
-    <text class='huodong'>限时活动价：</text>
-    <text class='price b'>{{activity_price}}</text>
+    <text class='huodong' wx:if="{{price_level == 3}}">限时活动价：</text>
+    <text class='huodong' wx:if="{{price_level == 1}}">正常价格：</text>
+    <text class='price b' wx:if="{{price_level == 3}}">{{activity_price}}</text>
+    <text class='price b' wx:if="{{price_level == 1}}">{{price}}</text>
+    <text class='huodong' wx:if="{{price_level == 1}}">原价：</text>
     <text class='delete'>{{price}}</text>
-    <!-- <text class='block tishi'>(您有20元的优惠券，可在购买时直接抵扣)</text>  -->
-    <text class='tishi2'>\n 22道题目 | 10项专业报告 | 10W+已测试</text>
+    <text class='tishi2' wx:if="{{id == 1 || id == 3}}">\n 263道题目 | 50页专业报告 | {{people_num}}已测试</text>
+    <text class='tishi2' wx:if="{{id == 2 || id == 3}}">\n 专业咨询解答</text>
 </text>
-
 <view wx:if="{{userInfo.id}}" class='block right' bindtap="zhifu">
     <button>立即抢购</button>
 </view>
@@ -18,7 +20,6 @@
     <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">立即抢购
     </button>
 </view>
-
 </view>
 <view>
   <text class='h1 block'>测评介绍</text>
@@ -26,12 +27,16 @@
 </view>
 <view>
   <text class='h1 block'>测评需知</text>
-  <text class='p'>
-      {{need_know}}
+  <text class='p' wx:if="{{class_id==1}}">
+      1、测试前寻找一个安静的环境并保证网络正常。
+      2、测评卡包含238道测评题目，大约需要30分钟左右，请您合理安排时间。
+      3、一张测评卡只能做一次测评。
+      4、请按个人真实情况选择题目中所问问题。
+      5、中途答题时间结束时，可点击继续测评，继续回答下一个问题。请保持良好心态，客观分析测评结果。
   </text>
 </view>
 
-<view class='h1'>用户评价</view>
+<view class='h1' wx:if="{{comments.length > 0}}">用户评价</view>
 
 <view wx:for="{{comments}}" style="height:117rpx;">
 

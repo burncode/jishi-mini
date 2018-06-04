@@ -24,7 +24,7 @@
         <view class='zhuanjia-content'>
           <view class='h2'>{{item.goods_name}}</view>
           <view class='p'>{{item.describe}}</view>
-          <view class='hits'><span>10万</span>人已测</view>
+          <view class='hits'><span>{{item.people_num}}</span>人已测</view>
         </view>
       </view>
 

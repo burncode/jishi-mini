@@ -6,8 +6,14 @@ Page({
    */
   data: {
     price:998,
-    order_id:0
+    order_id:0,
+    class_id:0
   
+  },
+  toPhone: function () {
+    wx.makePhoneCall({
+      phoneNumber: getApp().globalData.consultationPhone
+    })
   },
   toUsersDetail: function (data) {
     wx.redirectTo({
@@ -19,7 +25,7 @@ Page({
    */
   goHome:function () {
     wx.switchTab({
-      url: '/pages/index/index',
+      url: '/pages/home/home',
     })
   },
   /**
@@ -28,6 +34,7 @@ Page({
   onLoad: function (options) {
     console.log(options);
     wx.setStorageSync('order_number', options.order_id);
+    class_id = options.class_id; 
   },
 
   /**

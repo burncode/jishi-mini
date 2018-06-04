@@ -118,7 +118,7 @@ swiper image{
 }
 .del-price {
   text-decoration: line-through;
-  margin-right: 50rpx;
+  padding: 0 80rpx;
 }
 
 .bg-white {
