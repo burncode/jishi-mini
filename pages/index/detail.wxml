@@ -10,6 +10,16 @@
     <text class='price b' wx:if="{{price_level == 1}}">{{price}}</text>
     <text class='huodong' wx:if="{{price_level == 1}}">原价：</text>
     <text class='delete'>{{price}}</text>
+    <text wx:if="{{id == 1}}"> 
+      6月10日前    985元/人 
+      6月10-20日   1280元/人 
+      6月20日后    1980元/人
+    </text>
+    <text wx:if="{{id == 2}}"> 
+      6月10日前  6800元/人
+      6月10-20日  7800元/人
+      6月20日后  9800元/人
+    </text>
     <text class='tishi2' wx:if="{{id == 1 || id == 3}}">\n 263道题目 | 50页专业报告 | {{people_num}}已测试</text>
     <text class='tishi2' wx:if="{{id == 2 || id == 3}}">\n 专业咨询解答</text>
 </text>

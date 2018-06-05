@@ -4,7 +4,7 @@
  const host = 'https://api.jishiceping.com/api';
 
 //  const host = 'http://www.xyy.com/api';
- const consultationPhone = '400-100-985'; //咨询电话
+ const consultationPhone = '4001019859'; //咨询电话
 App({
     onLaunch: function (option) {
         //检测网络状态

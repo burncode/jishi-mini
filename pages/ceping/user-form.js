@@ -161,6 +161,23 @@ Page({
         var data = e.detail.value;
         data.order_number = order_number;
         data.sex = This.data.sex;
+        if(
+          data.name.length == 0 || 
+          data.tel.length == 0 ||
+          data.sex.length == 0 
+          ) {
+            wx.showModal({
+              title: '提示',
+              content: '您还有信息没有填写'
+            })
+            return false;
+        } else if(data.tel.length != 11) {
+          wx.showModal({
+            title: '提示',
+            content: '请输入正确的手机号！'
+          })
+          return false;
+        }
         wx.request({
             url: getApp().globalData.users_update.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.users_update.method,
