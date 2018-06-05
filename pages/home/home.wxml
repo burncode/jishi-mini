@@ -63,7 +63,7 @@
         <image class='profile' src='{{item.user_head}}' />
       </view>
       <view class='zhuanjia-content'>
-        <view class='p'>{{item.content}}</view>
+        <view class='comment-content'>{{item.content}}</view>
         <view class='date'>{{item.updated_at}}</view>
       </view>
     </view>

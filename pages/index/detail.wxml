@@ -27,22 +27,24 @@
     <button>立即抢购</button>
 </view>
 <view wx:else class='block right'>
-    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">立即抢购
-    </button>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">立即抢购</button>
 </view>
 </view>
 <view>
-  <text class='h1 block'>测评介绍</text>
+  <text class='h1 block' wx:if="{{class_id==1}}">测评介绍</text>
+  <text class='h1 block' wx:if="{{class_id==2}}">咨询介绍</text>
+  <text class='h1 block' wx:if="{{class_id==3}}">测评咨询介绍</text>
   <text class='p'>{{describe}}</text>
 </view>
 <view>
-  <text class='h1 block'>测评需知</text>
+  <text class='h1 block' wx:if="{{class_id==1}}">测评需知</text>
   <text class='p' wx:if="{{class_id==1}}">
       1、测试前寻找一个安静的环境并保证网络正常。
-      2、测评卡包含238道测评题目，大约需要30分钟左右，请您合理安排时间。
-      3、一张测评卡只能做一次测评。
-      4、请按个人真实情况选择题目中所问问题。
-      5、中途答题时间结束时，可点击继续测评，继续回答下一个问题。请保持良好心态，客观分析测评结果。
+      2、填写个人信息，报告必须内容，包括姓名、性别、联系方式、所在省市等。
+      3、测评卡包含238道测评题目，大约需要30分钟左右，请您合理安排时间。
+      4、一张测评卡只能做一次测评。
+      5、请按个人真实情况选择题目中所问问题。
+      6、中途答题时间结束时，可点击继续测评，继续回答下一个问题。请保持良好心态，客观分析测评结果。
   </text>
 </view>
 

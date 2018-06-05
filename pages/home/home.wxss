@@ -90,6 +90,9 @@ swiper image{
 .p {
   font-size: 22rpx;
   color: #888;
+  overflow:hidden;
+  height:150rpx;
+
 }
 .hits {
   font-size: 22rpx;
@@ -118,11 +121,16 @@ swiper image{
 }
 .del-price {
   text-decoration: line-through;
-  padding: 0 80rpx;
+  padding: 0 60rpx;
 }
 
 .bg-white {
   background-color: #fff;
   padding: 40rpx 20rpx 0;
   margin-top:10rpx;
+}
+
+.comment-content{
+  font-size:22rpx;
+  color:#888;
 }
