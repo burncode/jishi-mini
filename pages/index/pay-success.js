@@ -5,9 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    price:998,
-    order_id:0,
-    class_id:0
   
   },
   toPhone: function () {
@@ -34,7 +31,7 @@ Page({
   onLoad: function (options) {
     console.log(options);
     wx.setStorageSync('order_number', options.order_id);
-    class_id = options.class_id; 
+    this.setData(options); 
   },
 
   /**
