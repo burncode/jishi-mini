@@ -51,6 +51,9 @@ App({
                                             getApp().globalData.order_id = option.query.order_id;
                                             var order_id = option.query.order_id;
                                             getApp().receiveOrder(order_id);
+                                            wx.switchTab({
+                                              url: 'pages/home/home'
+                                            })
                                         }
                                     }
                                 }

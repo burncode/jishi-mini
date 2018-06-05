@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/home/home",
-
     "pages/gift/index",
     "pages/report/share",
     "pages/index/lunbo-01",
