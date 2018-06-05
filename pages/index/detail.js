@@ -206,12 +206,9 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function (res) {
-        if (res.from === 'button') {
-            // 来自页面内转发按钮
-        }
         return {
-            title: '/pages/index/detail页面转发标题',
-            path: '/pages/index/detail'
+            title: '商品详情',
+            path: '/pages/index/detail?id='+this.data.good_id
         }
     },
     getComments: function (id) {

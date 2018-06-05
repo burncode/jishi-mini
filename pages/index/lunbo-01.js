@@ -4,13 +4,18 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+      guid:null
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (option) {
         // 拿到guid
         let This = this;
+        This.setData({
+          guid:option.guid
+        });
         wx.request({
             url: getApp().globalData.getOneNews.url + option.guid,
             method: getApp().globalData.getOneNews.method,
@@ -75,8 +80,8 @@ Page({
             // 来自页面内转发按钮
         }
         return {
-            title: '轮播详情分享(lunbo-01)标题',
-            path: '/pages/index/lunbo-01'
+            title: '专栏详情',
+            path: '/pages/index/lunbo-01?guid=' + this.data.guid
         }
     }
 })

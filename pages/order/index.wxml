@@ -77,9 +77,7 @@
                 <text class='price-msg'>活动结束恢复原价</text>
             </view>
             <view class='del-price'>原价：￥ {{item.price}}</view>
-            
         </view>
-
     </view>
     <view class='order-date p'>购买时间：{{item.payDate}}</view>
     <view>
