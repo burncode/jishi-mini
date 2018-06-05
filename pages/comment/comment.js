@@ -46,7 +46,7 @@ Page({
     },
     goHome: function () {
         wx.switchTab({
-            url: '/pages/index/index',
+            url: '/pages/home/home',
         })
     },
     onShareAppMessage: function () {

@@ -386,10 +386,10 @@ Page({
         if (res.target.dataset.share_id) {
             var id = res.target.dataset.share_id;
             var This = this;
-            console.log('/pages/index/index?order_id=' + id);
+            console.log('/pages/home/home?order_id=' + id);
             return {
                 title: This.data.userInfo.name + '赠送您一张测评卡，速来领取',
-                path: '/pages/index/index?order_id=' + id,
+                path: '/pages/home/home?order_id=' + id,
                 success:function (res) {
                     wx.request({
                         url: app.globalData.sendOrder.url + id,

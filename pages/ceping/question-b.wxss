@@ -49,3 +49,12 @@ radio {
   line-height: 48rpx;
   color: #f99310;
 }
+
+button {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  background-color: #00479d;
+  color:#fff;
+}

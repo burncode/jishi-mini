@@ -53,16 +53,6 @@
         <view class='hits'>{{item.read_num}}人阅读</view>
       </view>
     </view>
-    <view wx:for="{{news}}" wx:key='news-key' class='block' data-id="{{item.id}}" bindtap="toNewsDetail">
-      <view class='zhuanjia-img'>
-        <image src='{{item.banner}}' />
-      </view>
-      <view class='zhuanjia-content'>
-        <view class='h2'>{{item.title}}</view>
-        <view class='p'>{{item.keyword}}</view>
-        <view class='hits'>{{item.read_num}}人阅读</view>
-      </view>
-    </view>
   </view>
 
   <view class='bg-white'>

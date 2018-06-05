@@ -192,7 +192,7 @@ Page({
     onShareAppMessage: function (res) {
         return {
             title: '我正在使用基石测评，您也来吧-首页',
-            path: '/pages/index/index'
+            path: '/pages/home/home'
         }
     },
 
