@@ -52,6 +52,12 @@
 </button>
 </view>
 </view>
+<view class='coupon'>
+<button bindtap="toSearch">
+<image class='coupon-icon' src='/images/search.png'></image>
+<text class='my-coupon' style="margin-top:15rpx;">有理有据查大学</text>
+</button>
+</view>
 
 <view wx:if="{{userInfo.id}}" class='list-tab'>
 <text class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成</text>

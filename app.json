@@ -21,6 +21,7 @@
     "pages/comment/comment",
     "pages/letter/letter",
     "pages/report/report",
+    "pages/search/index",
     "pages/index/index"
   ],
   "window": {

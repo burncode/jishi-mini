@@ -22,6 +22,11 @@ Page({
             url: '/pages/coupon/index'
         })
     },
+    toSearch: function () {
+      wx.navigateTo({
+        url: '/pages/search/index'
+      })
+    },
     toMyGifts: function () {
         wx.navigateTo({
             url: '/pages/gift/index'
