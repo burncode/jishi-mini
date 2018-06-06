@@ -52,12 +52,24 @@
 </button>
 </view>
 </view>
+<view class='coupon' bindtap="toSearch">
+    <view class='coupon-left'>
+        <image class='coupon-icon' src='/images/search.png'></image>
+        <text class='my-coupon'>有理有据查大学</text>
+    </view>
+    <view class='coupon-right'>
+        <image src='/images/icon_jinru.png' class='right-icon'></image>
+        <text class='right-content' bindtap='toSearch'></text>
+    </view>
+</view>
+<!-- <view>
 <view class='coupon'>
 <button bindtap="toSearch">
 <image class='coupon-icon' src='/images/search.png'></image>
 <text class='my-coupon' style="margin-top:15rpx;">有理有据查大学</text>
 </button>
 </view>
+</view> -->
 
 <view wx:if="{{userInfo.id}}" class='list-tab'>
 <text class='tab {{activeUnfinished}}' bindtap='activeUnfinished'>未完成</text>
