@@ -37,14 +37,15 @@ Page({
 
   displayButton: function () {
     if (this.data.progress.current_no >= 60) {
+      //点击最后一题时就提交grade请求
+      this.grade();
       var button_name = '提交答案'
       var bindfunction = 'submit'
-
       this.setData({
         button_name: button_name,
         bindfunction: bindfunction,
         selected: true,
-      })
+      });
     } else {
 
       var current_key = this.data.current_key + 1
@@ -108,6 +109,11 @@ Page({
   },
   submit: function (event) {
     clearInterval(this.data.timer)
+    wx.redirectTo({
+      url: '/pages/ceping/yindao-c'
+    })
+  },
+  grade: function() {
     var data = {
       member_id: app.globalData.userId,
       category_id: wx.getStorageSync('category_id'),
@@ -120,9 +126,6 @@ Page({
       success: function (msg) {
 
       },
-    })
-    wx.redirectTo({
-      url: '/pages/ceping/yindao-c'
     })
   },
   /**

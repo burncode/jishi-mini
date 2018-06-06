@@ -37,6 +37,8 @@ Page({
 
   displayButton: function () {
     if (this.data.progress.current_no >= 28) {
+      //点击最后一题时就提交grade请求
+      this.grade();
       var button_name = '提交答案'
       var bindfunction = 'submit'
 
@@ -118,63 +120,60 @@ Page({
     let that = this;
     clearInterval(this.data.timer)
     //提交前检测网络状态
+    if (!getApp().globalData.networtStatus.isConnected) {
+      wx.showToast({
+        title: '网络状态差',
+        icon: 'loading',
+        duration: 1000,
+        mask: true
+      });
+      return false;
+    }
+    var order_number = wx.getStorageSync('order_number');
+    console.log(order_number);
+    wx.request({
+      url: app.globalData.host + '/history',
+      method: 'POST',
+      data: {
+        member_id: app.globalData.userId,
+        subject_id: app.globalData.subjectId,
+        order_number: order_number,
+      },
+      success: function (res) {
+        var history = res.data.data;
+        if (history.subject_status === 2) {
+          wx.redirectTo({
+            url: '/pages/letter/letter',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          });
+        } else {
+          wx.showToast({
+            title: '数据处理中',
+            icon: 'loading',
+            duration: 1000,
+            mask: true
+          });
+        }
+      }
+    });
 
-      if (!getApp().globalData.networtStatus.isConnected) {
-        wx.showToast({
-          title: '网络状态差',
-          icon: 'loading',
-          duration: 1000,
-          mask: true
-        });
-        return false;
-      }  
-
+  },
+  grade: function () {
     var data = {
       member_id: app.globalData.userId,
       category_id: wx.getStorageSync('category_id'),
       order_number: wx.getStorageSync('order_number'),
     }
-    //弹出等待提示
-    wx.showToast({
-      title: '数据处理中',
-      icon: 'loading',
-      duration: 30000,
-      mask: true
-    })
-
-    //隐藏提交按钮
-    this.setData({
-      selected: false
-    });
-
     wx.request({
       url: app.globalData.host + '/grade',
       method: 'POST',
       data: data,
       success: function (msg) {
-        wx.redirectTo({
-          url: '/pages/letter/letter',
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
-        })
-        // wx.switchTab({
-        //   url: '/pages/order/index',
-        //   success: function (e) {
-        //     var page = getCurrentPages().pop();
-        //     if (page == undefined || page == null) return;
-        //     page.onLoad();
-        //   }
-        // })
-      },
-      complete: function () {
-        that.setData({
-          selected: true
-        });
+
       },
     })
-
-
   },
   /**
    * 页面的初始数据
