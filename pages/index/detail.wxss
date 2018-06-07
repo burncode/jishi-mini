@@ -2,7 +2,7 @@
 @import "/pages/common/common.wxss";
 image {
   width: 100%;
-  height: 340rpx;
+  height: 500rpx;
 }
 view {
   margin-bottom: 40rpx;

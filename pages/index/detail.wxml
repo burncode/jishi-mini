@@ -20,7 +20,7 @@
       6月10-20日  7800元/人
       6月20日后  9800元/人
     </text>
-    <text class='tishi2' wx:if="{{id == 1 || id == 3}}">\n 263道题目 | 50页专业报告 | {{people_num}}已测试</text>
+    <text class='tishi2' wx:if="{{id == 1 || id == 3}}">\n 263道题目 | 50页专业报告 | {{people_num}}已测</text>
     <text class='tishi2' wx:if="{{id == 2 || id == 3}}">\n 专业咨询解答</text>
 </text>
 <view wx:if="{{userInfo.id}}" class='block right' bindtap="zhifu">

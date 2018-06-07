@@ -24,9 +24,7 @@
         <view class='zhuanjia-content'>
           <view class='h2'>{{item.goods_name}}</view>
           <view class='p'>{{item.describe}}</view>
-          <view class='hits' wx:if="{{item.class_id == 1}}"><span>{{item.people_num}} \t</span>人已测</view>
-          <view class='hits' wx:if="{{item.class_id == 2}}"><span>{{item.people_num}} \t</span>人已咨询</view>
-          <view class='hits' wx:if="{{item.class_id == 3}}"><span>{{item.people_num}} \t</span>人已购</view>
+          
         </view>
       </view>
 
@@ -40,6 +38,9 @@
         <text class='price'>￥ {{item.activity_price}}</text>
         <text class='del-price'>\t ￥{{item.price}}</text>
         <text class='price-content'>活动结束恢复原价</text>
+        <view class='hits' wx:if="{{item.class_id == 1}}"><span>{{item.people_num}} \t</span>人已测</view>
+        <view class='hits' wx:if="{{item.class_id == 2}}"><span>{{item.people_num}} \t</span>人已咨询</view>
+        <view class='hits' wx:if="{{item.class_id == 3}}"><span>{{item.people_num}} \t</span>人已购</view>
       </view>
     </view>
   </view>
