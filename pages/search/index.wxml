@@ -2,10 +2,10 @@
   <view class="nav">
     <text class='left'>北京基石测评联合 有据app 为考生准备了完整的专业选择流程。通过专业的测评获取到适合自己的专业，通过有据app查询专业以及学校情况，让您对学校、师资、环境、专业等等数据了如指掌，添加基石测评测评客服微信号，所要有据激活码，可获取到价值20元的据点，在查询专业时使用.
     </text>
-    <image bindtap="previewImg" data-src="{{youjuImg}}" class="right" src='{{youjuImg}}'></image>
+    <image bindtap="previewImg" data-src="{{jishiImg}}" class="right" src='{{jishiImg}}'></image>
   </view>
   <view class="border nav">
-    <image bindtap="previewImg" data-src="{{jishiImg}}" class="b-left" src='{{jishiImg}}'></image>
+    <image bindtap="previewImg" data-src="{{youjuImg}}" class="b-left" src='{{youjuImg}}'></image>
     <text class='b-right'>有据app运用互联网大数据技术，专注于高考升学数据整理与剖析，致力于为高中生和家长提供具备公信力和效用性的全国大学高考升学数据以及升学服务。现数据已涵盖中国2755所大学、1254个专业，同时还提供了各类升学文章与升学轻咨询服务，以帮助高考生解决如何选大学、如何选专业的难题。
     </text>
   </view>

@@ -1,6 +1,6 @@
 <!--pages/ceping/yindao.wxml-->
 <view class='h1 center'>
-<text class='point'>·</text>
+<!-- <text class='point'>·</text>
 <text class='title blue bold'>测评前引导与注意事项</text>
 <text class='point'>·</text>
 </view>
@@ -16,7 +16,7 @@
 <text class='indent-block'>1.	测评共包括<text class='b'>238</text>道题目，需要大约<text class="b">30</text>分钟，请合理安排时间，在不受外界干扰的情况下完成测评；</text>	
 <text class='indent-block'>2.	请按您真实的自我、实际情况和现状选择答案，而不是按您想象中的或是期望中的答案去选择；</text>
 	<text class='indent-block'>3.	每个人都有自己独特的优势和相对的弱势，“一母生九子，九子各不同”。我们更注重一个人独特的天赋优势，发挥它，您将更容易成功。</text>
-	</view>
+	</view> -->
 <view class='p'>
 <text class="h2 blue">注意事项</text>
 <text>\n</text>
