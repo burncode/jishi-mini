@@ -1,24 +1,11 @@
-<!--pages/ceping/yindao.wxml-->
 <view class='h1 center'>
-<!-- <text class='point'>·</text>
-<text class='title blue bold'>测评前引导与注意事项</text>
-<text class='point'>·</text>
+  <text class='point'>·</text>
+  <text class='title blue bold'>注意事项</text>
+  <text class='point'>·</text>
 </view>
-
 <view class='body'>
 <view class='p'>
-欢迎您进行高中生专业选择测评，本测评是专门针对高中生的<text class="blue b">性格、天赋、潜能、兴趣、行为风格</text>等多维度特质进行科学的分析，从而帮助高中生选择最适合自己、最能发挥自己优势的专业。</view>
-<view class='p'>
-为了帮助您产生更好的测评效果，在测评时注意以下事项：
-</view>
-<view class='p'>
-
-<text class='indent-block'>1.	测评共包括<text class='b'>238</text>道题目，需要大约<text class="b">30</text>分钟，请合理安排时间，在不受外界干扰的情况下完成测评；</text>	
-<text class='indent-block'>2.	请按您真实的自我、实际情况和现状选择答案，而不是按您想象中的或是期望中的答案去选择；</text>
-	<text class='indent-block'>3.	每个人都有自己独特的优势和相对的弱势，“一母生九子，九子各不同”。我们更注重一个人独特的天赋优势，发挥它，您将更容易成功。</text>
-	</view> -->
-<view class='p'>
-<text class="h2 blue">注意事项</text>
+<!-- <text class="h2 blue">注意事项</text> -->
 <text>\n</text>
 <text>\n</text>
 <text class='block'>* 本模块共 <text class='b'>60</text> 题。</text>

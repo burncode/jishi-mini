@@ -2,7 +2,7 @@ const app = getApp()
 Page({
   startB: function (event) {
     wx.redirectTo({
-      url: '/pages/ceping/question-b'
+      url: '/pages/ceping/yindao-b-2'
     })
 
   },
