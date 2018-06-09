@@ -150,14 +150,14 @@
 				},
 				{
 					"id": -1,
-					"name": "领取优惠券",
-					"pathName": "pages/index/pay-success",
+					"name": "有理有据查大学",
+					"pathName": "pages/search/index",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "有理有据查大学",
-					"pathName": "pages/search/index",
+					"name": "礼物中心",
+					"pathName": "pages/gift/index",
 					"query": ""
 				}
 			]

@@ -6,9 +6,62 @@
           bindtap='activeFinished'>我收到的
     </text>
 </view>
-
 <view class='order-list' wx:if="{{gifts.length}}">
-<view wx:for="{{gifts}}">
+  <view wx:for="{{gifts}}">
+    <view class='order-item' bindtap="toGoodDetail" data-id="{{item.order.goods.id}}">
+      <view class='order-img'><image src='{{item.order.banner}}'></image></view>
+      <view class='order-content'>
+          <view><text class='h1'>{{item.order.title}}</text></view>
+          <view><text class='price'>￥ {{item.order.paid_price}}</text></view>
+          <view class='del-price'>原价：￥ {{item.order.price}}</view>
+      </view>
+    </view>
+    <view class='order-date p'>增送时间：{{item.order.created_at}}</view>
+    <view>
+        <view class='order-no p'>订单编号：{{item.order.order_id}}</view>
+        <view class='copy-no' bindtap='copy' data-order-no='{{item.order.orderNo}}'>复制</view>
+    </view>
+    <view class='order-buttons'></view>
+    
+    <view class="table">
+      <view class="tr">
+        <text class="th">领取时间</text>
+        <text class="th" wx:if="{{ tab=='receive'}}">赠送人</text>
+        <text class="th" wx:if="{{ tab=='send'}}">领取人</text>
+        <text class="th">报告</text>
+      </view>
+      <view class="tr">
+        <text class="td">{{item.user.receive_time}}</text>
+        <text class="td">{{item.user.name}}</text>
+        <text class="td button" wx:if="{{ (item.user.subject_status == 0 || item.user.subject_status == 1)&& tab=='send'}}">未测评</text>
+        　<text wx:if="{{ item.user.subject_status == 0 && tab=='receive'}}"
+                  class='td button' bindtap='toUsersDetail'
+                  data-order_no='{{item.order.order_id}}'>立即测评
+          </text>
+          <text wx:if="{{ item.user.subject_status == 1 && tab=='receive'}}"
+                  class='td button' bindtap='goEvaluate'
+                  data-order_no='{{item.order.order_id}}'>继续测评
+          </text>
+          <text wx:if="{{ item.user.subject_status == 2}}" class='td button'
+                  bindtap='goReport' data-order-no='{{item.order.order_id}}'>查看
+          </text>
+      </view>
+    </view>
+    <view class='item-line'></view>
+  </view>
+  <view class="loading" style="bottom: 180rpx;font-size: 25rpx;text-align:center;" hidden="{{!moreLoading}}">正在载入更多...
+</view>
+  <view class="loading complete" style="bottom: 180rpx;font-size: 25rpx;text-align:center;"
+        hidden="{{!moreLoadingComplete}}">
+      已加载全部
+  </view>
+</view>
+<view class='order-list' wx:else>
+  <text class="content-center">暂无礼物</text>
+</view>
+
+ <!-- <view class='order-list' wx:if="{{gifts.length}}">
+  <view wx:for="{{gifts}}">
     <view class='order-item' bindtap="toGoodDetail" data-id="{{item.order.goods.id}}">
         <view class='order-img'>
             <image src='{{item.order.banner}}'></image>
@@ -19,7 +72,6 @@
             </view>
             <view>
                 <text class='price'>￥ {{item.order.paid_price}}</text>
-                <text class='price-msg'>活动结束恢复原价</text>
             </view>
             <view class='del-price'>原价：￥ {{item.order.price}}</view>
         </view>
@@ -30,8 +82,7 @@
         <view class='copy-no' bindtap='copy' data-order-no='{{item.order.orderNo}}'>复制</view>
     </view>
 
-    <view class='order-buttons'>
-    </view>
+    <view class='order-buttons'></view>
 
     <view class="display-flex bottom-btn">
         <view class="flex-1">
@@ -41,7 +92,7 @@
         <view class="flex-1">
             <text class="time-code content-center tab-view-title" wx:if="{{ tab=='receive'}}">赠送人</text>
             <text class="time-code content-center tab-view-title" wx:if="{{ tab=='send'}}">领取人</text>
-            <text class="time-code content-center m-t-30 font-size-36">{{item.user.name}}</text>
+            <text class="time-code content-center m-t-30 font-size-25">{{item.user.name}}</text>
         </view>
         <view class="flex-1">
             <text class="time-code content-center tab-view-title">报告</text>
@@ -62,7 +113,7 @@
         </view>
     </view>
     <view class='item-line'>
-    </view>
+  </view>
 </view>
 <view class="loading" style="bottom: 180rpx;font-size: 25rpx;text-align:center;" hidden="{{!moreLoading}}">正在载入更多...
 </view>
@@ -74,4 +125,4 @@
 <view class='order-list' wx:else>
 <text class="content-center">暂无礼物</text>
 </view>
-
+  -->

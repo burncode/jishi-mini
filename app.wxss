@@ -11,3 +11,6 @@
 swiper{
   height:200px;
 }
+image{
+  height:0;
+}
