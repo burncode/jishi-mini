@@ -166,3 +166,7 @@ input-holder {
   height: 88rpx;
   line-height: 88rpx;
 }
+
+.fake-textarea{
+  height: 350rpx;
+}

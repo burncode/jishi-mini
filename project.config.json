@@ -159,6 +159,24 @@
 					"name": "礼物中心",
 					"pathName": "pages/gift/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/comment/comment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/ceping/yindao-b",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/comment/comment",
+					"query": ""
 				}
 			]
 		}

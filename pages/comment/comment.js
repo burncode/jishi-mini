@@ -5,6 +5,7 @@ Page({
         var This = this;
 
         var data = e.detail.value;
+        console.log(data)
         wx.request({
             url: getApp().globalData.add_comment.url, //仅为示例，并非真实的接口地址
             method: getApp().globalData.add_comment.method,
@@ -15,7 +16,7 @@ Page({
             },
             success: function (res) {
                 if (res.statusCode === 200) {
-                    This.submit();
+                    This.submit(data.content);
                     // wx.showModal({
                     //     title: '提示',
                     //     content: res.data.message
@@ -68,12 +69,19 @@ Page({
      */
     hideModal: function () {
         this.setData({
-            showModal: false
+            showModal: false,
+            // isHide: false,
+            // isShow:false,
         });
     },
-    submit: function () {
+    submit: function (content) {
         //提交到后台
         console.log(this.data);
+        this.setData({
+          isHide: true,
+          isShow: true,
+          content: content
+        });
 
 
         this.showDialogBtn()
@@ -117,6 +125,8 @@ Page({
      * 页面的初始数据
      */
     data: {
+       isHide:false,
+       isShow:false,
         good_id: null,
         content: '',
         noteMaxLen: 80, //备注最多字数

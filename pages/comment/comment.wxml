@@ -27,13 +27,14 @@
 </view>
 
 <view class='content'>
-    <textarea name="content" placeholder='说说你的测试心得，分享给想测评的Ta吧～' maxlength="{{noteMaxLen}}" bindinput="bindWordLimit">
+    <textarea hidden='{{ isHide }}' name="content" placeholder='说说你的测试心得，分享给想测评的Ta吧～' maxlength="{{noteMaxLen}}" bindinput="bindWordLimit">
    {{content}}
     </textarea>
+    <view class='fake-textarea' wx:if="{{ isHide }}">{{ content }}</view>
     <text class='remainer'>剩余{{noteMaxLen - currentNoteLen}}字</text>
 </view>
 
-<button formType="submit">发布</button>
+<button class='fenxiang' formType="submit">发布</button>
 </form>
 
         <!--弹窗-->
