@@ -2,5 +2,5 @@
 @import "/pages/common/common.wxss";
 
 .body {
-  margin-bottom: 100rpx;
+  margin:100rpx 0 100rpx 0;
 }

@@ -1,7 +1,7 @@
 <view class='h1 center'>
-  <text class='point'>·</text>
+  <!-- <text class='point'>·</text>
   <text class='title blue bold'>注意事项</text>
-  <text class='point'>·</text>
+  <text class='point'>·</text> -->
 </view>
 <view class='body'>
   <view class='p'>
@@ -12,18 +12,19 @@
     <text class='block'>* 每道题分别有<text class='b'>A</text>和B两种描述，根据自己对描述的符合程度选择。</text>
     <text>\n</text>
     <text class='block'>* 如果特别同意<text class='b'>A</text>的描述，就选择最左边</text>
-    <text class='block'>--“<text class='b'>A</text>非常符合我”；</text>
+    <text class='block'>--“<text class='b'>A</text>非常贴切描述我”；</text>
     <text>\n</text>
     <text class='block'>如果比较同意<text class='b'>A</text>的描述, 就选择左边第二个</text>
-    <text class='block'>--“<text class='b'>A</text>比较符合我”；</text>
+    <text class='block'>--“<text class='b'>A</text>比较贴切描述我”；</text>
     <text>\n</text>
     <text class='block'>如果特别同意<text class='b'>B</text>的描述，就选择最右边</text>
-    <text class='block'>--“<text class='b'>B</text>非常符合我”；</text>
+    <text class='block'>--“<text class='b'>B</text>比较贴切描述我”；</text>
     <text>\n</text>
     <text class='block'>如果比较同意B的描述，就选择右边第二个</text>
-    <text class='block'> --“<text class='b'>B</text>比较符合我”；</text>
+    <text class='block'> --“<text class='b'>B</text>非常贴切描述我”；</text>
     <text>\n</text>
-    <text class='block'>如果摇摆不定或者比较均衡，就选中间--“中立”。</text>
+    <text class='block'>如果摇摆不定或者比较均衡，就选中间 </text>
+     <text class='block'>--“中立”。</text>
   </view>
 </view>
 

@@ -1,7 +1,7 @@
 <view class='h1 center'>
-  <text class='point'>·</text>
+  <!-- <text class='point'>·</text>
   <text class='title blue bold'>注意事项</text>
-  <text class='point'>·</text>
+  <text class='point'>·</text> -->
 </view>
 <view class='body'>
 

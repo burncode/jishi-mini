@@ -115,9 +115,9 @@ Page({
         selected_key: null,
         items: [
           { name: '1', value: 'A非常贴切描述我' },
-          { name: '2', value: 'A一般' },
+          { name: '2', value: 'A比较贴切描述我' },
           { name: '3', value: '中立' },
-          { name: '4', value: 'B一般' },
+          { name: '4', value: 'B比较贴切描述我' },
           { name: '5', value: 'B非常贴切描述我' },
         ],
       })
@@ -160,9 +160,9 @@ Page({
     seconds: app.globalData.questionBSeconds,
     items: [
       { name: '1', value: 'A非常贴切描述我' },
-      { name: '2', value: 'A一般' },
+      { name: '2', value: 'A比较贴切描述我' },
       { name: '3', value: '中立' },
-      { name: '4', value: 'B一般' },
+      { name: '4', value: 'B比较贴切描述我' },
       { name: '5', value: 'B非常贴切描述我' },
     ],
     button_name: '',

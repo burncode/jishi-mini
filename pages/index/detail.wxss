@@ -97,7 +97,7 @@ view.right {
 
 .right button {
   margin:  auto;
-  margin-top: 25rpx;
+  padding-top: 25rpx;
   background-color: #e64340;
   display: block;
   width: 100%;
