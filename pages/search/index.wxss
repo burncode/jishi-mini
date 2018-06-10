@@ -25,12 +25,12 @@ view{
 }
 
 .b-left{
-  width: 60%;
-  height: 450rpx;
+  width: 48%;
+  height: 355rpx;
   padding-right:30rpx;
 }
 .b-right{
-  width: 35%;
+  width: 47%;
   float: right;
   display: block;
 }

@@ -157,7 +157,7 @@ App({
             method: 'get'
         },
         get_news: {
-            url: host + '/news?per_page=3',
+            url: host + '/news?per_page=5',
             method: 'get'
         },
         get_banner_news: {

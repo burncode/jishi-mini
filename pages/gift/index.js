@@ -247,9 +247,11 @@ Page({
     },
     goReport: function (e) {
         var order_number = e.currentTarget.dataset.orderNo;
+        var user_id = e.currentTarget.dataset.userId;
         wx.setStorageSync('order_number', order_number);
+        console.log(user_id)        
         wx.navigateTo({
-            url: '/pages/report/report?order_number=' + order_number,
+          url: '/pages/report/report?user_id=' + user_id +'&order_number=' + order_number,
         })
     },
     toUsersDetail: function (data) {

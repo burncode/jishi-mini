@@ -16,7 +16,7 @@
           <view class='del-price'>原价：￥ {{item.order.price}}</view>
       </view>
     </view>
-    <view class='order-date p'>增送时间：{{item.order.created_at}}</view>
+    <view class='order-date p'>赠送时间：{{item.order.created_at}}</view>
     <view>
         <view class='order-no p'>订单编号：{{item.order.order_id}}</view>
         <view class='copy-no' bindtap='copy' data-order-no='{{item.order.orderNo}}'>复制</view>
@@ -43,7 +43,7 @@
                   data-order_no='{{item.order.order_id}}'>继续测评
           </text>
           <text wx:if="{{ item.user.subject_status == 2}}" class='td button'
-                  bindtap='goReport' data-order-no='{{item.order.order_id}}'>查看
+                  bindtap='goReport' data-order-no='{{item.order.order_id}}' data-user-id='{{item.order.user_id}}'>查看
           </text>
       </view>
     </view>
