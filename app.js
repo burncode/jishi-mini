@@ -1,9 +1,9 @@
 //app.js
 // const host = 'https://admin.gq1994.top/api'
 // const host = 'http://yuanshiceping.com/api'
-//  const host = 'https://api.jishiceping.com/api';
+ const host = 'https://api.jishiceping.com/api';
 
- const host = 'http://www.xyy.com/api';
+//  const host = 'http://www.xyy.com/api';
  const consultationPhone = '4001019859'; //咨询电话
 App({
     onLaunch: function (option) {
