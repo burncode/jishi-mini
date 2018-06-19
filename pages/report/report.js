@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    reportUrl: null
+    reportUrl: null,
+    order_number:null
   },
   /**
    * 生命周期函数--监听页面加载
@@ -15,7 +16,8 @@ Page({
     var userId = options.user_id ? options.user_id : app.globalData.userId;
     console.log(app.globalData.host + '/report/' + userId + '?order_number=' + options.order_number);
     this.setData({
-      reportUrl: app.globalData.host + '/report/' + userId + '?order_number=' + options.order_number+'#wechat_redirect'
+      reportUrl: app.globalData.host + '/report/' + userId + '?order_number=' + options.order_number+'#wechat_redirect',
+      order_number: options.order_number
     })
   },
 
@@ -65,11 +67,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let order_number = wx.getStorageSync('order_number');
-    console.log(order_number);
+    console.log(this.data.order_number);
     return {
       title: '报告',
-      path: '/pages/report/report?order_number=' + order_number
+      path: '/pages/report/report?order_number=' + this.data.order_number
     }
   }
 })

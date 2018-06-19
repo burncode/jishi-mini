@@ -18,6 +18,7 @@ Page({
     this.setData({
       orderNumber:options.order_number,
       userId:options.user_id,
+      imageUrl: "https://api.jishiceping.com/images/report_share.jpg",
     });
   },
 
