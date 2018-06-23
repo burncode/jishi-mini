@@ -205,6 +205,10 @@ App({
                 url: host + '/wechat_pay/createOrder',
                 method: 'post'
             },
+            updateWechatOrder:{
+                url: host + '/wechat_pay/updateWechatOrder',
+                method: 'post'
+            }
         },
         gift_sends: {
             url: host + '/gifts/sendOrders',

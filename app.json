@@ -23,7 +23,8 @@
     "pages/letter/letter",
     "pages/report/report",
     "pages/search/index",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/pay/zhifu"
   ],
   "window": {
     "backgroundTextStyle": "light",

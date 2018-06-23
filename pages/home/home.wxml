@@ -30,6 +30,7 @@
 
       <view wx:if="{{item.price_level==1}}" class='huodong'>
         <text class='price'>￥ {{item.price}}</text>
+        <view class='hits' wx:if="{{item.class_id == 4}}">今日剩余 <span>{{item.people_num}} \t</span>人</view>
       </view>
       <view wx:if="{{item.price_level==2}}" class='huodong'>
         <text class='price'>免费</text>
@@ -38,10 +39,11 @@
         <text class='price'>￥ {{item.activity_price}}</text>
         <text class='del-price'>\t ￥{{item.price}}</text>
         <text class='price-content'>活动结束恢复原价</text>
-        <view class='hits' wx:if="{{item.class_id == 1}}">今天 <span>{{item.people_num}} \t</span>人已测</view>
+        <view class='hits' wx:if="{{item.class_id == 1 }}">今天 <span>{{item.people_num}} \t</span>人已测</view>
         <view class='hits' wx:if="{{item.class_id == 2}}">今天 <span>{{item.people_num}} \t</span>人已咨询</view>
         <view class='hits' wx:if="{{item.class_id == 3}}">今天 <span>{{item.people_num}} \t</span>人已购</view>
       </view>
+      
     </view>
   </view>
   <view class='bg-white'>

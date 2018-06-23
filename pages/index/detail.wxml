@@ -20,7 +20,7 @@
       6月21-25日  7800元/人
       6月25日后  9800元/人
     </text>
-    <text class='tishi2' wx:if="{{id == 1 || id == 3}}">\n 263道题目 | 50页专业报告 </text>
+    <text class='tishi2' wx:if="{{id == 1 || id == 3 || id == 4}}">\n 263道题目 | 50页专业报告 </text>
     <text class='tishi2' wx:if="{{id == 2 || id == 3}}">\n 专业咨询解答</text>
 </text>
 <view wx:if="{{userInfo.id}}" class='block right' bindtap="zhifu">
@@ -31,14 +31,14 @@
 </view>
 </view>
 <view>
-  <text class='h1 block' wx:if="{{class_id==1}}">测评介绍</text>
+  <text class='h1 block' wx:if="{{class_id==1 || class_id == 4}}">测评介绍</text>
   <text class='h1 block' wx:if="{{class_id==2}}">咨询介绍</text>
   <text class='h1 block' wx:if="{{class_id==3}}">服务内容</text>
   <text class='p'>{{describe}}</text>
 </view>
 <view>
-  <text class='h1 block' wx:if="{{class_id==1}}">测评需知</text> 
-  <text class='p' wx:if="{{class_id==1}}">1、测试前寻找一个安静的环境并保证网络正常。
+  <text class='h1 block' wx:if="{{class_id==1 || class_id == 4}}">测评需知</text> 
+  <text class='p' wx:if="{{class_id==1 || class_id == 4}}">1、测试前寻找一个安静的环境并保证网络正常。
       2、填写个人信息，报告必须内容，包括姓名、性别、联系方式、所在省市等。
       3、测评卡包含238道测评题目，大约需要30分钟左右，请您合理安排时间。
       4、一张测评卡只能做一次测评。
@@ -46,9 +46,9 @@
       6、中途答题时间结束时，可点击继续测评，继续回答下一个问题。请保持良好心态，客观分析测评结果。\n
   </text>
   
-  <text class='h1 block' wx:if="{{class_id==1}}">测评报告主要内容</text>
+  <text class='h1 block' wx:if="{{class_id==1 || class_id == 4}}">测评报告主要内容</text>
 
-  <image src='/images/goods-detail.jpg' style='height:900rpx;' wx:if="{{class_id==1}}"/>
+  <image src='/images/goods-detail.jpg' style='height:900rpx;' wx:if="{{class_id==1 || class_id == 4}}"/>
   <text class='h1 block' wx:if="{{class_id==2}}">服务内容</text> 
   <text class='p' wx:if="{{class_id==2}}">1、专家老师与高中生本人交流30分钟
     2、专家老师与其父母交流30分钟

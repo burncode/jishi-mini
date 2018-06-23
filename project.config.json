@@ -177,6 +177,12 @@
 					"name": "评价",
 					"pathName": "pages/comment/comment",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "报告支付",
+					"pathName": "pages/pay/zhifu",
+					"query": ""
 				}
 			]
 		}
